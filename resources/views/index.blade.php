@@ -1,1945 +1,2611 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
+
+@section('content')
+    <!-- BANNER SECTION START -->
+    <section class="et-banner relative bg-etBlue">
+        <div class="et-banner-slider swiper">
+            <div class="swiper-wrapper">
+                <!-- single slide -->
+                <div class="swiper-slide">
+                    <div
+                        class="bg-no-repeat bg-cover bg-[url('../assets/img/banner-bg-1.jpg')] bg-center pt-[clamp(150px,17.3vw,333px)] pb-[clamp(120px,22vw,422px)] text-white relative overflow-hidden z-[1] before:content-normal before:absolute before:inset-0 before:bg-etBlue/40 before:-z-[1]">
+                        <div class="mx-[15.5em] xxxl:mx-[10em] xxl:mx-[40px] xs:mx-[12px]">
+                            <div
+                                class="flex md:flex-col items-center justify-between gap-x-[30px] gap-y-[30px] md:grid-cols-1">
+                                <div class="left relative z-[20] w-[55%] md:w-full">
+                                    <h6 class="font-kalam font-bold text-[2.4rem] mb-[3px] anim-text">Business expo
+                                        2024</h6>
+
+                                    <h1 class="text-[clamp(42px,6.25vw,12rem)] font-semibold leading-[1.1] mb-[36px] md:mb-[36px] anim-text">
+                                        Big Conference <span class="font-normal tracking-tighter"> & Workshop</span>
+                                    </h1>
+
+                                    <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
+                                        <a href="contact.html"
+                                           class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">Register
+                                            Now</a>
+
+                                        <a href="#"
+                                           class="et-btn bg-white inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-etBlue font-normal text-[17px] rounded-full">View
+                                            More</a>
+                                    </div>
+
+                                    <!-- vectors -->
+                                    <div class="et-banner-vectors">
+                                        <div class="absolute left-[457px] bottom-[calc(100%+40px)]"><img
+                                                src="assets/img/banner-vector.png" alt="vector"
+                                                class="w-[45px] h-[45px]"></div>
+                                        <div class="absolute bottom-0 right-[6px]"><img
+                                                src="assets/img/banner-vector.png" alt="vector"
+                                                class="w-[21px] h-[21px]"></div>
+                                    </div>
+                                </div>
+
+                                <!-- video button -->
+                                <div class="et-banner-video-btn w-[40%] md:w-full shrink-0">
+                                    <a href="https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s"
+                                       data-fslightbox="banner-video-1"
+                                       class="w-[135px] aspect-square rounded-full border border-white/20 flex justify-center items-center text-etBlue ml-auto mr-[230px] lg:mr-[150px] md:mr-auto md:ml-0 relative z-[1] text-[18px] before:absolute before:w-[70px] before:h-[70px] before:bg-white before:rounded-full before:-z-[1] before:transition before:duration-[400ms] hover:text-white hover:before:bg-etBlue hover:border-etBlue"><i
+                                            class="fa-solid fa-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- bottom title -->
+                        <span
+                            class="et-banner-bottom-title text-[clamp(30px,13vw,250px)] font-bold text-white/10 text-center block absolute bottom-[40px] left-0 w-full">BUSINESS EXPO</span>
+                    </div>
+                </div>
+
+                <!-- single slide -->
+                <div class="swiper-slide">
+                    <div
+                        class="bg-no-repeat bg-cover bg-[url('../assets/img/banner-bg-2.jpg')] bg-center pt-[clamp(150px,17.3vw,333px)] pb-[clamp(120px,22vw,422px)] text-white relative overflow-hidden z-[1] before:content-normal before:absolute before:inset-0 before:bg-etBlue/40 before:-z-[1]">
+                        <div class="mx-[15.5em] xxxl:mx-[10em] xxl:mx-[40px] xs:mx-[12px]">
+                            <div
+                                class="flex md:flex-col items-center justify-between gap-x-[30px] gap-y-[30px] md:grid-cols-1">
+                                <div class="left relative z-[20] w-[55%] md:w-full">
+                                    <h6 class="font-kalam font-bold text-[2.4rem] mb-[3px] anim-text">Business expo
+                                        2024</h6>
+
+                                    <h1 class="text-[clamp(42px,6.25vw,12rem)] font-semibold leading-[1.1] mb-[36px] md:mb-[36px] anim-text">
+                                        Big Conference <span class="font-normal tracking-tighter"> & Workshop</span>
+                                    </h1>
+
+                                    <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
+                                        <a href="contact.html"
+                                           class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">Register
+                                            Now</a>
+
+                                        <a href="#"
+                                           class="et-btn bg-white inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-etBlue font-normal text-[17px] rounded-full">View
+                                            More</a>
+                                    </div>
+
+                                    <!-- vectors -->
+                                    <div class="et-banner-vectors">
+                                        <div class="absolute left-[457px] bottom-[calc(100%+40px)]"><img
+                                                src="assets/img/banner-vector.png" alt="vector"
+                                                class="w-[45px] h-[45px]"></div>
+                                        <div class="absolute bottom-0 right-[6px]"><img
+                                                src="assets/img/banner-vector.png" alt="vector"
+                                                class="w-[21px] h-[21px]"></div>
+                                    </div>
+                                </div>
+
+                                <!-- video button -->
+                                <div class="et-banner-video-btn w-[40%] md:w-full shrink-0">
+                                    <a href="https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s"
+                                       data-fslightbox="banner-video-1"
+                                       class="w-[135px] aspect-square rounded-full border border-white/20 flex justify-center items-center text-etBlue ml-auto mr-[230px] lg:mr-[150px] md:mr-auto md:ml-0 relative z-[1] text-[18px] before:absolute before:w-[70px] before:h-[70px] before:bg-white before:rounded-full before:-z-[1] before:transition before:duration-[400ms] hover:text-white hover:before:bg-etBlue hover:border-etBlue"><i
+                                            class="fa-solid fa-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- bottom title -->
+                        <span
+                            class="et-banner-bottom-title text-[clamp(30px,13vw,250px)] font-bold text-white/10 text-center block absolute bottom-[40px] left-0 w-full">BUSINESS EXPO</span>
+                    </div>
+                </div>
+
+                <!-- single slide -->
+                <div class="swiper-slide">
+                    <div
+                        class="bg-no-repeat bg-cover bg-[url('../assets/img/banner-bg-3.jpg')] bg-center pt-[clamp(150px,17.3vw,333px)] pb-[clamp(120px,22vw,422px)] text-white relative overflow-hidden z-[1] before:content-normal before:absolute before:inset-0 before:bg-etBlue/40 before:-z-[1]">
+                        <div class="mx-[15.5em] xxxl:mx-[10em] xxl:mx-[40px] xs:mx-[12px]">
+                            <div
+                                class="flex md:flex-col items-center justify-between gap-x-[30px] gap-y-[30px] md:grid-cols-1">
+                                <div class="left relative z-[20] w-[55%] md:w-full">
+                                    <h6 class="font-kalam font-bold text-[2.4rem] mb-[3px] anim-text">Business expo
+                                        2024</h6>
+
+                                    <h1 class="text-[clamp(42px,6.25vw,12rem)] font-semibold leading-[1.1] mb-[36px] md:mb-[36px] anim-text">
+                                        Big Conference <span class="font-normal tracking-tighter"> & Workshop</span>
+                                    </h1>
+
+                                    <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
+                                        <a href="contact.html"
+                                           class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">Register
+                                            Now</a>
+
+                                        <a href="#"
+                                           class="et-btn bg-white inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-etBlue font-normal text-[17px] rounded-full">View
+                                            More</a>
+                                    </div>
+
+                                    <!-- vectors -->
+                                    <div class="et-banner-vectors">
+                                        <div class="absolute left-[457px] bottom-[calc(100%+40px)]"><img
+                                                src="assets/img/banner-vector.png" alt="vector"
+                                                class="w-[45px] h-[45px]"></div>
+                                        <div class="absolute bottom-0 right-[6px]"><img
+                                                src="assets/img/banner-vector.png" alt="vector"
+                                                class="w-[21px] h-[21px]"></div>
+                                    </div>
+                                </div>
+
+                                <!-- video button -->
+                                <div class="et-banner-video-btn w-[40%] md:w-full shrink-0">
+                                    <a href="https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s"
+                                       data-fslightbox="banner-video-1"
+                                       class="w-[135px] aspect-square rounded-full border border-white/20 flex justify-center items-center text-etBlue ml-auto mr-[230px] lg:mr-[150px] md:mr-auto md:ml-0 relative z-[1] text-[18px] before:absolute before:w-[70px] before:h-[70px] before:bg-white before:rounded-full before:-z-[1] before:transition before:duration-[400ms] hover:text-white hover:before:bg-etBlue hover:border-etBlue"><i
+                                            class="fa-solid fa-play"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- bottom title -->
+                        <span
+                            class="et-banner-bottom-title text-[clamp(30px,13vw,250px)] font-bold text-white/10 text-center block absolute bottom-[40px] left-0 w-full">BUSINESS EXPO</span>
+                    </div>
+                </div>
+            </div>
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet"/>
-
-    <!-- Styles / Scripts -->
-    @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css', 'resources/js/app.js'])
-    @else
-        <style>
-            /*! tailwindcss v4.0.7 | MIT License | https://tailwindcss.com */
-            @layer theme {
-                :root, :host {
-                    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-                    --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
-                    --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-                    --color-red-50: oklch(.971 .013 17.38);
-                    --color-red-100: oklch(.936 .032 17.717);
-                    --color-red-200: oklch(.885 .062 18.334);
-                    --color-red-300: oklch(.808 .114 19.571);
-                    --color-red-400: oklch(.704 .191 22.216);
-                    --color-red-500: oklch(.637 .237 25.331);
-                    --color-red-600: oklch(.577 .245 27.325);
-                    --color-red-700: oklch(.505 .213 27.518);
-                    --color-red-800: oklch(.444 .177 26.899);
-                    --color-red-900: oklch(.396 .141 25.723);
-                    --color-red-950: oklch(.258 .092 26.042);
-                    --color-orange-50: oklch(.98 .016 73.684);
-                    --color-orange-100: oklch(.954 .038 75.164);
-                    --color-orange-200: oklch(.901 .076 70.697);
-                    --color-orange-300: oklch(.837 .128 66.29);
-                    --color-orange-400: oklch(.75 .183 55.934);
-                    --color-orange-500: oklch(.705 .213 47.604);
-                    --color-orange-600: oklch(.646 .222 41.116);
-                    --color-orange-700: oklch(.553 .195 38.402);
-                    --color-orange-800: oklch(.47 .157 37.304);
-                    --color-orange-900: oklch(.408 .123 38.172);
-                    --color-orange-950: oklch(.266 .079 36.259);
-                    --color-amber-50: oklch(.987 .022 95.277);
-                    --color-amber-100: oklch(.962 .059 95.617);
-                    --color-amber-200: oklch(.924 .12 95.746);
-                    --color-amber-300: oklch(.879 .169 91.605);
-                    --color-amber-400: oklch(.828 .189 84.429);
-                    --color-amber-500: oklch(.769 .188 70.08);
-                    --color-amber-600: oklch(.666 .179 58.318);
-                    --color-amber-700: oklch(.555 .163 48.998);
-                    --color-amber-800: oklch(.473 .137 46.201);
-                    --color-amber-900: oklch(.414 .112 45.904);
-                    --color-amber-950: oklch(.279 .077 45.635);
-                    --color-yellow-50: oklch(.987 .026 102.212);
-                    --color-yellow-100: oklch(.973 .071 103.193);
-                    --color-yellow-200: oklch(.945 .129 101.54);
-                    --color-yellow-300: oklch(.905 .182 98.111);
-                    --color-yellow-400: oklch(.852 .199 91.936);
-                    --color-yellow-500: oklch(.795 .184 86.047);
-                    --color-yellow-600: oklch(.681 .162 75.834);
-                    --color-yellow-700: oklch(.554 .135 66.442);
-                    --color-yellow-800: oklch(.476 .114 61.907);
-                    --color-yellow-900: oklch(.421 .095 57.708);
-                    --color-yellow-950: oklch(.286 .066 53.813);
-                    --color-lime-50: oklch(.986 .031 120.757);
-                    --color-lime-100: oklch(.967 .067 122.328);
-                    --color-lime-200: oklch(.938 .127 124.321);
-                    --color-lime-300: oklch(.897 .196 126.665);
-                    --color-lime-400: oklch(.841 .238 128.85);
-                    --color-lime-500: oklch(.768 .233 130.85);
-                    --color-lime-600: oklch(.648 .2 131.684);
-                    --color-lime-700: oklch(.532 .157 131.589);
-                    --color-lime-800: oklch(.453 .124 130.933);
-                    --color-lime-900: oklch(.405 .101 131.063);
-                    --color-lime-950: oklch(.274 .072 132.109);
-                    --color-green-50: oklch(.982 .018 155.826);
-                    --color-green-100: oklch(.962 .044 156.743);
-                    --color-green-200: oklch(.925 .084 155.995);
-                    --color-green-300: oklch(.871 .15 154.449);
-                    --color-green-400: oklch(.792 .209 151.711);
-                    --color-green-500: oklch(.723 .219 149.579);
-                    --color-green-600: oklch(.627 .194 149.214);
-                    --color-green-700: oklch(.527 .154 150.069);
-                    --color-green-800: oklch(.448 .119 151.328);
-                    --color-green-900: oklch(.393 .095 152.535);
-                    --color-green-950: oklch(.266 .065 152.934);
-                    --color-emerald-50: oklch(.979 .021 166.113);
-                    --color-emerald-100: oklch(.95 .052 163.051);
-                    --color-emerald-200: oklch(.905 .093 164.15);
-                    --color-emerald-300: oklch(.845 .143 164.978);
-                    --color-emerald-400: oklch(.765 .177 163.223);
-                    --color-emerald-500: oklch(.696 .17 162.48);
-                    --color-emerald-600: oklch(.596 .145 163.225);
-                    --color-emerald-700: oklch(.508 .118 165.612);
-                    --color-emerald-800: oklch(.432 .095 166.913);
-                    --color-emerald-900: oklch(.378 .077 168.94);
-                    --color-emerald-950: oklch(.262 .051 172.552);
-                    --color-teal-50: oklch(.984 .014 180.72);
-                    --color-teal-100: oklch(.953 .051 180.801);
-                    --color-teal-200: oklch(.91 .096 180.426);
-                    --color-teal-300: oklch(.855 .138 181.071);
-                    --color-teal-400: oklch(.777 .152 181.912);
-                    --color-teal-500: oklch(.704 .14 182.503);
-                    --color-teal-600: oklch(.6 .118 184.704);
-                    --color-teal-700: oklch(.511 .096 186.391);
-                    --color-teal-800: oklch(.437 .078 188.216);
-                    --color-teal-900: oklch(.386 .063 188.416);
-                    --color-teal-950: oklch(.277 .046 192.524);
-                    --color-cyan-50: oklch(.984 .019 200.873);
-                    --color-cyan-100: oklch(.956 .045 203.388);
-                    --color-cyan-200: oklch(.917 .08 205.041);
-                    --color-cyan-300: oklch(.865 .127 207.078);
-                    --color-cyan-400: oklch(.789 .154 211.53);
-                    --color-cyan-500: oklch(.715 .143 215.221);
-                    --color-cyan-600: oklch(.609 .126 221.723);
-                    --color-cyan-700: oklch(.52 .105 223.128);
-                    --color-cyan-800: oklch(.45 .085 224.283);
-                    --color-cyan-900: oklch(.398 .07 227.392);
-                    --color-cyan-950: oklch(.302 .056 229.695);
-                    --color-sky-50: oklch(.977 .013 236.62);
-                    --color-sky-100: oklch(.951 .026 236.824);
-                    --color-sky-200: oklch(.901 .058 230.902);
-                    --color-sky-300: oklch(.828 .111 230.318);
-                    --color-sky-400: oklch(.746 .16 232.661);
-                    --color-sky-500: oklch(.685 .169 237.323);
-                    --color-sky-600: oklch(.588 .158 241.966);
-                    --color-sky-700: oklch(.5 .134 242.749);
-                    --color-sky-800: oklch(.443 .11 240.79);
-                    --color-sky-900: oklch(.391 .09 240.876);
-                    --color-sky-950: oklch(.293 .066 243.157);
-                    --color-blue-50: oklch(.97 .014 254.604);
-                    --color-blue-100: oklch(.932 .032 255.585);
-                    --color-blue-200: oklch(.882 .059 254.128);
-                    --color-blue-300: oklch(.809 .105 251.813);
-                    --color-blue-400: oklch(.707 .165 254.624);
-                    --color-blue-500: oklch(.623 .214 259.815);
-                    --color-blue-600: oklch(.546 .245 262.881);
-                    --color-blue-700: oklch(.488 .243 264.376);
-                    --color-blue-800: oklch(.424 .199 265.638);
-                    --color-blue-900: oklch(.379 .146 265.522);
-                    --color-blue-950: oklch(.282 .091 267.935);
-                    --color-indigo-50: oklch(.962 .018 272.314);
-                    --color-indigo-100: oklch(.93 .034 272.788);
-                    --color-indigo-200: oklch(.87 .065 274.039);
-                    --color-indigo-300: oklch(.785 .115 274.713);
-                    --color-indigo-400: oklch(.673 .182 276.935);
-                    --color-indigo-500: oklch(.585 .233 277.117);
-                    --color-indigo-600: oklch(.511 .262 276.966);
-                    --color-indigo-700: oklch(.457 .24 277.023);
-                    --color-indigo-800: oklch(.398 .195 277.366);
-                    --color-indigo-900: oklch(.359 .144 278.697);
-                    --color-indigo-950: oklch(.257 .09 281.288);
-                    --color-violet-50: oklch(.969 .016 293.756);
-                    --color-violet-100: oklch(.943 .029 294.588);
-                    --color-violet-200: oklch(.894 .057 293.283);
-                    --color-violet-300: oklch(.811 .111 293.571);
-                    --color-violet-400: oklch(.702 .183 293.541);
-                    --color-violet-500: oklch(.606 .25 292.717);
-                    --color-violet-600: oklch(.541 .281 293.009);
-                    --color-violet-700: oklch(.491 .27 292.581);
-                    --color-violet-800: oklch(.432 .232 292.759);
-                    --color-violet-900: oklch(.38 .189 293.745);
-                    --color-violet-950: oklch(.283 .141 291.089);
-                    --color-purple-50: oklch(.977 .014 308.299);
-                    --color-purple-100: oklch(.946 .033 307.174);
-                    --color-purple-200: oklch(.902 .063 306.703);
-                    --color-purple-300: oklch(.827 .119 306.383);
-                    --color-purple-400: oklch(.714 .203 305.504);
-                    --color-purple-500: oklch(.627 .265 303.9);
-                    --color-purple-600: oklch(.558 .288 302.321);
-                    --color-purple-700: oklch(.496 .265 301.924);
-                    --color-purple-800: oklch(.438 .218 303.724);
-                    --color-purple-900: oklch(.381 .176 304.987);
-                    --color-purple-950: oklch(.291 .149 302.717);
-                    --color-fuchsia-50: oklch(.977 .017 320.058);
-                    --color-fuchsia-100: oklch(.952 .037 318.852);
-                    --color-fuchsia-200: oklch(.903 .076 319.62);
-                    --color-fuchsia-300: oklch(.833 .145 321.434);
-                    --color-fuchsia-400: oklch(.74 .238 322.16);
-                    --color-fuchsia-500: oklch(.667 .295 322.15);
-                    --color-fuchsia-600: oklch(.591 .293 322.896);
-                    --color-fuchsia-700: oklch(.518 .253 323.949);
-                    --color-fuchsia-800: oklch(.452 .211 324.591);
-                    --color-fuchsia-900: oklch(.401 .17 325.612);
-                    --color-fuchsia-950: oklch(.293 .136 325.661);
-                    --color-pink-50: oklch(.971 .014 343.198);
-                    --color-pink-100: oklch(.948 .028 342.258);
-                    --color-pink-200: oklch(.899 .061 343.231);
-                    --color-pink-300: oklch(.823 .12 346.018);
-                    --color-pink-400: oklch(.718 .202 349.761);
-                    --color-pink-500: oklch(.656 .241 354.308);
-                    --color-pink-600: oklch(.592 .249 .584);
-                    --color-pink-700: oklch(.525 .223 3.958);
-                    --color-pink-800: oklch(.459 .187 3.815);
-                    --color-pink-900: oklch(.408 .153 2.432);
-                    --color-pink-950: oklch(.284 .109 3.907);
-                    --color-rose-50: oklch(.969 .015 12.422);
-                    --color-rose-100: oklch(.941 .03 12.58);
-                    --color-rose-200: oklch(.892 .058 10.001);
-                    --color-rose-300: oklch(.81 .117 11.638);
-                    --color-rose-400: oklch(.712 .194 13.428);
-                    --color-rose-500: oklch(.645 .246 16.439);
-                    --color-rose-600: oklch(.586 .253 17.585);
-                    --color-rose-700: oklch(.514 .222 16.935);
-                    --color-rose-800: oklch(.455 .188 13.697);
-                    --color-rose-900: oklch(.41 .159 10.272);
-                    --color-rose-950: oklch(.271 .105 12.094);
-                    --color-slate-50: oklch(.984 .003 247.858);
-                    --color-slate-100: oklch(.968 .007 247.896);
-                    --color-slate-200: oklch(.929 .013 255.508);
-                    --color-slate-300: oklch(.869 .022 252.894);
-                    --color-slate-400: oklch(.704 .04 256.788);
-                    --color-slate-500: oklch(.554 .046 257.417);
-                    --color-slate-600: oklch(.446 .043 257.281);
-                    --color-slate-700: oklch(.372 .044 257.287);
-                    --color-slate-800: oklch(.279 .041 260.031);
-                    --color-slate-900: oklch(.208 .042 265.755);
-                    --color-slate-950: oklch(.129 .042 264.695);
-                    --color-gray-50: oklch(.985 .002 247.839);
-                    --color-gray-100: oklch(.967 .003 264.542);
-                    --color-gray-200: oklch(.928 .006 264.531);
-                    --color-gray-300: oklch(.872 .01 258.338);
-                    --color-gray-400: oklch(.707 .022 261.325);
-                    --color-gray-500: oklch(.551 .027 264.364);
-                    --color-gray-600: oklch(.446 .03 256.802);
-                    --color-gray-700: oklch(.373 .034 259.733);
-                    --color-gray-800: oklch(.278 .033 256.848);
-                    --color-gray-900: oklch(.21 .034 264.665);
-                    --color-gray-950: oklch(.13 .028 261.692);
-                    --color-zinc-50: oklch(.985 0 0);
-                    --color-zinc-100: oklch(.967 .001 286.375);
-                    --color-zinc-200: oklch(.92 .004 286.32);
-                    --color-zinc-300: oklch(.871 .006 286.286);
-                    --color-zinc-400: oklch(.705 .015 286.067);
-                    --color-zinc-500: oklch(.552 .016 285.938);
-                    --color-zinc-600: oklch(.442 .017 285.786);
-                    --color-zinc-700: oklch(.37 .013 285.805);
-                    --color-zinc-800: oklch(.274 .006 286.033);
-                    --color-zinc-900: oklch(.21 .006 285.885);
-                    --color-zinc-950: oklch(.141 .005 285.823);
-                    --color-neutral-50: oklch(.985 0 0);
-                    --color-neutral-100: oklch(.97 0 0);
-                    --color-neutral-200: oklch(.922 0 0);
-                    --color-neutral-300: oklch(.87 0 0);
-                    --color-neutral-400: oklch(.708 0 0);
-                    --color-neutral-500: oklch(.556 0 0);
-                    --color-neutral-600: oklch(.439 0 0);
-                    --color-neutral-700: oklch(.371 0 0);
-                    --color-neutral-800: oklch(.269 0 0);
-                    --color-neutral-900: oklch(.205 0 0);
-                    --color-neutral-950: oklch(.145 0 0);
-                    --color-stone-50: oklch(.985 .001 106.423);
-                    --color-stone-100: oklch(.97 .001 106.424);
-                    --color-stone-200: oklch(.923 .003 48.717);
-                    --color-stone-300: oklch(.869 .005 56.366);
-                    --color-stone-400: oklch(.709 .01 56.259);
-                    --color-stone-500: oklch(.553 .013 58.071);
-                    --color-stone-600: oklch(.444 .011 73.639);
-                    --color-stone-700: oklch(.374 .01 67.558);
-                    --color-stone-800: oklch(.268 .007 34.298);
-                    --color-stone-900: oklch(.216 .006 56.043);
-                    --color-stone-950: oklch(.147 .004 49.25);
-                    --color-black: #000;
-                    --color-white: #fff;
-                    --spacing: .25rem;
-                    --breakpoint-sm: 40rem;
-                    --breakpoint-md: 48rem;
-                    --breakpoint-lg: 64rem;
-                    --breakpoint-xl: 80rem;
-                    --breakpoint-2xl: 96rem;
-                    --container-3xs: 16rem;
-                    --container-2xs: 18rem;
-                    --container-xs: 20rem;
-                    --container-sm: 24rem;
-                    --container-md: 28rem;
-                    --container-lg: 32rem;
-                    --container-xl: 36rem;
-                    --container-2xl: 42rem;
-                    --container-3xl: 48rem;
-                    --container-4xl: 56rem;
-                    --container-5xl: 64rem;
-                    --container-6xl: 72rem;
-                    --container-7xl: 80rem;
-                    --text-xs: .75rem;
-                    --text-xs--line-height: calc(1 / .75);
-                    --text-sm: .875rem;
-                    --text-sm--line-height: calc(1.25 / .875);
-                    --text-base: 1rem;
-                    --text-base--line-height: 1.5;
-                    --text-lg: 1.125rem;
-                    --text-lg--line-height: calc(1.75 / 1.125);
-                    --text-xl: 1.25rem;
-                    --text-xl--line-height: calc(1.75 / 1.25);
-                    --text-2xl: 1.5rem;
-                    --text-2xl--line-height: calc(2 / 1.5);
-                    --text-3xl: 1.875rem;
-                    --text-3xl--line-height: 1.2;
-                    --text-4xl: 2.25rem;
-                    --text-4xl--line-height: calc(2.5 / 2.25);
-                    --text-5xl: 3rem;
-                    --text-5xl--line-height: 1;
-                    --text-6xl: 3.75rem;
-                    --text-6xl--line-height: 1;
-                    --text-7xl: 4.5rem;
-                    --text-7xl--line-height: 1;
-                    --text-8xl: 6rem;
-                    --text-8xl--line-height: 1;
-                    --text-9xl: 8rem;
-                    --text-9xl--line-height: 1;
-                    --font-weight-thin: 100;
-                    --font-weight-extralight: 200;
-                    --font-weight-light: 300;
-                    --font-weight-normal: 400;
-                    --font-weight-medium: 500;
-                    --font-weight-semibold: 600;
-                    --font-weight-bold: 700;
-                    --font-weight-extrabold: 800;
-                    --font-weight-black: 900;
-                    --tracking-tighter: -.05em;
-                    --tracking-tight: -.025em;
-                    --tracking-normal: 0em;
-                    --tracking-wide: .025em;
-                    --tracking-wider: .05em;
-                    --tracking-widest: .1em;
-                    --leading-tight: 1.25;
-                    --leading-snug: 1.375;
-                    --leading-normal: 1.5;
-                    --leading-relaxed: 1.625;
-                    --leading-loose: 2;
-                    --radius-xs: .125rem;
-                    --radius-sm: .25rem;
-                    --radius-md: .375rem;
-                    --radius-lg: .5rem;
-                    --radius-xl: .75rem;
-                    --radius-2xl: 1rem;
-                    --radius-3xl: 1.5rem;
-                    --radius-4xl: 2rem;
-                    --shadow-2xs: 0 1px #0000000d;
-                    --shadow-xs: 0 1px 2px 0 #0000000d;
-                    --shadow-sm: 0 1px 3px 0 #0000001a, 0 1px 2px -1px #0000001a;
-                    --shadow-md: 0 4px 6px -1px #0000001a, 0 2px 4px -2px #0000001a;
-                    --shadow-lg: 0 10px 15px -3px #0000001a, 0 4px 6px -4px #0000001a;
-                    --shadow-xl: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
-                    --shadow-2xl: 0 25px 50px -12px #00000040;
-                    --inset-shadow-2xs: inset 0 1px #0000000d;
-                    --inset-shadow-xs: inset 0 1px 1px #0000000d;
-                    --inset-shadow-sm: inset 0 2px 4px #0000000d;
-                    --drop-shadow-xs: 0 1px 1px #0000000d;
-                    --drop-shadow-sm: 0 1px 2px #00000026;
-                    --drop-shadow-md: 0 3px 3px #0000001f;
-                    --drop-shadow-lg: 0 4px 4px #00000026;
-                    --drop-shadow-xl: 0 9px 7px #0000001a;
-                    --drop-shadow-2xl: 0 25px 25px #00000026;
-                    --ease-in: cubic-bezier(.4, 0, 1, 1);
-                    --ease-out: cubic-bezier(0, 0, .2, 1);
-                    --ease-in-out: cubic-bezier(.4, 0, .2, 1);
-                    --animate-spin: spin 1s linear infinite;
-                    --animate-ping: ping 1s cubic-bezier(0, 0, .2, 1) infinite;
-                    --animate-pulse: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
-                    --animate-bounce: bounce 1s infinite;
-                    --blur-xs: 4px;
-                    --blur-sm: 8px;
-                    --blur-md: 12px;
-                    --blur-lg: 16px;
-                    --blur-xl: 24px;
-                    --blur-2xl: 40px;
-                    --blur-3xl: 64px;
-                    --perspective-dramatic: 100px;
-                    --perspective-near: 300px;
-                    --perspective-normal: 500px;
-                    --perspective-midrange: 800px;
-                    --perspective-distant: 1200px;
-                    --aspect-video: 16/9;
-                    --default-transition-duration: .15s;
-                    --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-                    --default-font-family: var(--font-sans);
-                    --default-font-feature-settings: var(--font-sans--font-feature-settings);
-                    --default-font-variation-settings: var(--font-sans--font-variation-settings);
-                    --default-mono-font-family: var(--font-mono);
-                    --default-mono-font-feature-settings: var(--font-mono--font-feature-settings);
-                    --default-mono-font-variation-settings: var(--font-mono--font-variation-settings)
-                }
-            }
-
-            @layer base {
-                *, :after, :before, ::backdrop {
-                    box-sizing: border-box;
-                    border: 0 solid;
-                    margin: 0;
-                    padding: 0
-                }
-
-                ::file-selector-button {
-                    box-sizing: border-box;
-                    border: 0 solid;
-                    margin: 0;
-                    padding: 0
-                }
-
-                html, :host {
-                    -webkit-text-size-adjust: 100%;
-                    -moz-tab-size: 4;
-                    tab-size: 4;
-                    line-height: 1.5;
-                    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
-                    font-feature-settings: var(--default-font-feature-settings, normal);
-                    font-variation-settings: var(--default-font-variation-settings, normal);
-                    -webkit-tap-highlight-color: transparent
-                }
-
-                body {
-                    line-height: inherit
-                }
-
-                hr {
-                    height: 0;
-                    color: inherit;
-                    border-top-width: 1px
-                }
-
-                abbr:where([title]) {
-                    -webkit-text-decoration: underline dotted;
-                    text-decoration: underline dotted
-                }
-
-                h1, h2, h3, h4, h5, h6 {
-                    font-size: inherit;
-                    font-weight: inherit
-                }
-
-                a {
-                    color: inherit;
-                    -webkit-text-decoration: inherit;
-                    text-decoration: inherit
-                }
-
-                b, strong {
-                    font-weight: bolder
-                }
-
-                code, kbd, samp, pre {
-                    font-family: var(--default-mono-font-family, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace);
-                    font-feature-settings: var(--default-mono-font-feature-settings, normal);
-                    font-variation-settings: var(--default-mono-font-variation-settings, normal);
-                    font-size: 1em
-                }
-
-                small {
-                    font-size: 80%
-                }
-
-                sub, sup {
-                    vertical-align: baseline;
-                    font-size: 75%;
-                    line-height: 0;
-                    position: relative
-                }
-
-                sub {
-                    bottom: -.25em
-                }
-
-                sup {
-                    top: -.5em
-                }
-
-                table {
-                    text-indent: 0;
-                    border-color: inherit;
-                    border-collapse: collapse
-                }
-
-                :-moz-focusring {
-                    outline: auto
-                }
-
-                progress {
-                    vertical-align: baseline
-                }
-
-                summary {
-                    display: list-item
-                }
-
-                ol, ul, menu {
-                    list-style: none
-                }
-
-                img, svg, video, canvas, audio, iframe, embed, object {
-                    vertical-align: middle;
-                    display: block
-                }
-
-                img, video {
-                    max-width: 100%;
-                    height: auto
-                }
-
-                button, input, select, optgroup, textarea {
-                    font: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    letter-spacing: inherit;
-                    color: inherit;
-                    opacity: 1;
-                    background-color: #0000;
-                    border-radius: 0
-                }
-
-                ::file-selector-button {
-                    font: inherit;
-                    font-feature-settings: inherit;
-                    font-variation-settings: inherit;
-                    letter-spacing: inherit;
-                    color: inherit;
-                    opacity: 1;
-                    background-color: #0000;
-                    border-radius: 0
-                }
-
-                :where(select:is([multiple],[size])) optgroup {
-                    font-weight: bolder
-                }
-
-                :where(select:is([multiple],[size])) optgroup option {
-                    padding-inline-start: 20px
-                }
-
-                ::file-selector-button {
-                    margin-inline-end: 4px
-                }
-
-                ::placeholder {
-                    opacity: 1;
-                    color: color-mix(in oklab, currentColor 50%, transparent)
-                }
-
-                textarea {
-                    resize: vertical
-                }
-
-                ::-webkit-search-decoration {
-                    -webkit-appearance: none
-                }
-
-                ::-webkit-date-and-time-value {
-                    min-height: 1lh;
-                    text-align: inherit
-                }
-
-                ::-webkit-datetime-edit {
-                    display: inline-flex
-                }
-
-                ::-webkit-datetime-edit-fields-wrapper {
-                    padding: 0
-                }
-
-                ::-webkit-datetime-edit {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-year-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-month-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-day-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-hour-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-minute-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-second-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-millisecond-field {
-                    padding-block: 0
-                }
-
-                ::-webkit-datetime-edit-meridiem-field {
-                    padding-block: 0
-                }
-
-                :-moz-ui-invalid {
-                    box-shadow: none
-                }
-
-                button, input:where([type=button],[type=reset],[type=submit]) {
-                    -webkit-appearance: button;
-                    -moz-appearance: button;
-                    appearance: button
-                }
-
-                ::file-selector-button {
-                    -webkit-appearance: button;
-                    -moz-appearance: button;
-                    appearance: button
-                }
-
-                ::-webkit-inner-spin-button {
-                    height: auto
-                }
-
-                ::-webkit-outer-spin-button {
-                    height: auto
-                }
-
-                [hidden]:where(:not([hidden=until-found])) {
-                    display: none !important
-                }
-            }
-
-            @layer components;
-
-            @layer utilities {
-                .absolute {
-                    position: absolute
-                }
-
-                .relative {
-                    position: relative
-                }
-
-                .static {
-                    position: static
-                }
-
-                .inset-0 {
-                    inset: calc(var(--spacing) * 0)
-                }
-
-                .-mt-\[4\.9rem\] {
-                    margin-top: -4.9rem
-                }
-
-                .-mb-px {
-                    margin-bottom: -1px
-                }
-
-                .mb-1 {
-                    margin-bottom: calc(var(--spacing) * 1)
-                }
-
-                .mb-2 {
-                    margin-bottom: calc(var(--spacing) * 2)
-                }
-
-                .mb-4 {
-                    margin-bottom: calc(var(--spacing) * 4)
-                }
-
-                .mb-6 {
-                    margin-bottom: calc(var(--spacing) * 6)
-                }
-
-                .-ml-8 {
-                    margin-left: calc(var(--spacing) * -8)
-                }
-
-                .flex {
-                    display: flex
-                }
-
-                .hidden {
-                    display: none
-                }
-
-                .inline-block {
-                    display: inline-block
-                }
-
-                .inline-flex {
-                    display: inline-flex
-                }
-
-                .table {
-                    display: table
-                }
-
-                .aspect-\[335\/376\] {
-                    aspect-ratio: 335/376
-                }
-
-                .h-1 {
-                    height: calc(var(--spacing) * 1)
-                }
-
-                .h-1\.5 {
-                    height: calc(var(--spacing) * 1.5)
-                }
-
-                .h-2 {
-                    height: calc(var(--spacing) * 2)
-                }
-
-                .h-2\.5 {
-                    height: calc(var(--spacing) * 2.5)
-                }
-
-                .h-3 {
-                    height: calc(var(--spacing) * 3)
-                }
-
-                .h-3\.5 {
-                    height: calc(var(--spacing) * 3.5)
-                }
-
-                .h-14 {
-                    height: calc(var(--spacing) * 14)
-                }
-
-                .h-14\.5 {
-                    height: calc(var(--spacing) * 14.5)
-                }
-
-                .min-h-screen {
-                    min-height: 100vh
-                }
-
-                .w-1 {
-                    width: calc(var(--spacing) * 1)
-                }
-
-                .w-1\.5 {
-                    width: calc(var(--spacing) * 1.5)
-                }
-
-                .w-2 {
-                    width: calc(var(--spacing) * 2)
-                }
-
-                .w-2\.5 {
-                    width: calc(var(--spacing) * 2.5)
-                }
-
-                .w-3 {
-                    width: calc(var(--spacing) * 3)
-                }
-
-                .w-3\.5 {
-                    width: calc(var(--spacing) * 3.5)
-                }
-
-                .w-\[448px\] {
-                    width: 448px
-                }
-
-                .w-full {
-                    width: 100%
-                }
-
-                .max-w-\[335px\] {
-                    max-width: 335px
-                }
-
-                .max-w-none {
-                    max-width: none
-                }
-
-                .flex-1 {
-                    flex: 1
-                }
-
-                .shrink-0 {
-                    flex-shrink: 0
-                }
-
-                .translate-y-0 {
-                    --tw-translate-y: calc(var(--spacing) * 0);
-                    translate: var(--tw-translate-x) var(--tw-translate-y)
-                }
-
-                .transform {
-                    transform: var(--tw-rotate-x) var(--tw-rotate-y) var(--tw-rotate-z) var(--tw-skew-x) var(--tw-skew-y)
-                }
-
-                .flex-col {
-                    flex-direction: column
-                }
-
-                .flex-col-reverse {
-                    flex-direction: column-reverse
-                }
-
-                .items-center {
-                    align-items: center
-                }
-
-                .justify-center {
-                    justify-content: center
-                }
-
-                .justify-end {
-                    justify-content: flex-end
-                }
-
-                .gap-3 {
-                    gap: calc(var(--spacing) * 3)
-                }
-
-                .gap-4 {
-                    gap: calc(var(--spacing) * 4)
-                }
-
-                :where(.space-x-1>:not(:last-child)) {
-                    --tw-space-x-reverse: 0;
-                    margin-inline-start: calc(calc(var(--spacing) * 1) * var(--tw-space-x-reverse));
-                    margin-inline-end: calc(calc(var(--spacing) * 1) * calc(1 - var(--tw-space-x-reverse)))
-                }
-
-                .overflow-hidden {
-                    overflow: hidden
-                }
-
-                .rounded-full {
-                    border-radius: 3.40282e38px
-                }
-
-                .rounded-sm {
-                    border-radius: var(--radius-sm)
-                }
-
-                .rounded-t-lg {
-                    border-top-left-radius: var(--radius-lg);
-                    border-top-right-radius: var(--radius-lg)
-                }
-
-                .rounded-br-lg {
-                    border-bottom-right-radius: var(--radius-lg)
-                }
-
-                .rounded-bl-lg {
-                    border-bottom-left-radius: var(--radius-lg)
-                }
-
-                .border {
-                    border-style: var(--tw-border-style);
-                    border-width: 1px
-                }
-
-                .border-\[\#19140035\] {
-                    border-color: #19140035
-                }
-
-                .border-\[\#e3e3e0\] {
-                    border-color: #e3e3e0
-                }
-
-                .border-black {
-                    border-color: var(--color-black)
-                }
-
-                .border-transparent {
-                    border-color: #0000
-                }
-
-                .bg-\[\#1b1b18\] {
-                    background-color: #1b1b18
-                }
-
-                .bg-\[\#FDFDFC\] {
-                    background-color: #fdfdfc
-                }
-
-                .bg-\[\#dbdbd7\] {
-                    background-color: #dbdbd7
-                }
-
-                .bg-\[\#fff2f2\] {
-                    background-color: #fff2f2
-                }
-
-                .bg-white {
-                    background-color: var(--color-white)
-                }
-
-                .p-6 {
-                    padding: calc(var(--spacing) * 6)
-                }
-
-                .px-5 {
-                    padding-inline: calc(var(--spacing) * 5)
-                }
-
-                .py-1 {
-                    padding-block: calc(var(--spacing) * 1)
-                }
-
-                .py-1\.5 {
-                    padding-block: calc(var(--spacing) * 1.5)
-                }
-
-                .py-2 {
-                    padding-block: calc(var(--spacing) * 2)
-                }
-
-                .pb-12 {
-                    padding-bottom: calc(var(--spacing) * 12)
-                }
-
-                .text-sm {
-                    font-size: var(--text-sm);
-                    line-height: var(--tw-leading, var(--text-sm--line-height))
-                }
-
-                .text-\[13px\] {
-                    font-size: 13px
-                }
-
-                .leading-\[20px\] {
-                    --tw-leading: 20px;
-                    line-height: 20px
-                }
-
-                .leading-normal {
-                    --tw-leading: var(--leading-normal);
-                    line-height: var(--leading-normal)
-                }
-
-                .font-medium {
-                    --tw-font-weight: var(--font-weight-medium);
-                    font-weight: var(--font-weight-medium)
-                }
-
-                .text-\[\#1b1b18\] {
-                    color: #1b1b18
-                }
-
-                .text-\[\#706f6c\] {
-                    color: #706f6c
-                }
-
-                .text-\[\#F53003\], .text-\[\#f53003\] {
-                    color: #f53003
-                }
-
-                .text-white {
-                    color: var(--color-white)
-                }
-
-                .underline {
-                    text-decoration-line: underline
-                }
-
-                .underline-offset-4 {
-                    text-underline-offset: 4px
-                }
-
-                .opacity-100 {
-                    opacity: 1
-                }
-
-                .shadow-\[0px_0px_1px_0px_rgba\(0\,0\,0\,0\.03\)\,0px_1px_2px_0px_rgba\(0\,0\,0\,0\.06\)\] {
-                    --tw-shadow: 0px 0px 1px 0px var(--tw-shadow-color, #00000008), 0px 1px 2px 0px var(--tw-shadow-color, #0000000f);
-                    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)
-                }
-
-                .shadow-\[inset_0px_0px_0px_1px_rgba\(26\,26\,0\,0\.16\)\] {
-                    --tw-shadow: inset 0px 0px 0px 1px var(--tw-shadow-color, #1a1a0029);
-                    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)
-                }
-
-                .\!filter {
-                    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,) !important
-                }
-
-                .filter {
-                    filter: var(--tw-blur,) var(--tw-brightness,) var(--tw-contrast,) var(--tw-grayscale,) var(--tw-hue-rotate,) var(--tw-invert,) var(--tw-saturate,) var(--tw-sepia,) var(--tw-drop-shadow,)
-                }
-
-                .transition-all {
-                    transition-property: all;
-                    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-                    transition-duration: var(--tw-duration, var(--default-transition-duration))
-                }
-
-                .transition-opacity {
-                    transition-property: opacity;
-                    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-                    transition-duration: var(--tw-duration, var(--default-transition-duration))
-                }
-
-                .delay-300 {
-                    transition-delay: .3s
-                }
-
-                .duration-750 {
-                    --tw-duration: .75s;
-                    transition-duration: .75s
-                }
-
-                .not-has-\[nav\]\:hidden:not(:has(:is(nav))) {
-                    display: none
-                }
-
-                .before\:absolute:before {
-                    content: var(--tw-content);
-                    position: absolute
-                }
-
-                .before\:top-0:before {
-                    content: var(--tw-content);
-                    top: calc(var(--spacing) * 0)
-                }
-
-                .before\:top-1\/2:before {
-                    content: var(--tw-content);
-                    top: 50%
-                }
-
-                .before\:bottom-0:before {
-                    content: var(--tw-content);
-                    bottom: calc(var(--spacing) * 0)
-                }
-
-                .before\:bottom-1\/2:before {
-                    content: var(--tw-content);
-                    bottom: 50%
-                }
-
-                .before\:left-\[0\.4rem\]:before {
-                    content: var(--tw-content);
-                    left: .4rem
-                }
-
-                .before\:border-l:before {
-                    content: var(--tw-content);
-                    border-left-style: var(--tw-border-style);
-                    border-left-width: 1px
-                }
-
-                .before\:border-\[\#e3e3e0\]:before {
-                    content: var(--tw-content);
-                    border-color: #e3e3e0
-                }
-
-                @media (hover: hover) {
-                    .hover\:border-\[\#1915014a\]:hover {
-                        border-color: #1915014a
-                    }
-
-                    .hover\:border-\[\#19140035\]:hover {
-                        border-color: #19140035
-                    }
-
-                    .hover\:border-black:hover {
-                        border-color: var(--color-black)
-                    }
-
-                    .hover\:bg-black:hover {
-                        background-color: var(--color-black)
-                    }
-                }@media (width >= 64rem) {
-                .lg\:-mt-\[6\.6rem\] {
-                    margin-top: -6.6rem
-                }
-
-                .lg\:mb-0 {
-                    margin-bottom: calc(var(--spacing) * 0)
-                }
-
-                .lg\:mb-6 {
-                    margin-bottom: calc(var(--spacing) * 6)
-                }
-
-                .lg\:-ml-px {
-                    margin-left: -1px
-                }
-
-                .lg\:ml-0 {
-                    margin-left: calc(var(--spacing) * 0)
-                }
-
-                .lg\:block {
-                    display: block
-                }
-
-                .lg\:aspect-auto {
-                    aspect-ratio: auto
-                }
-
-                .lg\:w-\[438px\] {
-                    width: 438px
-                }
-
-                .lg\:max-w-4xl {
-                    max-width: var(--container-4xl)
-                }
-
-                .lg\:grow {
-                    flex-grow: 1
-                }
-
-                .lg\:flex-row {
-                    flex-direction: row
-                }
-
-                .lg\:justify-center {
-                    justify-content: center
-                }
-
-                .lg\:rounded-t-none {
-                    border-top-left-radius: 0;
-                    border-top-right-radius: 0
-                }
-
-                .lg\:rounded-tl-lg {
-                    border-top-left-radius: var(--radius-lg)
-                }
-
-                .lg\:rounded-r-lg {
-                    border-top-right-radius: var(--radius-lg);
-                    border-bottom-right-radius: var(--radius-lg)
-                }
-
-                .lg\:rounded-br-none {
-                    border-bottom-right-radius: 0
-                }
-
-                .lg\:p-8 {
-                    padding: calc(var(--spacing) * 8)
-                }
-
-                .lg\:p-20 {
-                    padding: calc(var(--spacing) * 20)
-                }
-            }@media (prefers-color-scheme: dark) {
-                .dark\:block {
-                    display: block
-                }
-
-                .dark\:hidden {
-                    display: none
-                }
-
-                .dark\:border-\[\#3E3E3A\] {
-                    border-color: #3e3e3a
-                }
-
-                .dark\:border-\[\#eeeeec\] {
-                    border-color: #eeeeec
-                }
-
-                .dark\:bg-\[\#0a0a0a\] {
-                    background-color: #0a0a0a
-                }
-
-                .dark\:bg-\[\#1D0002\] {
-                    background-color: #1d0002
-                }
-
-                .dark\:bg-\[\#3E3E3A\] {
-                    background-color: #3e3e3a
-                }
-
-                .dark\:bg-\[\#161615\] {
-                    background-color: #161615
-                }
-
-                .dark\:bg-\[\#eeeeec\] {
-                    background-color: #eeeeec
-                }
-
-                .dark\:text-\[\#1C1C1A\] {
-                    color: #1c1c1a
-                }
-
-                .dark\:text-\[\#A1A09A\] {
-                    color: #a1a09a
-                }
-
-                .dark\:text-\[\#EDEDEC\] {
-                    color: #ededec
-                }
-
-                .dark\:text-\[\#F61500\] {
-                    color: #f61500
-                }
-
-                .dark\:text-\[\#FF4433\] {
-                    color: #f43
-                }
-
-                .dark\:shadow-\[inset_0px_0px_0px_1px_\#fffaed2d\] {
-                    --tw-shadow: inset 0px 0px 0px 1px var(--tw-shadow-color, #fffaed2d);
-                    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow)
-                }
-
-                .dark\:before\:border-\[\#3E3E3A\]:before {
-                    content: var(--tw-content);
-                    border-color: #3e3e3a
-                }
-
-                @media (hover: hover) {
-                    .dark\:hover\:border-\[\#3E3E3A\]:hover {
-                        border-color: #3e3e3a
-                    }
-
-                    .dark\:hover\:border-\[\#62605b\]:hover {
-                        border-color: #62605b
-                    }
-
-                    .dark\:hover\:border-white:hover {
-                        border-color: var(--color-white)
-                    }
-
-                    .dark\:hover\:bg-white:hover {
-                        background-color: var(--color-white)
-                    }
-                }
-            }@starting-style{
-                .starting\:translate-y-4 {
-                    --tw-translate-y: calc(var(--spacing) * 4);
-                    translate: var(--tw-translate-x) var(--tw-translate-y)
-                }
-            }@starting-style{
-                .starting\:translate-y-6 {
-                    --tw-translate-y: calc(var(--spacing) * 6);
-                    translate: var(--tw-translate-x) var(--tw-translate-y)
-                }
-            }@starting-style{
-                .starting\:opacity-0 {
-                    opacity: 0
-                }
-            }
-            }
-
-            @keyframes spin {
-                to {
-                    transform: rotate(360deg)
-                }
-            }
-
-            @keyframes ping {
-                75%, to {
-                    opacity: 0;
-                    transform: scale(2)
-                }
-            }
-
-            @keyframes pulse {
-                50% {
-                    opacity: .5
-                }
-            }
-
-            @keyframes bounce {
-                0%, to {
-                    animation-timing-function: cubic-bezier(.8, 0, 1, 1);
-                    transform: translateY(-25%)
-                }
-                50% {
-                    animation-timing-function: cubic-bezier(0, 0, .2, 1);
-                    transform: none
-                }
-            }
-
-            @property --tw-translate-x {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0
-            }
-
-            @property --tw-translate-y {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0
-            }
-
-            @property --tw-translate-z {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0
-            }
-
-            @property --tw-rotate-x {
-                syntax: "*";
-                inherits: false;
-                initial-value: rotateX(0)
-            }
-
-            @property --tw-rotate-y {
-                syntax: "*";
-                inherits: false;
-                initial-value: rotateY(0)
-            }
-
-            @property --tw-rotate-z {
-                syntax: "*";
-                inherits: false;
-                initial-value: rotateZ(0)
-            }
-
-            @property --tw-skew-x {
-                syntax: "*";
-                inherits: false;
-                initial-value: skewX(0)
-            }
-
-            @property --tw-skew-y {
-                syntax: "*";
-                inherits: false;
-                initial-value: skewY(0)
-            }
-
-            @property --tw-space-x-reverse {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0
-            }
-
-            @property --tw-border-style {
-                syntax: "*";
-                inherits: false;
-                initial-value: solid
-            }
-
-            @property --tw-leading {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-font-weight {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-shadow {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0 0 #0000
-            }
-
-            @property --tw-shadow-color {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-inset-shadow {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0 0 #0000
-            }
-
-            @property --tw-inset-shadow-color {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-ring-color {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-ring-shadow {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0 0 #0000
-            }
-
-            @property --tw-inset-ring-color {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-inset-ring-shadow {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0 0 #0000
-            }
-
-            @property --tw-ring-inset {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-ring-offset-width {
-                syntax: "<length>";
-                inherits: false;
-                initial-value: 0
-            }
-
-            @property --tw-ring-offset-color {
-                syntax: "*";
-                inherits: false;
-                initial-value: #fff
-            }
-
-            @property --tw-ring-offset-shadow {
-                syntax: "*";
-                inherits: false;
-                initial-value: 0 0 #0000
-            }
-
-            @property --tw-blur {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-brightness {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-contrast {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-grayscale {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-hue-rotate {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-invert {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-opacity {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-saturate {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-sepia {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-drop-shadow {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-duration {
-                syntax: "*";
-                inherits: false
-            }
-
-            @property --tw-content {
-                syntax: "*";
-                inherits: false;
-                initial-value: ""
-            }
-        </style>
-    @endif
-</head>
-<body
-    class="bg-[#FDFDFC] dark:bg-[#0a0a0a] text-[#1b1b18] flex p-6 lg:p-8 items-center lg:justify-center min-h-screen flex-col">
-<header class="w-full lg:max-w-4xl max-w-[335px] text-sm mb-6 not-has-[nav]:hidden">
-    @if (Route::has('login'))
-        <nav class="flex items-center justify-end gap-4">
-            @auth
-                <a
-                    href="{{ url('/dashboard') }}"
-                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal"
-                >
-                    Dashboard
-                </a>
-            @else
-                <a
-                    href="{{ route('login') }}"
-                    class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] text-[#1b1b18] border border-transparent hover:border-[#19140035] dark:hover:border-[#3E3E3A] rounded-sm text-sm leading-normal"
-                >
-                    Log in
-                </a>
-
-                @if (Route::has('register'))
-                    <a
-                        href="{{ route('register') }}"
-                        class="inline-block px-5 py-1.5 dark:text-[#EDEDEC] border-[#19140035] hover:border-[#1915014a] border text-[#1b1b18] dark:border-[#3E3E3A] dark:hover:border-[#62605b] rounded-sm text-sm leading-normal">
-                        Register
-                    </a>
-                @endif
-            @endauth
-        </nav>
-    @endif
-</header>
-<div
-    class="flex items-center justify-center w-full transition-opacity opacity-100 duration-750 lg:grow starting:opacity-0">
-    <main class="flex max-w-[335px] w-full flex-col-reverse lg:max-w-4xl lg:flex-row">
-        <div
-            class="text-[13px] leading-[20px] flex-1 p-6 pb-12 lg:p-20 bg-white dark:bg-[#161615] dark:text-[#EDEDEC] shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d] rounded-bl-lg rounded-br-lg lg:rounded-tl-lg lg:rounded-br-none">
-            <h1 class="mb-1 font-medium">Let's get started</h1>
-            <p class="mb-2 text-[#706f6c] dark:text-[#A1A09A]">Laravel has an incredibly rich ecosystem. <br>We suggest
-                starting with the following.</p>
-            <ul class="flex flex-col mb-4 lg:mb-6">
-                <li class="flex items-center gap-4 py-2 relative before:border-l before:border-[#e3e3e0] dark:before:border-[#3E3E3A] before:top-1/2 before:bottom-0 before:left-[0.4rem] before:absolute">
-                            <span class="relative py-1 bg-white dark:bg-[#161615]">
-                                <span
-                                    class="flex items-center justify-center rounded-full bg-[#FDFDFC] dark:bg-[#161615] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)] w-3.5 h-3.5 border dark:border-[#3E3E3A] border-[#e3e3e0]">
-                                    <span class="rounded-full bg-[#dbdbd7] dark:bg-[#3E3E3A] w-1.5 h-1.5"></span>
-                                </span>
-                            </span>
-                    <span>
-                                Read the
-                                <a href="https://laravel.com/docs" target="_blank"
-                                   class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
-                                    <span>Documentation</span>
-                                    <svg
-                                        width="10"
-                                        height="11"
-                                        viewBox="0 0 10 11"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="w-2.5 h-2.5"
-                                    >
-                                        <path
-                                            d="M7.70833 6.95834V2.79167H3.54167M2.5 8L7.5 3.00001"
-                                            stroke="currentColor"
-                                            stroke-linecap="square"
-                                        />
-                                    </svg>
-                                </a>
-                            </span>
-                </li>
-                <li class="flex items-center gap-4 py-2 relative before:border-l before:border-[#e3e3e0] dark:before:border-[#3E3E3A] before:bottom-1/2 before:top-0 before:left-[0.4rem] before:absolute">
-                            <span class="relative py-1 bg-white dark:bg-[#161615]">
-                                <span
-                                    class="flex items-center justify-center rounded-full bg-[#FDFDFC] dark:bg-[#161615] shadow-[0px_0px_1px_0px_rgba(0,0,0,0.03),0px_1px_2px_0px_rgba(0,0,0,0.06)] w-3.5 h-3.5 border dark:border-[#3E3E3A] border-[#e3e3e0]">
-                                    <span class="rounded-full bg-[#dbdbd7] dark:bg-[#3E3E3A] w-1.5 h-1.5"></span>
-                                </span>
-                            </span>
-                    <span>
-                                Watch video tutorials at
-                                <a href="https://laracasts.com" target="_blank"
-                                   class="inline-flex items-center space-x-1 font-medium underline underline-offset-4 text-[#f53003] dark:text-[#FF4433] ml-1">
-                                    <span>Laracasts</span>
-                                    <svg
-                                        width="10"
-                                        height="11"
-                                        viewBox="0 0 10 11"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        class="w-2.5 h-2.5"
-                                    >
-                                        <path
-                                            d="M7.70833 6.95834V2.79167H3.54167M2.5 8L7.5 3.00001"
-                                            stroke="currentColor"
-                                            stroke-linecap="square"
-                                        />
-                                    </svg>
-                                </a>
-                            </span>
-                </li>
-            </ul>
-            <ul class="flex gap-3 text-sm leading-normal">
-                <li>
-                    <a href="https://cloud.laravel.com" target="_blank"
-                       class="inline-block dark:bg-[#eeeeec] dark:border-[#eeeeec] dark:text-[#1C1C1A] dark:hover:bg-white dark:hover:border-white hover:bg-black hover:border-black px-5 py-1.5 bg-[#1b1b18] rounded-sm border border-black text-white text-sm leading-normal">
-                        Deploy now
-                    </a>
-                </li>
-            </ul>
-        </div>
-        <div
-            class="bg-[#fff2f2] dark:bg-[#1D0002] relative lg:-ml-px -mb-px lg:mb-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg aspect-[335/376] lg:aspect-auto w-full lg:w-[438px] shrink-0 overflow-hidden">
-            {{-- Laravel Logo --}}
-            <svg
-                class="w-full text-[#F53003] dark:text-[#F61500] transition-all translate-y-0 opacity-100 max-w-none duration-750 starting:opacity-0 starting:translate-y-6"
-                viewBox="0 0 438 104" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17.2036 -3H0V102.197H49.5189V86.7187H17.2036V-3Z" fill="currentColor"/>
-                <path
-                    d="M110.256 41.6337C108.061 38.1275 104.945 35.3731 100.905 33.3681C96.8667 31.3647 92.8016 30.3618 88.7131 30.3618C83.4247 30.3618 78.5885 31.3389 74.201 33.2923C69.8111 35.2456 66.0474 37.928 62.9059 41.3333C59.7643 44.7401 57.3198 48.6726 55.5754 53.1293C53.8287 57.589 52.9572 62.274 52.9572 67.1813C52.9572 72.1925 53.8287 76.8995 55.5754 81.3069C57.3191 85.7173 59.7636 89.6241 62.9059 93.0293C66.0474 96.4361 69.8119 99.1155 74.201 101.069C78.5885 103.022 83.4247 103.999 88.7131 103.999C92.8016 103.999 96.8667 102.997 100.905 100.994C104.945 98.9911 108.061 96.2359 110.256 92.7282V102.195H126.563V32.1642H110.256V41.6337ZM108.76 75.7472C107.762 78.4531 106.366 80.8078 104.572 82.8112C102.776 84.8161 100.606 86.4183 98.0637 87.6206C95.5202 88.823 92.7004 89.4238 89.6103 89.4238C86.5178 89.4238 83.7252 88.823 81.2324 87.6206C78.7388 86.4183 76.5949 84.8161 74.7998 82.8112C73.004 80.8078 71.6319 78.4531 70.6856 75.7472C69.7356 73.0421 69.2644 70.1868 69.2644 67.1821C69.2644 64.1758 69.7356 61.3205 70.6856 58.6154C71.6319 55.9102 73.004 53.5571 74.7998 51.5522C76.5949 49.5495 78.738 47.9451 81.2324 46.7427C83.7252 45.5404 86.5178 44.9396 89.6103 44.9396C92.7012 44.9396 95.5202 45.5404 98.0637 46.7427C100.606 47.9451 102.776 49.5487 104.572 51.5522C106.367 53.5571 107.762 55.9102 108.76 58.6154C109.756 61.3205 110.256 64.1758 110.256 67.1821C110.256 70.1868 109.756 73.0421 108.76 75.7472Z"
-                    fill="currentColor"/>
-                <path
-                    d="M242.805 41.6337C240.611 38.1275 237.494 35.3731 233.455 33.3681C229.416 31.3647 225.351 30.3618 221.262 30.3618C215.974 30.3618 211.138 31.3389 206.75 33.2923C202.36 35.2456 198.597 37.928 195.455 41.3333C192.314 44.7401 189.869 48.6726 188.125 53.1293C186.378 57.589 185.507 62.274 185.507 67.1813C185.507 72.1925 186.378 76.8995 188.125 81.3069C189.868 85.7173 192.313 89.6241 195.455 93.0293C198.597 96.4361 202.361 99.1155 206.75 101.069C211.138 103.022 215.974 103.999 221.262 103.999C225.351 103.999 229.416 102.997 233.455 100.994C237.494 98.9911 240.611 96.2359 242.805 92.7282V102.195H259.112V32.1642H242.805V41.6337ZM241.31 75.7472C240.312 78.4531 238.916 80.8078 237.122 82.8112C235.326 84.8161 233.156 86.4183 230.614 87.6206C228.07 88.823 225.251 89.4238 222.16 89.4238C219.068 89.4238 216.275 88.823 213.782 87.6206C211.289 86.4183 209.145 84.8161 207.35 82.8112C205.554 80.8078 204.182 78.4531 203.236 75.7472C202.286 73.0421 201.814 70.1868 201.814 67.1821C201.814 64.1758 202.286 61.3205 203.236 58.6154C204.182 55.9102 205.554 53.5571 207.35 51.5522C209.145 49.5495 211.288 47.9451 213.782 46.7427C216.275 45.5404 219.068 44.9396 222.16 44.9396C225.251 44.9396 228.07 45.5404 230.614 46.7427C233.156 47.9451 235.326 49.5487 237.122 51.5522C238.917 53.5571 240.312 55.9102 241.31 58.6154C242.306 61.3205 242.806 64.1758 242.806 67.1821C242.805 70.1868 242.305 73.0421 241.31 75.7472Z"
-                    fill="currentColor"/>
-                <path d="M438 -3H421.694V102.197H438V-3Z" fill="currentColor"/>
-                <path d="M139.43 102.197H155.735V48.2834H183.712V32.1665H139.43V102.197Z" fill="currentColor"/>
-                <path
-                    d="M324.49 32.1665L303.995 85.794L283.498 32.1665H266.983L293.748 102.197H314.242L341.006 32.1665H324.49Z"
-                    fill="currentColor"/>
-                <path
-                    d="M376.571 30.3656C356.603 30.3656 340.797 46.8497 340.797 67.1828C340.797 89.6597 356.094 104 378.661 104C391.29 104 399.354 99.1488 409.206 88.5848L398.189 80.0226C398.183 80.031 389.874 90.9895 377.468 90.9895C363.048 90.9895 356.977 79.3111 356.977 73.269H411.075C413.917 50.1328 398.775 30.3656 376.571 30.3656ZM357.02 61.0967C357.145 59.7487 359.023 43.3761 376.442 43.3761C393.861 43.3761 395.978 59.7464 396.099 61.0967H357.02Z"
-                    fill="currentColor"/>
-            </svg>
-
-            {{-- Light Mode 12 SVG --}}
-            <svg class="w-[448px] max-w-none relative -mt-[4.9rem] -ml-8 lg:ml-0 lg:-mt-[6.6rem] dark:hidden"
-                 viewBox="0 0 440 376" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M188.263 355.73L188.595 355.73C195.441 348.845 205.766 339.761 219.569 328.477C232.93 317.193 242.978 308.205 249.714 301.511C256.34 294.626 260.867 287.358 263.296 279.708C265.725 272.058 264.565 264.121 259.816 255.896C254.516 246.716 247.062 239.352 237.454 233.805C227.957 228.067 217.908 225.198 207.307 225.198C196.927 225.197 190.136 227.97 186.934 233.516C183.621 238.872 184.726 246.331 190.247 255.894L125.647 255.891C116.371 239.825 112.395 225.481 113.72 212.858C115.265 200.235 121.559 190.481 132.602 183.596C143.754 176.52 158.607 172.982 177.159 172.983C196.594 172.984 215.863 176.523 234.968 183.6C253.961 190.486 271.299 200.241 286.98 212.864C302.661 225.488 315.14 239.833 324.416 255.899C333.03 270.817 336.841 283.918 335.847 295.203C335.075 306.487 331.376 316.336 324.75 324.751C318.346 333.167 308.408 343.494 294.936 355.734L377.094 355.737L405.917 405.656L217.087 405.649L188.263 355.73Z"
-                        fill="black"/>
-                    <path
-                        d="M9.11884 226.339L-13.7396 226.338L-42.7286 176.132L43.0733 176.135L175.595 405.649L112.651 405.647L9.11884 226.339Z"
-                        fill="black"/>
-                    <path
-                        d="M188.263 355.73L188.595 355.73C195.441 348.845 205.766 339.761 219.569 328.477C232.93 317.193 242.978 308.205 249.714 301.511C256.34 294.626 260.867 287.358 263.296 279.708C265.725 272.058 264.565 264.121 259.816 255.896C254.516 246.716 247.062 239.352 237.454 233.805C227.957 228.067 217.908 225.198 207.307 225.198C196.927 225.197 190.136 227.97 186.934 233.516C183.621 238.872 184.726 246.331 190.247 255.894L125.647 255.891C116.371 239.825 112.395 225.481 113.72 212.858C115.265 200.235 121.559 190.481 132.602 183.596C143.754 176.52 158.607 172.982 177.159 172.983C196.594 172.984 215.863 176.523 234.968 183.6C253.961 190.486 271.299 200.241 286.98 212.864C302.661 225.488 315.14 239.833 324.416 255.899C333.03 270.817 336.841 283.918 335.847 295.203C335.075 306.487 331.376 316.336 324.75 324.751C318.346 333.167 308.408 343.494 294.936 355.734L377.094 355.737L405.917 405.656L217.087 405.649L188.263 355.73Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                    <path
-                        d="M9.11884 226.339L-13.7396 226.338L-42.7286 176.132L43.0733 176.135L175.595 405.649L112.651 405.647L9.11884 226.339Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                    <path
-                        d="M204.592 327.449L204.923 327.449C211.769 320.564 222.094 311.479 235.897 300.196C249.258 288.912 259.306 279.923 266.042 273.23C272.668 266.345 277.195 259.077 279.624 251.427C282.053 243.777 280.893 235.839 276.145 227.615C270.844 218.435 263.39 211.071 253.782 205.524C244.285 199.786 234.236 196.917 223.635 196.916C213.255 196.916 206.464 199.689 203.262 205.235C199.949 210.59 201.054 218.049 206.575 227.612L141.975 227.61C132.699 211.544 128.723 197.2 130.048 184.577C131.593 171.954 137.887 162.2 148.93 155.315C160.083 148.239 174.935 144.701 193.487 144.702C212.922 144.703 232.192 148.242 251.296 155.319C270.289 162.205 287.627 171.96 303.308 184.583C318.989 197.207 331.468 211.552 340.745 227.618C349.358 242.536 353.169 255.637 352.175 266.921C351.403 278.205 347.704 288.055 341.078 296.47C334.674 304.885 324.736 315.213 311.264 327.453L393.422 327.456L422.246 377.375L233.415 377.368L204.592 327.449Z"
-                        fill="#F8B803"/>
-                    <path
-                        d="M25.447 198.058L2.58852 198.057L-26.4005 147.851L59.4015 147.854L191.923 377.368L128.979 377.365L25.447 198.058Z"
-                        fill="#F8B803"/>
-                    <path
-                        d="M204.592 327.449L204.923 327.449C211.769 320.564 222.094 311.479 235.897 300.196C249.258 288.912 259.306 279.923 266.042 273.23C272.668 266.345 277.195 259.077 279.624 251.427C282.053 243.777 280.893 235.839 276.145 227.615C270.844 218.435 263.39 211.071 253.782 205.524C244.285 199.786 234.236 196.917 223.635 196.916C213.255 196.916 206.464 199.689 203.262 205.235C199.949 210.59 201.054 218.049 206.575 227.612L141.975 227.61C132.699 211.544 128.723 197.2 130.048 184.577C131.593 171.954 137.887 162.2 148.93 155.315C160.083 148.239 174.935 144.701 193.487 144.702C212.922 144.703 232.192 148.242 251.296 155.319C270.289 162.205 287.627 171.96 303.308 184.583C318.989 197.207 331.468 211.552 340.745 227.618C349.358 242.536 353.169 255.637 352.175 266.921C351.403 278.205 347.704 288.055 341.078 296.47C334.674 304.885 324.736 315.213 311.264 327.453L393.422 327.456L422.246 377.375L233.415 377.368L204.592 327.449Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                    <path
-                        d="M25.447 198.058L2.58852 198.057L-26.4005 147.851L59.4015 147.854L191.923 377.368L128.979 377.365L25.447 198.058Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                </g>
-                <g style="mix-blend-mode: hard-light"
-                   class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M217.342 305.363L217.673 305.363C224.519 298.478 234.844 289.393 248.647 278.11C262.008 266.826 272.056 257.837 278.792 251.144C285.418 244.259 289.945 236.991 292.374 229.341C294.803 221.691 293.643 213.753 288.895 205.529C283.594 196.349 276.14 188.985 266.532 183.438C257.035 177.7 246.986 174.831 236.385 174.83C226.005 174.83 219.214 177.603 216.012 183.149C212.699 188.504 213.804 195.963 219.325 205.527L154.725 205.524C145.449 189.458 141.473 175.114 142.798 162.491C144.343 149.868 150.637 140.114 161.68 133.229C172.833 126.153 187.685 122.615 206.237 122.616C225.672 122.617 244.942 126.156 264.046 133.233C283.039 140.119 300.377 149.874 316.058 162.497C331.739 175.121 344.218 189.466 353.495 205.532C362.108 220.45 365.919 233.551 364.925 244.835C364.153 256.12 360.454 265.969 353.828 274.384C347.424 282.799 337.486 293.127 324.014 305.367L406.172 305.37L434.996 355.289L246.165 355.282L217.342 305.363Z"
-                        fill="#F0ACB8"/>
-                    <path
-                        d="M38.197 175.972L15.3385 175.971L-13.6505 125.765L72.1515 125.768L204.673 355.282L141.729 355.279L38.197 175.972Z"
-                        fill="#F0ACB8"/>
-                    <path
-                        d="M217.342 305.363L217.673 305.363C224.519 298.478 234.844 289.393 248.647 278.11C262.008 266.826 272.056 257.837 278.792 251.144C285.418 244.259 289.945 236.991 292.374 229.341C294.803 221.691 293.643 213.753 288.895 205.529C283.594 196.349 276.14 188.985 266.532 183.438C257.035 177.7 246.986 174.831 236.385 174.83C226.005 174.83 219.214 177.603 216.012 183.149C212.699 188.504 213.804 195.963 219.325 205.527L154.725 205.524C145.449 189.458 141.473 175.114 142.798 162.491C144.343 149.868 150.637 140.114 161.68 133.229C172.833 126.153 187.685 122.615 206.237 122.616C225.672 122.617 244.942 126.156 264.046 133.233C283.039 140.119 300.377 149.874 316.058 162.497C331.739 175.121 344.218 189.466 353.495 205.532C362.108 220.45 365.919 233.551 364.925 244.835C364.153 256.12 360.454 265.969 353.828 274.384C347.424 282.799 337.486 293.127 324.014 305.367L406.172 305.37L434.996 355.289L246.165 355.282L217.342 305.363Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                    <path
-                        d="M38.197 175.972L15.3385 175.971L-13.6505 125.765L72.1515 125.768L204.673 355.282L141.729 355.279L38.197 175.972Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                </g>
-                <g style="mix-blend-mode: plus-darker"
-                   class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M230.951 281.792L231.282 281.793C238.128 274.907 248.453 265.823 262.256 254.539C275.617 243.256 285.666 234.267 292.402 227.573C299.027 220.688 303.554 213.421 305.983 205.771C308.412 198.12 307.253 190.183 302.504 181.959C297.203 172.778 289.749 165.415 280.142 159.868C270.645 154.13 260.596 151.26 249.995 151.26C239.615 151.26 232.823 154.033 229.621 159.579C226.309 164.934 227.413 172.393 232.935 181.956L168.335 181.954C159.058 165.888 155.082 151.543 156.407 138.92C157.953 126.298 164.247 116.544 175.289 109.659C186.442 102.583 201.294 99.045 219.846 99.0457C239.281 99.0464 258.551 102.585 277.655 109.663C296.649 116.549 313.986 126.303 329.667 138.927C345.349 151.551 357.827 165.895 367.104 181.961C375.718 196.88 379.528 209.981 378.535 221.265C377.762 232.549 374.063 242.399 367.438 250.814C361.033 259.229 351.095 269.557 337.624 281.796L419.782 281.8L448.605 331.719L259.774 331.712L230.951 281.792Z"
-                        fill="#F3BEC7"/>
-                    <path
-                        d="M51.8063 152.402L28.9479 152.401L-0.0411453 102.195L85.7608 102.198L218.282 331.711L155.339 331.709L51.8063 152.402Z"
-                        fill="#F3BEC7"/>
-                    <path
-                        d="M230.951 281.792L231.282 281.793C238.128 274.907 248.453 265.823 262.256 254.539C275.617 243.256 285.666 234.267 292.402 227.573C299.027 220.688 303.554 213.421 305.983 205.771C308.412 198.12 307.253 190.183 302.504 181.959C297.203 172.778 289.749 165.415 280.142 159.868C270.645 154.13 260.596 151.26 249.995 151.26C239.615 151.26 232.823 154.033 229.621 159.579C226.309 164.934 227.413 172.393 232.935 181.956L168.335 181.954C159.058 165.888 155.082 151.543 156.407 138.92C157.953 126.298 164.247 116.544 175.289 109.659C186.442 102.583 201.294 99.045 219.846 99.0457C239.281 99.0464 258.551 102.585 277.655 109.663C296.649 116.549 313.986 126.303 329.667 138.927C345.349 151.551 357.827 165.895 367.104 181.961C375.718 196.88 379.528 209.981 378.535 221.265C377.762 232.549 374.063 242.399 367.438 250.814C361.033 259.229 351.095 269.557 337.624 281.796L419.782 281.8L448.605 331.719L259.774 331.712L230.951 281.792Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                    <path
-                        d="M51.8063 152.402L28.9479 152.401L-0.0411453 102.195L85.7608 102.198L218.282 331.711L155.339 331.709L51.8063 152.402Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                </g>
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M188.467 355.363L188.798 355.363C195.644 348.478 205.969 339.393 219.772 328.11C233.133 316.826 243.181 307.837 249.917 301.144C253.696 297.217 256.792 293.166 259.205 288.991C261.024 285.845 262.455 282.628 263.499 279.341C265.928 271.691 264.768 263.753 260.02 255.529C254.719 246.349 247.265 238.985 237.657 233.438C228.16 227.7 218.111 224.831 207.51 224.83C197.13 224.83 190.339 227.603 187.137 233.149C183.824 238.504 184.929 245.963 190.45 255.527L125.851 255.524C116.574 239.458 112.598 225.114 113.923 212.491C114.615 206.836 116.261 201.756 118.859 197.253C122.061 191.704 126.709 187.03 132.805 183.229C143.958 176.153 158.81 172.615 177.362 172.616C196.797 172.617 216.067 176.156 235.171 183.233C254.164 190.119 271.502 199.874 287.183 212.497C302.864 225.121 315.343 239.466 324.62 255.532C333.233 270.45 337.044 283.551 336.05 294.835C335.46 303.459 333.16 311.245 329.151 318.194C327.915 320.337 326.515 322.4 324.953 324.384C318.549 332.799 308.611 343.127 295.139 355.367L377.297 355.37L406.121 405.289L217.29 405.282L188.467 355.363Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M9.32197 225.972L-13.5365 225.971L-42.5255 175.765L43.2765 175.768L175.798 405.282L112.854 405.279L9.32197 225.972Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M345.247 111.915C329.566 99.2919 312.229 89.5371 293.235 82.6512L235.167 183.228C254.161 190.114 271.498 199.869 287.179 212.492L345.247 111.915Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M382.686 154.964C373.41 138.898 360.931 124.553 345.25 111.93L287.182 212.506C302.863 225.13 315.342 239.475 324.618 255.541L382.686 154.964Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M293.243 82.6472C274.139 75.57 254.869 72.031 235.434 72.0303L177.366 172.607C196.801 172.608 216.071 176.147 235.175 183.224L293.243 82.6472Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M394.118 194.257C395.112 182.973 391.301 169.872 382.688 154.953L324.619 255.53C333.233 270.448 337.044 283.55 336.05 294.834L394.118 194.257Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M235.432 72.0311C216.88 72.0304 202.027 75.5681 190.875 82.6442L132.806 183.221C143.959 176.145 158.812 172.607 177.363 172.608L235.432 72.0311Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M265.59 124.25C276.191 124.251 286.24 127.12 295.737 132.858L237.669 233.435C228.172 227.697 218.123 224.828 207.522 224.827L265.59 124.25Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M295.719 132.859C305.326 138.406 312.78 145.77 318.081 154.95L260.013 255.527C254.712 246.347 247.258 238.983 237.651 233.436L295.719 132.859Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M387.218 217.608C391.227 210.66 393.527 202.874 394.117 194.25L336.049 294.827C335.459 303.451 333.159 311.237 329.15 318.185L387.218 217.608Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M245.211 132.577C248.413 127.03 255.204 124.257 265.584 124.258L207.516 224.835C197.136 224.834 190.345 227.607 187.143 233.154L245.211 132.577Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M318.094 154.945C322.842 163.17 324.002 171.107 321.573 178.757L263.505 279.334C265.934 271.684 264.774 263.746 260.026 255.522L318.094 154.945Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M176.925 96.6737C180.127 91.1249 184.776 86.4503 190.871 82.6499L132.803 183.227C126.708 187.027 122.059 191.702 118.857 197.25L176.925 96.6737Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M387.226 217.606C385.989 219.749 384.59 221.813 383.028 223.797L324.96 324.373C326.522 322.39 327.921 320.326 329.157 318.183L387.226 217.606Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M317.269 188.408C319.087 185.262 320.519 182.045 321.562 178.758L263.494 279.335C262.451 282.622 261.019 285.839 259.201 288.985L317.269 188.408Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M245.208 132.573C241.895 137.928 243 145.387 248.522 154.95L190.454 255.527C184.932 245.964 183.827 238.505 187.14 233.15L245.208 132.573Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M176.93 96.6719C174.331 101.175 172.686 106.255 171.993 111.91L113.925 212.487C114.618 206.831 116.263 201.752 118.862 197.249L176.93 96.6719Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M317.266 188.413C314.853 192.589 311.757 196.64 307.978 200.566L249.91 301.143C253.689 297.216 256.785 293.166 259.198 288.99L317.266 188.413Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M464.198 304.708L435.375 254.789L377.307 355.366L406.13 405.285L464.198 304.708Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M353.209 254.787C366.68 242.548 376.618 232.22 383.023 223.805L324.955 324.382C318.55 332.797 308.612 343.124 295.141 355.364L353.209 254.787Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M435.37 254.787L353.212 254.784L295.144 355.361L377.302 355.364L435.37 254.787Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M183.921 154.947L248.521 154.95L190.453 255.527L125.853 255.524L183.921 154.947Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M171.992 111.914C170.668 124.537 174.643 138.881 183.92 154.947L125.852 255.524C116.575 239.458 112.599 225.114 113.924 212.491L171.992 111.914Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M307.987 200.562C301.251 207.256 291.203 216.244 277.842 227.528L219.774 328.105C233.135 316.821 243.183 307.832 249.919 301.139L307.987 200.562Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M15.5469 75.1797L44.5359 125.386L-13.5321 225.963L-42.5212 175.756L15.5469 75.1797Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M277.836 227.536C264.033 238.82 253.708 247.904 246.862 254.789L188.794 355.366C195.64 348.481 205.965 339.397 219.768 328.113L277.836 227.536Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M275.358 304.706L464.189 304.713L406.12 405.29L217.29 405.283L275.358 304.706Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M44.5279 125.39L67.3864 125.39L9.31834 225.967L-13.5401 225.966L44.5279 125.39Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M101.341 75.1911L233.863 304.705L175.795 405.282L43.2733 175.768L101.341 75.1911ZM15.5431 75.19L-42.525 175.767L43.277 175.77L101.345 75.1932L15.5431 75.19Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M246.866 254.784L246.534 254.784L188.466 355.361L188.798 355.361L246.866 254.784Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M246.539 254.781L275.362 304.701L217.294 405.277L188.471 355.358L246.539 254.781Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M67.3906 125.391L170.923 304.698L112.855 405.275L9.32257 225.967L67.3906 125.391Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M170.921 304.699L233.865 304.701L175.797 405.278L112.853 405.276L170.921 304.699Z"
-                          stroke="#1B1B18" stroke-width="1" stroke-linejoin="bevel"/>
-                </g>
-                <g style="mix-blend-mode: hard-light"
-                   class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M246.544 254.79L246.875 254.79C253.722 247.905 264.046 238.82 277.849 227.537C291.21 216.253 301.259 207.264 307.995 200.57C314.62 193.685 319.147 186.418 321.577 178.768C324.006 171.117 322.846 163.18 318.097 154.956C312.796 145.775 305.342 138.412 295.735 132.865C286.238 127.127 276.189 124.258 265.588 124.257C255.208 124.257 248.416 127.03 245.214 132.576C241.902 137.931 243.006 145.39 248.528 154.953L183.928 154.951C174.652 138.885 170.676 124.541 172 111.918C173.546 99.2946 179.84 89.5408 190.882 82.6559C202.035 75.5798 216.887 72.0421 235.439 72.0428C254.874 72.0435 274.144 75.5825 293.248 82.6598C312.242 89.5457 329.579 99.3005 345.261 111.924C360.942 124.548 373.421 138.892 382.697 154.958C391.311 169.877 395.121 182.978 394.128 194.262C393.355 205.546 389.656 215.396 383.031 223.811C376.627 232.226 366.688 242.554 353.217 254.794L435.375 254.797L464.198 304.716L275.367 304.709L246.544 254.79Z"
-                        fill="#F0ACB8"/>
-                    <path
-                        d="M246.544 254.79L246.875 254.79C253.722 247.905 264.046 238.82 277.849 227.537C291.21 216.253 301.259 207.264 307.995 200.57C314.62 193.685 319.147 186.418 321.577 178.768C324.006 171.117 322.846 163.18 318.097 154.956C312.796 145.775 305.342 138.412 295.735 132.865C286.238 127.127 276.189 124.258 265.588 124.257C255.208 124.257 248.416 127.03 245.214 132.576C241.902 137.931 243.006 145.39 248.528 154.953L183.928 154.951C174.652 138.885 170.676 124.541 172 111.918C173.546 99.2946 179.84 89.5408 190.882 82.6559C202.035 75.5798 216.887 72.0421 235.439 72.0428C254.874 72.0435 274.144 75.5825 293.248 82.6598C312.242 89.5457 329.579 99.3005 345.261 111.924C360.942 124.548 373.421 138.892 382.697 154.958C391.311 169.877 395.121 182.978 394.128 194.262C393.355 205.546 389.656 215.396 383.031 223.811C376.627 232.226 366.688 242.554 353.217 254.794L435.375 254.797L464.198 304.716L275.367 304.709L246.544 254.79Z"
-                        stroke="#1B1B18" stroke-width="1" stroke-linejoin="round"/>
-                </g>
-                <g style="mix-blend-mode: hard-light"
-                   class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M67.41 125.402L44.5515 125.401L15.5625 75.1953L101.364 75.1985L233.886 304.712L170.942 304.71L67.41 125.402Z"
-                        fill="#F0ACB8"/>
-                    <path
-                        d="M67.41 125.402L44.5515 125.401L15.5625 75.1953L101.364 75.1985L233.886 304.712L170.942 304.71L67.41 125.402Z"
-                        stroke="#1B1B18" stroke-width="1"/>
-                </g>
-            </svg>
-
-            {{-- Dark Mode 12 SVG --}}
-            <svg class="w-[448px] max-w-none relative -mt-[4.9rem] -ml-8 lg:ml-0 lg:-mt-[6.6rem] hidden dark:block"
-                 viewBox="0 0 440 376" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M188.263 355.73L188.595 355.73C195.441 348.845 205.766 339.761 219.569 328.477C232.93 317.193 242.978 308.205 249.714 301.511C256.34 294.626 260.867 287.358 263.296 279.708C265.725 272.058 264.565 264.121 259.816 255.896C254.516 246.716 247.062 239.352 237.454 233.805C227.957 228.067 217.908 225.198 207.307 225.198C196.927 225.197 190.136 227.97 186.934 233.516C183.621 238.872 184.726 246.331 190.247 255.894L125.647 255.891C116.371 239.825 112.395 225.481 113.72 212.858C115.265 200.235 121.559 190.481 132.602 183.596C143.754 176.52 158.607 172.982 177.159 172.983C196.594 172.984 215.863 176.523 234.968 183.6C253.961 190.486 271.299 200.241 286.98 212.864C302.661 225.488 315.14 239.833 324.416 255.899C333.03 270.817 336.841 283.918 335.847 295.203C335.075 306.487 331.376 316.336 324.75 324.751C318.346 333.167 308.408 343.494 294.936 355.734L377.094 355.737L405.917 405.656L217.087 405.649L188.263 355.73Z"
-                        fill="black"/>
-                    <path
-                        d="M9.11884 226.339L-13.7396 226.338L-42.7286 176.132L43.0733 176.135L175.595 405.649L112.651 405.647L9.11884 226.339Z"
-                        fill="black"/>
-                    <path
-                        d="M188.263 355.73L188.595 355.73C195.441 348.845 205.766 339.761 219.569 328.477C232.93 317.193 242.978 308.205 249.714 301.511C256.34 294.626 260.867 287.358 263.296 279.708C265.725 272.058 264.565 264.121 259.816 255.896C254.516 246.716 247.062 239.352 237.454 233.805C227.957 228.067 217.908 225.198 207.307 225.198C196.927 225.197 190.136 227.97 186.934 233.516C183.621 238.872 184.726 246.331 190.247 255.894L125.647 255.891C116.371 239.825 112.395 225.481 113.72 212.858C115.265 200.235 121.559 190.481 132.602 183.596C143.754 176.52 158.607 172.982 177.159 172.983C196.594 172.984 215.863 176.523 234.968 183.6C253.961 190.486 271.299 200.241 286.98 212.864C302.661 225.488 315.14 239.833 324.416 255.899C333.03 270.817 336.841 283.918 335.847 295.203C335.075 306.487 331.376 316.336 324.75 324.751C318.346 333.167 308.408 343.494 294.936 355.734L377.094 355.737L405.917 405.656L217.087 405.649L188.263 355.73Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                    <path
-                        d="M9.11884 226.339L-13.7396 226.338L-42.7286 176.132L43.0733 176.135L175.595 405.649L112.651 405.647L9.11884 226.339Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                    <path
-                        d="M204.592 327.449L204.923 327.449C211.769 320.564 222.094 311.479 235.897 300.196C249.258 288.912 259.306 279.923 266.042 273.23C272.668 266.345 277.195 259.077 279.624 251.427C282.053 243.777 280.893 235.839 276.145 227.615C270.844 218.435 263.39 211.071 253.782 205.524C244.285 199.786 234.236 196.917 223.635 196.916C213.255 196.916 206.464 199.689 203.262 205.235C199.949 210.59 201.054 218.049 206.575 227.612L141.975 227.61C132.699 211.544 128.723 197.2 130.048 184.577C131.593 171.954 137.887 162.2 148.93 155.315C160.083 148.239 174.935 144.701 193.487 144.702C212.922 144.703 232.192 148.242 251.296 155.319C270.289 162.205 287.627 171.96 303.308 184.583C318.989 197.207 331.468 211.552 340.745 227.618C349.358 242.536 353.169 255.637 352.175 266.921C351.403 278.205 347.704 288.055 341.078 296.47C334.674 304.885 324.736 315.213 311.264 327.453L393.422 327.456L422.246 377.375L233.415 377.368L204.592 327.449Z"
-                        fill="#391800"/>
-                    <path
-                        d="M25.447 198.058L2.58852 198.057L-26.4005 147.851L59.4015 147.854L191.923 377.368L128.979 377.365L25.447 198.058Z"
-                        fill="#391800"/>
-                    <path
-                        d="M204.592 327.449L204.923 327.449C211.769 320.564 222.094 311.479 235.897 300.196C249.258 288.912 259.306 279.923 266.042 273.23C272.668 266.345 277.195 259.077 279.624 251.427C282.053 243.777 280.893 235.839 276.145 227.615C270.844 218.435 263.39 211.071 253.782 205.524C244.285 199.786 234.236 196.917 223.635 196.916C213.255 196.916 206.464 199.689 203.262 205.235C199.949 210.59 201.054 218.049 206.575 227.612L141.975 227.61C132.699 211.544 128.723 197.2 130.048 184.577C131.593 171.954 137.887 162.2 148.93 155.315C160.083 148.239 174.935 144.701 193.487 144.702C212.922 144.703 232.192 148.242 251.296 155.319C270.289 162.205 287.627 171.96 303.308 184.583C318.989 197.207 331.468 211.552 340.745 227.618C349.358 242.536 353.169 255.637 352.175 266.921C351.403 278.205 347.704 288.055 341.078 296.47C334.674 304.885 324.736 315.213 311.264 327.453L393.422 327.456L422.246 377.375L233.415 377.368L204.592 327.449Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                    <path
-                        d="M25.447 198.058L2.58852 198.057L-26.4005 147.851L59.4015 147.854L191.923 377.368L128.979 377.365L25.447 198.058Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                </g>
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4"
-                   style="mix-blend-mode:hard-light">
-                    <path
-                        d="M217.342 305.363L217.673 305.363C224.519 298.478 234.844 289.393 248.647 278.11C262.008 266.826 272.056 257.837 278.792 251.144C285.418 244.259 289.945 236.991 292.374 229.341C294.803 221.691 293.643 213.753 288.895 205.529C283.594 196.349 276.14 188.985 266.532 183.438C257.035 177.7 246.986 174.831 236.385 174.83C226.005 174.83 219.214 177.603 216.012 183.149C212.699 188.504 213.804 195.963 219.325 205.527L154.725 205.524C145.449 189.458 141.473 175.114 142.798 162.491C144.343 149.868 150.637 140.114 161.68 133.229C172.833 126.153 187.685 122.615 206.237 122.616C225.672 122.617 244.942 126.156 264.046 133.233C283.039 140.119 300.377 149.874 316.058 162.497C331.739 175.121 344.218 189.466 353.495 205.532C362.108 220.45 365.919 233.551 364.925 244.835C364.153 256.12 360.454 265.969 353.828 274.384C347.424 282.799 337.486 293.127 324.014 305.367L406.172 305.37L434.996 355.289L246.165 355.282L217.342 305.363Z"
-                        fill="#733000"/>
-                    <path
-                        d="M38.197 175.972L15.3385 175.971L-13.6505 125.765L72.1515 125.768L204.673 355.282L141.729 355.279L38.197 175.972Z"
-                        fill="#733000"/>
-                    <path
-                        d="M217.342 305.363L217.673 305.363C224.519 298.478 234.844 289.393 248.647 278.11C262.008 266.826 272.056 257.837 278.792 251.144C285.418 244.259 289.945 236.991 292.374 229.341C294.803 221.691 293.643 213.753 288.895 205.529C283.594 196.349 276.14 188.985 266.532 183.438C257.035 177.7 246.986 174.831 236.385 174.83C226.005 174.83 219.214 177.603 216.012 183.149C212.699 188.504 213.804 195.963 219.325 205.527L154.725 205.524C145.449 189.458 141.473 175.114 142.798 162.491C144.343 149.868 150.637 140.114 161.68 133.229C172.833 126.153 187.685 122.615 206.237 122.616C225.672 122.617 244.942 126.156 264.046 133.233C283.039 140.119 300.377 149.874 316.058 162.497C331.739 175.121 344.218 189.466 353.495 205.532C362.108 220.45 365.919 233.551 364.925 244.835C364.153 256.12 360.454 265.969 353.828 274.384C347.424 282.799 337.486 293.127 324.014 305.367L406.172 305.37L434.996 355.289L246.165 355.282L217.342 305.363Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                    <path
-                        d="M38.197 175.972L15.3385 175.971L-13.6505 125.765L72.1515 125.768L204.673 355.282L141.729 355.279L38.197 175.972Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                </g>
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M217.342 305.363L217.673 305.363C224.519 298.478 234.844 289.393 248.647 278.11C262.008 266.826 272.056 257.837 278.792 251.144C285.418 244.259 289.945 236.991 292.374 229.341C294.803 221.691 293.643 213.753 288.895 205.529C283.594 196.349 276.14 188.985 266.532 183.438C257.035 177.7 246.986 174.831 236.385 174.83C226.005 174.83 219.214 177.603 216.012 183.149C212.699 188.504 213.804 195.963 219.325 205.527L154.726 205.524C145.449 189.458 141.473 175.114 142.798 162.491C144.343 149.868 150.637 140.114 161.68 133.229C172.833 126.153 187.685 122.615 206.237 122.616C225.672 122.617 244.942 126.156 264.046 133.233C283.039 140.119 300.377 149.874 316.058 162.497C331.739 175.121 344.218 189.466 353.495 205.532C362.108 220.45 365.919 233.551 364.925 244.835C364.153 256.12 360.454 265.969 353.828 274.384C347.424 282.799 337.486 293.127 324.014 305.367L406.172 305.37L434.996 355.289L246.165 355.282L217.342 305.363Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                    <path
-                        d="M38.197 175.972L15.3385 175.971L-13.6505 125.765L72.1515 125.768L204.673 355.282L141.729 355.279L38.197 175.972Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                </g>
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4">
-                    <path
-                        d="M188.467 355.363L188.798 355.363C195.644 348.478 205.969 339.393 219.772 328.11C233.133 316.826 243.181 307.837 249.917 301.144C253.696 297.217 256.792 293.166 259.205 288.991C261.024 285.845 262.455 282.628 263.499 279.341C265.928 271.691 264.768 263.753 260.02 255.529C254.719 246.349 247.265 238.985 237.657 233.438C228.16 227.7 218.111 224.831 207.51 224.83C197.13 224.83 190.339 227.603 187.137 233.149C183.824 238.504 184.929 245.963 190.45 255.527L125.851 255.524C116.574 239.458 112.598 225.114 113.923 212.491C114.615 206.836 116.261 201.756 118.859 197.253C122.061 191.704 126.709 187.03 132.805 183.229C143.958 176.153 158.81 172.615 177.362 172.616C196.797 172.617 216.067 176.156 235.171 183.233C254.164 190.119 271.502 199.874 287.183 212.497C302.864 225.121 315.343 239.466 324.62 255.532C333.233 270.45 337.044 283.551 336.05 294.835C335.46 303.459 333.16 311.245 329.151 318.194C327.915 320.337 326.515 322.4 324.953 324.384C318.549 332.799 308.611 343.127 295.139 355.367L377.297 355.37L406.121 405.289L217.29 405.282L188.467 355.363Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M9.32197 225.972L-13.5365 225.971L-42.5255 175.765L43.2765 175.768L175.798 405.282L112.854 405.279L9.32197 225.972Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M345.247 111.915C329.566 99.2919 312.229 89.5371 293.235 82.6512L235.167 183.228C254.161 190.114 271.498 199.869 287.179 212.492L345.247 111.915Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M382.686 154.964C373.41 138.898 360.931 124.553 345.25 111.93L287.182 212.506C302.863 225.13 315.342 239.475 324.618 255.541L382.686 154.964Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M293.243 82.6472C274.139 75.57 254.869 72.031 235.434 72.0303L177.366 172.607C196.801 172.608 216.071 176.147 235.175 183.224L293.243 82.6472Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M394.118 194.257C395.112 182.973 391.301 169.872 382.688 154.953L324.619 255.53C333.233 270.448 337.044 283.55 336.05 294.834L394.118 194.257Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M235.432 72.0311C216.88 72.0304 202.027 75.5681 190.875 82.6442L132.806 183.221C143.959 176.145 158.812 172.607 177.363 172.608L235.432 72.0311Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M265.59 124.25C276.191 124.251 286.24 127.12 295.737 132.858L237.669 233.435C228.172 227.697 218.123 224.828 207.522 224.827L265.59 124.25Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M295.719 132.859C305.326 138.406 312.78 145.77 318.081 154.95L260.013 255.527C254.712 246.347 247.258 238.983 237.651 233.436L295.719 132.859Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M387.218 217.608C391.227 210.66 393.527 202.874 394.117 194.25L336.049 294.827C335.459 303.451 333.159 311.237 329.15 318.185L387.218 217.608Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M245.211 132.577C248.413 127.03 255.204 124.257 265.584 124.258L207.516 224.835C197.136 224.834 190.345 227.607 187.143 233.154L245.211 132.577Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M318.094 154.945C322.842 163.17 324.002 171.107 321.573 178.757L263.505 279.334C265.934 271.684 264.774 263.746 260.026 255.522L318.094 154.945Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M176.925 96.6737C180.127 91.1249 184.776 86.4503 190.871 82.6499L132.803 183.227C126.708 187.027 122.059 191.702 118.857 197.25L176.925 96.6737Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M387.226 217.606C385.989 219.749 384.59 221.813 383.028 223.797L324.96 324.373C326.522 322.39 327.921 320.326 329.157 318.183L387.226 217.606Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M317.269 188.408C319.087 185.262 320.519 182.045 321.562 178.758L263.494 279.335C262.451 282.622 261.019 285.839 259.201 288.985L317.269 188.408Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M245.208 132.573C241.895 137.928 243 145.387 248.522 154.95L190.454 255.527C184.932 245.964 183.827 238.505 187.14 233.15L245.208 132.573Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M176.93 96.6719C174.331 101.175 172.686 106.255 171.993 111.91L113.925 212.487C114.618 206.831 116.263 201.752 118.862 197.249L176.93 96.6719Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M317.266 188.413C314.853 192.589 311.757 196.64 307.978 200.566L249.91 301.143C253.689 297.216 256.785 293.166 259.198 288.99L317.266 188.413Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M464.198 304.708L435.375 254.789L377.307 355.366L406.13 405.285L464.198 304.708Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M353.209 254.787C366.68 242.548 376.618 232.22 383.023 223.805L324.955 324.382C318.55 332.797 308.612 343.124 295.141 355.364L353.209 254.787Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M435.37 254.787L353.212 254.784L295.144 355.361L377.302 355.364L435.37 254.787Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M183.921 154.947L248.521 154.95L190.453 255.527L125.853 255.524L183.921 154.947Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M171.992 111.914C170.668 124.537 174.643 138.881 183.92 154.947L125.852 255.524C116.575 239.458 112.599 225.114 113.924 212.491L171.992 111.914Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M307.987 200.562C301.251 207.256 291.203 216.244 277.842 227.528L219.774 328.105C233.135 316.821 243.183 307.832 249.919 301.139L307.987 200.562Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M15.5469 75.1797L44.5359 125.386L-13.5321 225.963L-42.5212 175.756L15.5469 75.1797Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M277.836 227.536C264.033 238.82 253.708 247.904 246.862 254.789L188.794 355.366C195.64 348.481 205.965 339.397 219.768 328.113L277.836 227.536Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M275.358 304.706L464.189 304.713L406.12 405.29L217.29 405.283L275.358 304.706Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M44.5279 125.39L67.3864 125.39L9.31834 225.967L-13.5401 225.966L44.5279 125.39Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path
-                        d="M101.341 75.1911L233.863 304.705L175.795 405.282L43.2733 175.768L101.341 75.1911ZM15.5431 75.19L-42.525 175.767L43.277 175.77L101.345 75.1932L15.5431 75.19Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M246.866 254.784L246.534 254.784L188.466 355.361L188.798 355.361L246.866 254.784Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M246.539 254.781L275.362 304.701L217.294 405.277L188.471 355.358L246.539 254.781Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M67.3906 125.391L170.923 304.698L112.855 405.275L9.32257 225.967L67.3906 125.391Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                    <path d="M170.921 304.699L233.865 304.701L175.797 405.278L112.853 405.276L170.921 304.699Z"
-                          stroke="#FF750F" stroke-width="1" stroke-linejoin="bevel"/>
-                </g>
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4"
-                   style="mix-blend-mode:hard-light">
-                    <path
-                        d="M246.544 254.79L246.875 254.79C253.722 247.905 264.046 238.82 277.849 227.537C291.21 216.253 301.259 207.264 307.995 200.57C314.62 193.685 319.147 186.418 321.577 178.768C324.006 171.117 322.846 163.18 318.097 154.956C312.796 145.775 305.342 138.412 295.735 132.865C286.238 127.127 276.189 124.258 265.588 124.257C255.208 124.257 248.416 127.03 245.214 132.576C241.902 137.931 243.006 145.39 248.528 154.953L183.928 154.951C174.652 138.885 170.676 124.541 172 111.918C173.546 99.2946 179.84 89.5408 190.882 82.6559C202.035 75.5798 216.887 72.0421 235.439 72.0428C254.874 72.0435 274.144 75.5825 293.248 82.6598C312.242 89.5457 329.579 99.3005 345.261 111.924C360.942 124.548 373.421 138.892 382.697 154.958C391.311 169.877 395.121 182.978 394.128 194.262C393.355 205.546 389.656 215.396 383.031 223.811C376.627 232.226 366.688 242.554 353.217 254.794L435.375 254.797L464.198 304.716L275.367 304.709L246.544 254.79Z"
-                        fill="#4B0600"/>
-                    <path
-                        d="M246.544 254.79L246.875 254.79C253.722 247.905 264.046 238.82 277.849 227.537C291.21 216.253 301.259 207.264 307.995 200.57C314.62 193.685 319.147 186.418 321.577 178.768C324.006 171.117 322.846 163.18 318.097 154.956C312.796 145.775 305.342 138.412 295.735 132.865C286.238 127.127 276.189 124.258 265.588 124.257C255.208 124.257 248.416 127.03 245.214 132.576C241.902 137.931 243.006 145.39 248.528 154.953L183.928 154.951C174.652 138.885 170.676 124.541 172 111.918C173.546 99.2946 179.84 89.5408 190.882 82.6559C202.035 75.5798 216.887 72.0421 235.439 72.0428C254.874 72.0435 274.144 75.5825 293.248 82.6598C312.242 89.5457 329.579 99.3005 345.261 111.924C360.942 124.548 373.421 138.892 382.697 154.958C391.311 169.877 395.121 182.978 394.128 194.262C393.355 205.546 389.656 215.396 383.031 223.811C376.627 232.226 366.688 242.554 353.217 254.794L435.375 254.797L464.198 304.716L275.367 304.709L246.544 254.79Z"
-                        stroke="#FF750F" stroke-width="1" stroke-linejoin="round"/>
-                </g>
-                <g class="transition-all delay-300 translate-y-0 opacity-100 duration-750 starting:opacity-0 starting:translate-y-4"
-                   style="mix-blend-mode:hard-light">
-                    <path
-                        d="M67.41 125.402L44.5515 125.401L15.5625 75.1953L101.364 75.1985L233.886 304.712L170.942 304.71L67.41 125.402Z"
-                        fill="#4B0600"/>
-                    <path
-                        d="M67.41 125.402L44.5515 125.401L15.5625 75.1953L101.364 75.1985L233.886 304.712L170.942 304.71L67.41 125.402Z"
-                        stroke="#FF750F" stroke-width="1"/>
-                </g>
-            </svg>
             <div
-                class="absolute inset-0 rounded-t-lg lg:rounded-t-none lg:rounded-r-lg shadow-[inset_0px_0px_0px_1px_rgba(26,26,0,0.16)] dark:shadow-[inset_0px_0px_0px_1px_#fffaed2d]"></div>
+                class="et-banner-slider-dots absolute flex flex-col right-[40px] xxs:right-[15px] !left-auto z-[1] !top-[50%] -translate-y-[50%] !w-auto"></div>
         </div>
-    </main>
-</div>
+    </section>
+    <!-- BANNER SECTION END -->
 
-@if (Route::has('login'))
-    <div class="h-14.5 hidden lg:block"></div>
-@endif
-</body>
-</html>
+
+    <!-- ABOUT SECTION START -->
+    <section class="et-about pt-[60px] pb-[130px] xl:pb-[80px] md:pb-[60px] overflow-hidden relative">
+        <div
+            class="container mx-auto max-w-[calc(100%-39.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
+            <div
+                class="flex items-center md:flex-wrap gap-x-[60px] xxl:gap-x-[40px] lg:gap-x-[30px] gap-y-[40px] sm:gap-y-[40px] lg:justify-center">
+                <!-- left -->
+                <div
+                    class="et-about-img relative z-[1] md:w-auto shrink-0 max-w-full mr-[70px] md:mr-0 ml-[28px] xxxl:ml-[47px] md:ml-0 xs:w-[70%] xxs:w-[90%] xxs:ml-[47px]">
+                    <img src="assets/img/about-img.jpg" alt="image" class="shrink-0 rounded-[10px]"/>
+                    <img src="assets/img/about-img-3.jpg" alt="image"
+                         class="et-about-floating-img absolute top-[45px] -right-[70px] shrink-0 rounded-[20px] border-white border-[10px] xs:hidden"/>
+
+                    <!-- vectors -->
+                    <div class="et-about-vectors xs:hidden">
+                        <img src="assets/img/about-img-vector-1.png" alt="vector"
+                             class="et-about-vector-1 absolute -left-[47px] top-[20px] -z-[1]"/>
+                        <img src="assets/img/about-img-vector-2.png" alt="vector"
+                             class="et-about-vector-2 absolute -left-[27px] top-[41px] -z-[1]"/>
+                        <img src="assets/img/about-img-vector-3.png" alt="vector"
+                             class="et-about-vector absolute -right-[24px] bottom-[34px] -z-[1]"/>
+                    </div>
+
+                    <!-- video btn -->
+                    <div
+                        class="absolute bottom-[50px] -left-[47px] lg:-left-[27px] md:-left-[47px] w-[180px] lg:w-[160px] aspect-square bg-[url('../assets/img/about-video-btn-bg.jpg')] text-center text-[22px] text-white z-[1] flex items-center justify-center before:absolute before:bg-etBlue/80 before:-z-[1] before:inset-0 after:bg-etBlack after:w-[47px] after:h-[30px] after:absolute after:top-[100%] after:left-0 after:-z-[2] after:skew-y-[30deg] after:-translate-y-[17px]">
+                        <a href="https://www.youtube.com/watch?v=AQleI8oFqZo&amp;t=1s" data-fslightbox="about-video"
+                           class="w-[107px] aspect-square rounded-full border border-white/20 flex justify-center items-center text-etBlue relative z-[1] text-[18px] before:absolute before:w-[56px] before:h-[56px] before:bg-white before:rounded-full before:-z-[1] hover:text-black"><i
+                                class="fa-solid fa-play"></i></a>
+                    </div>
+                </div>
+
+                <!-- right -->
+                <div class="et-about__txt">
+                    <h6 class="et-section-sub-title anim-text">About Eventek</h6>
+                    <h2 class="et-section-title mb-[24px] md:mb-[19px] anim-text">Know More About The Eventek </h2>
+
+                    <p class="mb-[30px] text-[16px] font-light text-etGray md:mb-[30px] rev-slide-up">
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+                        alteration in some form, by injected humour, or randomised words which don't look even slightly
+                        believable.
+                    </p>
+
+                    <div
+                        class="flex xxs:flex-wrap items-center gap-[20px] pt-[30px] border-t border-[#D9D9D9] mb-[50px] xxs:mb-[30px] rev-slide-up">
+                        <div
+                            class="shrink-0 h-[80px] w-[80px] rounded-[6px] shadow-[0_4px_50px_10px_rgba(18,96,254,0.10)] flex items-center justify-center">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_6038_295)">
+                                    <path
+                                        d="M35.4168 33.3346H28.4501C27.7601 33.3346 27.2001 32.7746 27.2001 32.0846C27.2001 31.3946 27.7601 30.8346 28.4501 30.8346H34.5401L36.9651 24.168H3.03343L5.45843 30.8346H11.5501C12.2401 30.8346 12.8001 31.3946 12.8001 32.0846C12.8001 32.7746 12.2401 33.3346 11.5501 33.3346H4.58343C4.05843 33.3346 3.58843 33.0063 3.40843 32.5113L0.0751012 23.3446C-0.0632322 22.9613 -0.00823216 22.5346 0.226768 22.1996C0.460101 21.8663 0.841768 21.668 1.2501 21.668H38.7501C39.1584 21.668 39.5401 21.8663 39.7734 22.2013C40.0084 22.5346 40.0634 22.963 39.9251 23.3463L36.5918 32.513C36.4118 33.0063 35.9418 33.3346 35.4168 33.3346Z"
+                                        fill="#1260FE"/>
+                                    <path
+                                        d="M27.0849 40.0013C27.0216 40.0013 26.9583 39.9963 26.8933 39.9863C26.2116 39.8813 25.7433 39.243 25.8483 38.5613L27.2933 29.168H12.7066L14.1516 38.5613C14.2566 39.2446 13.7883 39.8813 13.1066 39.9863C12.4249 40.098 11.7849 39.6246 11.6816 38.9413L10.0149 28.108C9.95994 27.748 10.0633 27.3796 10.3016 27.103C10.5399 26.8263 10.8849 26.668 11.2499 26.668H28.7499C29.1149 26.668 29.4616 26.828 29.6983 27.1046C29.9349 27.3813 30.0399 27.748 29.9849 28.1096L28.3183 38.943C28.2249 39.5596 27.6916 40.0013 27.0849 40.0013Z"
+                                        fill="#1260FE"/>
+                                    <path
+                                        d="M37.5 23.7498C36.81 23.7498 36.25 23.1898 36.25 22.4998C36.25 19.2015 34.4866 16.0798 31.6483 14.3515C31.0583 13.9915 30.8716 13.2232 31.2316 12.6332C31.5916 12.0432 32.36 11.8565 32.95 12.2165C36.5266 14.3965 38.7483 18.3365 38.7483 22.4998C38.75 23.1898 38.19 23.7498 37.5 23.7498Z"
+                                        fill="#1260FE"/>
+                                    <path
+                                        d="M30.8333 15C32.214 15 33.3333 13.8807 33.3333 12.5C33.3333 11.1193 32.214 10 30.8333 10C29.4525 10 28.3333 11.1193 28.3333 12.5C28.3333 13.8807 29.4525 15 30.8333 15Z"
+                                        fill="#1260FE"/>
+                                    <path
+                                        d="M19.9999 13.3333C16.3233 13.3333 13.3333 10.3433 13.3333 6.66667C13.3333 2.99 16.3233 0 19.9999 0C23.6766 0 26.6666 2.99 26.6666 6.66667C26.6666 10.3433 23.6766 13.3333 19.9999 13.3333ZM19.9999 2.5C17.7016 2.5 15.8333 4.37 15.8333 6.66667C15.8333 8.96333 17.7016 10.8333 19.9999 10.8333C22.2983 10.8333 24.1666 8.96333 24.1666 6.66667C24.1666 4.37 22.2983 2.5 19.9999 2.5Z"
+                                        fill="#1260FE"/>
+                                    <path
+                                        d="M32.5 24.1667C31.81 24.1667 31.25 23.6067 31.25 22.9167C31.25 19.93 28.82 17.5 25.8333 17.5H14.1667C11.18 17.5 8.75 19.93 8.75 22.9167C8.75 23.6067 8.19 24.1667 7.5 24.1667C6.81 24.1667 6.25 23.6067 6.25 22.9167C6.25 18.5517 9.80167 15 14.1667 15H25.8333C30.1983 15 33.75 18.5517 33.75 22.9167C33.75 23.6067 33.19 24.1667 32.5 24.1667Z"
+                                        fill="#1260FE"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_6038_295">
+                                        <rect width="40" height="40" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </div>
+
+                        <!-- txt -->
+                        <div>
+                            <h6 class="font-medium text-[18px] text-black mb-[8px]">Whence at the Conference</h6>
+                            <p class="text-[16px] font-light text-etGray">Embarrassing hidden in the middle All the
+                                Lorem Ipsum generators on the Internet repeat predefined chunks</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-wrap items-center gap-x-[30px] gap-y-[16px] rev-slide-up">
+                        <a href="contact.html"
+                           class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-black hover:!text-white">Register
+                            Now</a>
+
+                        <div class="flex items-center gap-[10px]">
+                            <div class="flex *:-ml-[20px]">
+                                <img src="assets/img/reviewer-1.png" alt="Person"
+                                     class="w-[60px] h-[60px] rounded-full border-[3px] border-white first:ml-0">
+                                <img src="assets/img/reviewer-2.png" alt="Person"
+                                     class="w-[60px] h-[60px] rounded-full border-[3px] border-white first:ml-0">
+                                <img src="assets/img/reviewer-3.png" alt="Person"
+                                     class="w-[60px] h-[60px] rounded-full border-[3px] border-white first:ml-0">
+                                <div
+                                    class="w-[60px] h-[60px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]">
+                                    25+
+                                </div>
+                            </div>
+                            <span class="uppercase font-semibold text-etBlue text-[16px]">Speakers</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- vectors -->
+        <div class="xs:hidden">
+            <img src="assets/img/about-vector-1.png" alt="vector"
+                 class="pointer-events-none absolute top-[340px] left-[90px] -z-[1]">
+            <img src="assets/img/about-vector-2.png" alt="vector"
+                 class="pointer-events-none absolute top-[153px] right-0 -z-[1]">
+        </div>
+    </section>
+    <!-- ABOUT SECTION END -->
+
+
+    <!-- COUNTDOWN SECTION START -->
+    <div
+        class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up relative z-[2]">
+        <div
+            class="bg-etBlue relative z-[1] p-[60px] sm:p-[40px] xs:px-[20px] rounded-[20px] overflow-hidden -mb-[114px] shadow-[0_4px_50px_rgba(18,96,254,0.2)] after:absolute after:inset-0 after:-z-[1] after:bg-[url(../assets/img/et-counter-bg.jpg)] after:bg-cover after:bg-no-repeat after:mix-blend-screen flex items-center md:flex-wrap gap-y-[20px]">
+            <div class="pr-[54px] border-r md:border-r-0 border-white/20 md:text-center md:pr-0 md:w-full">
+                <h2 class="et-section-title !text-white mb-[28px] anim-text">Count Every Second Until Event.</h2>
+                <a href="contact.html"
+                   class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full border-white border hover:!bg-white hover:!text-etBlue">Buy
+                    Ticket</a>
+            </div>
+
+            <!-- counter -->
+            <div
+                class="et-countdown flex sm:flex-wrap justify-center gap-y-[10px] md:w-full *:border-r *:sm:border-r-0 *:border-white/20 *:px-[46px] *:sm:px-[26px] *:xs:px-[16px] font-medium text-white text-[16px] text-center">
+                <div class="last:pr-0 last:md:pr-[30px] last:xs:pr-[20px] last:border-r-0">
+                    <span class="days number block"></span>
+                    <span>Days</span>
+                </div>
+
+                <div class="last:pr-0 last:md:pr-[30px] last:xs:pr-[20px] last:border-r-0">
+                    <span class="hours number block"></span>
+                    <span>Hours</span>
+                </div>
+
+                <div class="last:pr-0 last:md:pr-[30px] last:xs:pr-[20px] last:border-r-0">
+                    <span class="minutes number block"></span>
+                    <span>Minutes</span>
+                </div>
+
+                <div class="last:pr-0 last:md:pr-[30px] last:xs:pr-[20px] last:border-r-0">
+                    <span class="seconds number block"></span>
+                    <span>Seconds</span>
+                </div>
+            </div>
+
+            <!-- vectors -->
+            <div class="sm:hidden">
+                <img src="assets/img/counter-vector.png" alt="vector"
+                     class="pointer-events-none absolute top-[26px] left-[53%]">
+                <img src="assets/img/counter-vector.png" alt="vector"
+                     class="pointer-events-none absolute bottom-[33px] right-[90px]">
+            </div>
+        </div>
+    </div>
+    <!-- COUNTDOWN SECTION END -->
+
+
+    <!-- FEATURES SECTION STAR -->
+    <div
+        class="bg-[#EEF4FF] relative z-[1] after:absolute after:inset-0 after:bg-[url(../assets/img/features-bg.png)] after:bg-no-repeat after:bg-cover after:-z-[2] after:mix-blend-multiply after:pointer-events-none pb-[130px] xl:pb-[80px] md:pb-[60px] pt-[244px] xl:pt-[194px] md:pt-[174px]">
+        <div
+            class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up">
+            <!-- heading -->
+            <div class="text-center mb-[52px]">
+                <h6 class="et-section-sub-title anim-text">Event Features</h6>
+                <h2 class="et-section-title anim-text">Unifying For A Better World</h2>
+            </div>
+
+            <!-- cards -->
+            <div class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 gap-[30px] lg:gap-[20px]">
+                <!-- single card -->
+                <div class="rounded-[20px] bg-white overflow-hidden group">
+                    <!-- icon -->
+                    <div
+                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
+                        <img src="assets/img/feature-1.png" alt="Feature icon"
+                             class="transition duration-[0.4s] group-hover:-scale-x-100">
+                    </div>
+
+                    <!-- text -->
+                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
+                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Speaker
+                                Lineup</a></h5>
+                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
+                            nullam</p>
+                    </div>
+                </div>
+
+                <!-- single card -->
+                <div class="rounded-[20px] bg-white overflow-hidden group">
+                    <!-- icon -->
+                    <div
+                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
+                        <img src="assets/img/feature-2.png" alt="Feature icon"
+                             class="transition duration-[0.4s] group-hover:-scale-x-100">
+                    </div>
+
+                    <!-- text -->
+                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
+                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Networking
+                                People</a></h5>
+                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
+                            nullam</p>
+                    </div>
+                </div>
+
+                <!-- single card -->
+                <div class="rounded-[20px] bg-white overflow-hidden group">
+                    <!-- icon -->
+                    <div
+                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
+                        <img src="assets/img/feature-3.png" alt="Feature icon"
+                             class="transition duration-[0.4s] group-hover:-scale-x-100">
+                    </div>
+
+                    <!-- text -->
+                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
+                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Engaging
+                                Keynote</a></h5>
+                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
+                            nullam</p>
+                    </div>
+                </div>
+
+                <!-- single card -->
+                <div class="rounded-[20px] bg-white overflow-hidden group">
+                    <!-- icon -->
+                    <div
+                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
+                        <img src="assets/img/feature-4.png" alt="Feature icon"
+                             class="transition duration-[0.4s] group-hover:-scale-x-100">
+                    </div>
+
+                    <!-- text -->
+                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
+                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Exhibition
+                                Space</a></h5>
+                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
+                            nullam</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- vectors -->
+        <div class="md:hidden">
+            <img src="assets/img/features-vector-1.png" alt="vector"
+                 class="pointer-events-none absolute bottom-[130px] left-[40px] -z-[1]">
+            <img src="assets/img/features-vector-2.png" alt="vector"
+                 class="pointer-events-none absolute top-[222px] right-[180px] -z-[1]">
+            <img src="assets/img/features-vector-3.png" alt="vector"
+                 class="pointer-events-none absolute bottom-[138px] right-[106px] -z-[1]">
+        </div>
+    </div>
+    <!-- FEATURES SECTION end -->
+
+
+    <!-- EVENT SCHEDULE SECTION START -->
+    <section class="et-schedules py-[130px] xl:py-[80px] md:py-[60px]">
+        <div
+            class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up">
+            <!-- heading -->
+            <div
+                class="et-schedule-heading flex sm:flex-col justify-between items-center pb-[31px] mb-[40px] gap-[15px] border-b border-[#D9D9D9]">
+                <div class="left xs:text-center max-w-[50%] sm:max-w-full">
+                    <h6 class="et-section-sub-title anim-text">Event Timetable</h6>
+                    <h2 class="et-section-title anim-text">Information Of Event Schedule</h2>
+                </div>
+
+                <div class="right">
+                    <div
+                        class="et-schedules-tab-navs bg-[#EDF3FE] px-[12px] py-[14px] flex flex-w gap-[16px] sm:gap-[12px] rounded-full">
+                        <button data-tab="tab1"
+                                class="tab-nav bg-etBlack rounded-full px-[20px] py-[3px] text-[16px] font-medium text-white hover:bg-etBlue active">
+                            Day 01
+                        </button>
+
+                        <button data-tab="tab2"
+                                class="tab-nav bg-etBlack rounded-full px-[20px] py-[3px] text-[16px] font-medium text-white hover:bg-etBlue">
+                            Day 02
+                        </button>
+
+                        <button data-tab="tab3"
+                                class="tab-nav bg-etBlack rounded-full px-[20px] py-[3px] text-[16px] font-medium text-white hover:bg-etBlue">
+                            Day 03
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- events -->
+            <div class="et-schedules-tab-container">
+                <div id="tab1" class="et-tab active">
+                    <div class="all-scheduled-events space-y-[30px]">
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-1.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-2.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-3.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab2" class="et-tab">
+                    <div class="all-scheduled-events space-y-[30px]">
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-2.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-3.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-1.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab3" class="et-tab">
+                    <div class="all-scheduled-events space-y-[30px]">
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-3.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-1.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- single schedule -->
+                        <div
+                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
+                            <!-- img -->
+                            <div
+                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
+                                <img src="assets/img/evenet-sched-2.jpg" alt="scehduled-event-cover"></div>
+
+                            <!-- text -->
+                            <div
+                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
+                                <div
+                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
+                                    <!-- date & time -->
+                                    <div
+                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
+                                        <div class="date flex items-center gap-[10px]">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <g clip-path="url(#clip0_2043_1443)">
+                                                            <path
+                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
+                                                                fill="var(--et-blue)"/>
+                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
+                                                                  fill="var(--et-blue)"/>
+                                                        </g>
+                                                        <defs>
+                                                            <clipPath id="clip0_2043_1443">
+                                                                <rect width="16" height="16" fill="white"
+                                                                      transform="translate(0 0.5)"/>
+                                                            </clipPath>
+                                                        </defs>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                        </div>
+
+                                        <div class="time flex items-center gap-[10px] xxs:hidden">
+                                                <span class="icon">
+                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
+                                                         xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
+                                                            fill="var(--et-blue)"/>
+                                                        <path
+                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
+                                                            fill="var(--et-blue)"/>
+                                                    </svg>
+                                                </span>
+
+                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- title -->
+                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
+                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+
+                                    <!-- location -->
+                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
+                                            <span class="icon">
+                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
+                                                        fill="var(--et-blue)"/>
+                                                </svg>
+                                            </span>
+                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
+                                    <a href="event-details.html"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
+                                        Tickets</a>
+                                    <div class="flex items-center">
+                                        <div class="flex *:-ml-[20px]">
+                                            <img src="assets/img/reviewer-1.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
+                                            <div
+                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
+                                        </div>
+                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
+                                                class="text-white">Spe</span>akers</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- EVENT SCHEDULE SECTION END -->
+
+
+    <!-- STATS SECTION START -->
+    <section
+        class="text-center py-[130px] xl:py-[80px] md:py-[60px] bg-[url(../assets/img/stats-bg.jpg)] bg-no-repeat bg-cover relative z-[1] before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1]">
+        <div
+            class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up">
+            <div
+                class="flex xs:flex-col gap-x-[77px] sm:gap-x-[57px] gap-y-[15px] justify-center border-b border-white/20 pb-[35px]">
+                <!-- single stat -->
+                <div class="et-single-stat text-white">
+                    <h5 class="number font-semibold text-[55px]">50+</h5>
+                    <h6 class="font-medium text-[16px]">Workshop We Offer</h6>
+                </div>
+                <!-- single stat -->
+                <div class="et-single-stat text-white">
+                    <h5 class="number font-semibold text-[55px]">25+</h5>
+                    <h6 class="font-medium text-[16px]">Visionary Speaker</h6>
+                </div>
+                <!-- single stat -->
+                <div class="et-single-stat text-white">
+                    <h5 class="number font-semibold text-[55px]">70k+</h5>
+                    <h6 class="font-medium text-[16px]">Event Participants</h6>
+                </div>
+            </div>
+
+            <h2 class="et-section-title anim-text !text-white text-center max-w-[55%] md:max-w-[65%] sm:max-w-full mx-auto mt-[30px] mb-[40px]">
+                Never Miss Another Speaker Announcement</h2>
+
+            <a href="contact.html"
+               class="bg-white inline-flex items-center gap-[12px] rounded-full text-etBlue h-[54px] px-[15px] text-[17px] group hover:bg-etBlue hover:text-white">
+                    <span class="icon">
+                        <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M13.1023 17.6473C13.0496 17.6473 12.9979 17.6511 12.9471 17.6578C12.4966 16.1361 11.1883 14.9794 9.5848 14.7503V13.6641H8.41524V14.7503C6.81011 14.9796 5.50077 16.1384 5.05156 17.6624C4.99031 17.6526 4.92753 17.6473 4.86351 17.6473C4.21347 17.6473 3.68652 18.1742 3.68652 18.8242C3.68652 19.4742 4.21347 20.0012 4.86351 20.0012C5.4544 20.0012 5.94345 19.5657 6.0276 18.9982C6.04471 18.9433 6.05393 18.8848 6.05393 18.8242C6.05393 17.3999 7.06993 16.2086 8.41524 15.9366V17.791C8.04998 17.9908 7.80223 18.3786 7.80223 18.8242C7.80223 19.4742 8.32918 20.0012 8.97918 20.0012C9.62922 20.0012 10.1562 19.4742 10.1562 18.8242C10.1562 18.3957 9.92708 18.0208 9.5848 17.815V15.9366C10.8716 16.1968 11.8565 17.2982 11.9398 18.6401C11.9303 18.7001 11.9253 18.7616 11.9253 18.8243C11.9253 19.4743 12.4523 20.0012 13.1023 20.0012C13.7523 20.0012 14.2793 19.4743 14.2793 18.8243C14.2793 18.1743 13.7523 17.6473 13.1023 17.6473Z"
+                                class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"/>
+                            <path
+                                d="M17.2036 6.2168H15.6151C15.2921 6.2168 15.0303 6.47861 15.0303 6.8016V8.5676C15.0303 9.11044 14.5882 9.55211 14.0447 9.55211H13.9074C13.9062 9.55211 13.9051 9.55227 13.904 9.55227V9.55211H4.09592V9.55227C4.09478 9.55227 4.09365 9.55211 4.09252 9.55211H4.07443C3.53096 9.55211 3.08883 9.11044 3.08883 8.5676V6.8016C3.08883 6.47861 2.82701 6.2168 2.50403 6.2168H0.796348C0.47336 6.2168 0.211548 6.47861 0.211548 6.8016C0.211548 7.12458 0.47336 7.3864 0.796348 7.3864H1.91927V8.5676C1.91927 9.75536 2.88608 10.7217 4.07443 10.7217H4.09252C4.09369 10.7217 4.09478 10.7216 4.09592 10.7216V10.9282C4.09592 11.7911 4.79553 12.4908 5.65851 12.4908H12.3414C13.2044 12.4908 13.904 11.7911 13.904 10.9282V10.7216C13.9051 10.7216 13.9063 10.7217 13.9074 10.7217H14.0447C15.2331 10.7217 16.1999 9.7554 16.1999 8.5676V7.3864H17.2036C17.5265 7.3864 17.7884 7.12458 17.7884 6.8016C17.7884 6.47865 17.5265 6.2168 17.2036 6.2168Z"
+                                class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"/>
+                            <path
+                                d="M13.1157 2.14739C13.1157 0.963338 12.1524 0 10.9683 0H7.03167C5.84758 0 4.88428 0.963299 4.88428 2.14739V8.38037H13.1157V2.14739Z"
+                                class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"/>
+                        </svg>
+                    </span>
+                <span>Register Now</span>
+            </a>
+        </div>
+
+        <!-- vectors -->
+        <div>
+            <img src="assets/img/stats-vector-1.png" alt="vector"
+                 class="pointer-events-none absolute top-[150px] left-[105px] -z-[1] md:hidden">
+            <img src="assets/img/stats-vector-2.png" alt="vector"
+                 class="pointer-events-none absolute bottom-[63px] left-[63px] -z-[1] w-[80px] aspect-square opacity-10">
+            <img src="assets/img/stats-vector-2.png" alt="vector"
+                 class="pointer-events-none absolute top-[80px] right-[70px] -z-[1] opacity-10">
+            <img src="assets/img/stats-vector-3.png" alt="vector"
+                 class="pointer-events-none absolute bottom-[112px] right-[80px] -z-[1]">
+        </div>
+    </section>
+    <!-- STATS SECTION END -->
+
+
+    <!-- SPEAKERS SECTION START -->
+    <section class="et-speakers py-[130px] lg:py-[80px] md:py-[60px] relative overflow-hidden">
+        <div class="container mx-auto max-w-[1200px] px-[12px] xl:max-w-full">
+            <!-- heading -->
+            <div
+                class="et-speakers-heading flex xs:flex-col justify-between items-center mb-[46px] xl:mb-[26px] lg:mb-[16px] gap-[15px]">
+                <div class="left xs:text-center">
+                    <h6 class="et-section-sub-title anim-text">Event Speakers</h6>
+                    <h2 class="et-section-title anim-text">Meet Our Speakers</h2>
+                </div>
+
+                <div class="right">
+                    <div class="et-speakers-slider-nav flex gap-[16px] sm:gap-[12px]">
+                        <button
+                            class="prev border border-[#D9D9D9] rounded-full w-[60px] sm:w-[50px] h-[60px] sm:h-[50px] text-[18px] text-etBlack hover:bg-etBlue hover:border-etbg-etBlue hover:text-white">
+                            <i class="fa-solid fa-arrow-left-long"></i>
+                        </button>
+                        <button
+                            class="next border border-[#D9D9D9] rounded-full w-[60px] sm:w-[50px] h-[60px] sm:h-[50px] text-[18px] text-etBlack hover:bg-etBlue hover:border-etbg-etBlue hover:text-white">
+                            <i class="fa-solid fa-arrow-right-long"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- slider -->
+            <div class="et-speakers-slider swiper">
+                <div class="swiper-wrapper">
+                    <!-- single speaker -->
+                    <div class="swiper-slide">
+                        <div class="et-speaker bg-white rounded-[16px] relative z-[1] group">
+                            <div
+                                class="et-speaker-img overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
+                                <img src="assets/img/speaker-1.jpg" alt="speaker image"
+                                     class="mx-auto w-full transition duration-[400ms">
+                            </div>
+
+                            <!-- socials -->
+                            <div
+                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div
+                                class="et-speaker-txt text-center absolute z-[1] bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
+                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
+                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- single speaker -->
+                    <div class="swiper-slide">
+                        <div class="et-speaker bg-white rounded-[16px] relative group">
+                            <div
+                                class="et-speaker-img before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
+                                <img src="assets/img/speaker-2.jpg" alt="speaker image"
+                                     class="mx-auto w-full transition duration-[400ms]">
+                            </div>
+
+                            <!-- socials -->
+                            <div
+                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div
+                                class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
+                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
+                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- single speaker -->
+                    <div class="swiper-slide">
+                        <div class="et-speaker bg-white rounded-[16px] relative group">
+                            <div
+                                class="et-speaker-img before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
+                                <img src="assets/img/speaker-3.jpg" alt="speaker image"
+                                     class="mx-auto w-full transition duration-[400ms]">
+                            </div>
+
+                            <!-- socials -->
+                            <div
+                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div
+                                class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
+                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
+                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- single speaker -->
+                    <div class="swiper-slide">
+                        <div class="et-speaker bg-white rounded-[16px] relative group">
+                            <div
+                                class="et-speaker-img before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
+                                <img src="assets/img/speaker-1.jpg" alt="speaker image"
+                                     class="mx-auto w-full transition duration-[400ms]">
+                            </div>
+
+                            <!-- socials -->
+                            <div
+                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
+                            </div>
+
+                            <div
+                                class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
+                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
+                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- SPEAKERS SECTION END -->
+
+
+    <!-- TESTIMONIAL SECTION START -->
+    <section
+        class="et-testimonial bg-[#EEF4FF] relative z-[1] overflow-hidden py-[130px] lg:py-[80px] md:py-[60px] before:absolute before:inset-0 before:-z-[1] before:bg-[url('../assets/img/testimonial-bg.png')] before:bg-no-repeat before:bg-cover before:mix-blend-multiply before:opacity-[0.03] px-[12px]">
+        <!-- <div class="container mx-auto max-w-[1200px] px-[12px] xl:max-w-full"> -->
+        <!-- slider -->
+        <div class="et-testimonial-slider swiper overflow-visible">
+            <div class="swiper-wrapper">
+                <!-- single testimony  -->
+                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
+                    <div
+                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
+                        <div class="ml-auto w-max max-w-full">
+                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
+                                    class="fill-etBlue"/>
+                                <path
+                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
+                                    class="fill-etBlue"/>
+                            </svg>
+                        </div>
+
+                        <!-- rating stars -->
+                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+
+                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
+
+                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
+                            best decisions for our marketing strategy. They not only promised results but delivered them
+                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
+                            strategic insights and seamless execution.</p>
+
+                        <!-- single testimonay bottom -->
+                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
+                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
+                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
+                            </div>
+
+                            <div class="txt">
+                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
+                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
+                                    Tech</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single testimony  -->
+                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
+                    <div
+                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
+                        <div class="ml-auto w-max max-w-full">
+                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
+                                    class="fill-etBlue"/>
+                                <path
+                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
+                                    class="fill-etBlue"/>
+                            </svg>
+                        </div>
+
+                        <!-- rating stars -->
+                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+
+                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
+
+                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
+                            best decisions for our marketing strategy. They not only promised results but delivered them
+                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
+                            strategic insights and seamless execution.</p>
+
+                        <!-- single testimonay bottom -->
+                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
+                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
+                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
+                            </div>
+
+                            <div class="txt">
+                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
+                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
+                                    Tech</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single testimony  -->
+                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
+                    <div
+                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
+                        <div class="ml-auto w-max max-w-full">
+                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
+                                    class="fill-etBlue"/>
+                                <path
+                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
+                                    class="fill-etBlue"/>
+                            </svg>
+                        </div>
+
+                        <!-- rating stars -->
+                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+
+                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
+
+                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
+                            best decisions for our marketing strategy. They not only promised results but delivered them
+                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
+                            strategic insights and seamless execution.</p>
+
+                        <!-- single testimonay bottom -->
+                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
+                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
+                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
+                            </div>
+
+                            <div class="txt">
+                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
+                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
+                                    Tech</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single testimony  -->
+                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
+                    <div
+                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
+                        <div class="ml-auto w-max max-w-full">
+                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
+                                    class="fill-etBlue"/>
+                                <path
+                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
+                                    class="fill-etBlue"/>
+                            </svg>
+                        </div>
+
+                        <!-- rating stars -->
+                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+
+                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
+
+                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
+                            best decisions for our marketing strategy. They not only promised results but delivered them
+                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
+                            strategic insights and seamless execution.</p>
+
+                        <!-- single testimonay bottom -->
+                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
+                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
+                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
+                            </div>
+
+                            <div class="txt">
+                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
+                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
+                                    Tech</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- single testimony  -->
+                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
+                    <div
+                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
+                        <div class="ml-auto w-max max-w-full">
+                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
+                                    class="fill-etBlue"/>
+                                <path
+                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
+                                    class="fill-etBlue"/>
+                            </svg>
+                        </div>
+
+                        <!-- rating stars -->
+                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                            <span><i class="fa-solid fa-star"></i></span>
+                        </div>
+
+                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
+
+                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
+                            best decisions for our marketing strategy. They not only promised results but delivered them
+                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
+                            strategic insights and seamless executx-ion.</p>
+
+                        <!-- single testimonay bottom -->
+                        <div class="flex items-center gap-[16px] xxs:flex-col xxs:items-start gap-y-[10px]">
+                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
+                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
+                            </div>
+
+                            <div class="txt">
+                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
+                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
+                                    Tech</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- </div> -->
+    </section>
+    <!-- TESTIMONIAL SECTION END -->
+
+
+    <!-- PRICING SECTION START -->
+    <section class="py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
+        <div
+            class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
+            <!-- section heading -->
+            <div class="text-center mb-[52px] xl:mb-[42px] md:mb-[32px]">
+                <h6 class="et-section-sub-title anim-text">Pricing Table</h6>
+                <h2 class="et-section-title anim-text">Choose Your Tickets</h2>
+            </div>
+
+            <!-- pricing -->
+            <div class="grid grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-[30px] md:gap-[20px]">
+                <!-- single pricing -->
+                <div
+                    class="bg-[url('../assets/img/pricing-bg.jpg')] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
+                    <div
+                        class="mx-[56px] md:mx-[36px] bg-white rounded-br-[20px] rounded-bl-[20px] text-center py-[6px]">
+                        <h5 class="font-normal text-[24px] md:text-[22px]">Basic Pass</h5>
+                    </div>
+
+                    <!-- price -->
+                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">$39.00</h4>
+
+                    <!-- features -->
+                    <ul class="border-y border-dashed border-white/25 text-[16px] text-white font-normal py-[23px] space-y-[17px]">
+                        <li>Get everything a Conference pass</li>
+                        <li>Enjoy 2 days of inspiring talks</li>
+                        <li>Breakout sessions exploring</li>
+                        <li>Challenging topics, great food.</li>
+                        <li>With experts at a Workshops</li>
+                    </ul>
+
+                    <a href="#"
+                       class="my-[30px] inline-flex items-center gap-[12px] rounded-full border border-white/20 text-white h-[54px] px-[15px] text-[17px] group hover:bg-white hover:border-white hover:text-etBlue">
+                            <span class="icon">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.1023 17.6473C13.0496 17.6473 12.9979 17.6511 12.9471 17.6578C12.4966 16.1361 11.1883 14.9794 9.5848 14.7503V13.6641H8.41524V14.7503C6.81011 14.9796 5.50077 16.1384 5.05156 17.6624C4.99031 17.6526 4.92753 17.6473 4.86351 17.6473C4.21347 17.6473 3.68652 18.1742 3.68652 18.8242C3.68652 19.4742 4.21347 20.0012 4.86351 20.0012C5.4544 20.0012 5.94345 19.5657 6.0276 18.9982C6.04471 18.9433 6.05393 18.8848 6.05393 18.8242C6.05393 17.3999 7.06993 16.2086 8.41524 15.9366V17.791C8.04998 17.9908 7.80223 18.3786 7.80223 18.8242C7.80223 19.4742 8.32918 20.0012 8.97918 20.0012C9.62922 20.0012 10.1562 19.4742 10.1562 18.8242C10.1562 18.3957 9.92708 18.0208 9.5848 17.815V15.9366C10.8716 16.1968 11.8565 17.2982 11.9398 18.6401C11.9303 18.7001 11.9253 18.7616 11.9253 18.8243C11.9253 19.4743 12.4523 20.0012 13.1023 20.0012C13.7523 20.0012 14.2793 19.4743 14.2793 18.8243C14.2793 18.1743 13.7523 17.6473 13.1023 17.6473Z"
+                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
+                                    <path
+                                        d="M17.2036 6.2168H15.6151C15.2921 6.2168 15.0303 6.47861 15.0303 6.8016V8.5676C15.0303 9.11044 14.5882 9.55211 14.0447 9.55211H13.9074C13.9062 9.55211 13.9051 9.55227 13.904 9.55227V9.55211H4.09592V9.55227C4.09478 9.55227 4.09365 9.55211 4.09252 9.55211H4.07443C3.53096 9.55211 3.08883 9.11044 3.08883 8.5676V6.8016C3.08883 6.47861 2.82701 6.2168 2.50403 6.2168H0.796348C0.47336 6.2168 0.211548 6.47861 0.211548 6.8016C0.211548 7.12458 0.47336 7.3864 0.796348 7.3864H1.91927V8.5676C1.91927 9.75536 2.88608 10.7217 4.07443 10.7217H4.09252C4.09369 10.7217 4.09478 10.7216 4.09592 10.7216V10.9282C4.09592 11.7911 4.79553 12.4908 5.65851 12.4908H12.3414C13.2044 12.4908 13.904 11.7911 13.904 10.9282V10.7216C13.9051 10.7216 13.9063 10.7217 13.9074 10.7217H14.0447C15.2331 10.7217 16.1999 9.7554 16.1999 8.5676V7.3864H17.2036C17.5265 7.3864 17.7884 7.12458 17.7884 6.8016C17.7884 6.47865 17.5265 6.2168 17.2036 6.2168Z"
+                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
+                                    <path
+                                        d="M13.1157 2.14739C13.1157 0.963338 12.1524 0 10.9683 0H7.03167C5.84758 0 4.88428 0.963299 4.88428 2.14739V8.38037H13.1157V2.14739Z"
+                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
+                                </svg>
+                            </span>
+                        <span>Register Now</span>
+                    </a>
+                </div>
+
+                <!-- single pricing -->
+                <div
+                    class="bg-[url('../assets/img/pricing-bg.jpg')] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
+                    <div
+                        class="mx-[56px] md:mx-[36px] bg-[#FFC532] rounded-br-[20px] rounded-bl-[20px] text-center py-[6px]">
+                        <h5 class="font-normal text-[24px] md:text-[22px]">Standard Pass</h5>
+                    </div>
+
+                    <!-- price -->
+                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">$49.00</h4>
+
+                    <!-- features -->
+                    <ul class="border-y border-dashed border-white/25 text-[16px] text-white font-normal py-[23px] space-y-[17px]">
+                        <li>Get everything a Conference pass</li>
+                        <li>Enjoy 2 days of inspiring talks</li>
+                        <li>Breakout sessions exploring</li>
+                        <li>Challenging topics, great food.</li>
+                        <li>With experts at a Workshops</li>
+                    </ul>
+
+                    <a href="#"
+                       class="bg-white my-[30px] inline-flex items-center gap-[12px] rounded-full text-etBlue h-[54px] px-[15px] text-[17px] group hover:bg-etBlue hover:text-white">
+                            <span class="icon">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.1023 17.6473C13.0496 17.6473 12.9979 17.6511 12.9471 17.6578C12.4966 16.1361 11.1883 14.9794 9.5848 14.7503V13.6641H8.41524V14.7503C6.81011 14.9796 5.50077 16.1384 5.05156 17.6624C4.99031 17.6526 4.92753 17.6473 4.86351 17.6473C4.21347 17.6473 3.68652 18.1742 3.68652 18.8242C3.68652 19.4742 4.21347 20.0012 4.86351 20.0012C5.4544 20.0012 5.94345 19.5657 6.0276 18.9982C6.04471 18.9433 6.05393 18.8848 6.05393 18.8242C6.05393 17.3999 7.06993 16.2086 8.41524 15.9366V17.791C8.04998 17.9908 7.80223 18.3786 7.80223 18.8242C7.80223 19.4742 8.32918 20.0012 8.97918 20.0012C9.62922 20.0012 10.1562 19.4742 10.1562 18.8242C10.1562 18.3957 9.92708 18.0208 9.5848 17.815V15.9366C10.8716 16.1968 11.8565 17.2982 11.9398 18.6401C11.9303 18.7001 11.9253 18.7616 11.9253 18.8243C11.9253 19.4743 12.4523 20.0012 13.1023 20.0012C13.7523 20.0012 14.2793 19.4743 14.2793 18.8243C14.2793 18.1743 13.7523 17.6473 13.1023 17.6473Z"
+                                        class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"></path>
+                                    <path
+                                        d="M17.2036 6.2168H15.6151C15.2921 6.2168 15.0303 6.47861 15.0303 6.8016V8.5676C15.0303 9.11044 14.5882 9.55211 14.0447 9.55211H13.9074C13.9062 9.55211 13.9051 9.55227 13.904 9.55227V9.55211H4.09592V9.55227C4.09478 9.55227 4.09365 9.55211 4.09252 9.55211H4.07443C3.53096 9.55211 3.08883 9.11044 3.08883 8.5676V6.8016C3.08883 6.47861 2.82701 6.2168 2.50403 6.2168H0.796348C0.47336 6.2168 0.211548 6.47861 0.211548 6.8016C0.211548 7.12458 0.47336 7.3864 0.796348 7.3864H1.91927V8.5676C1.91927 9.75536 2.88608 10.7217 4.07443 10.7217H4.09252C4.09369 10.7217 4.09478 10.7216 4.09592 10.7216V10.9282C4.09592 11.7911 4.79553 12.4908 5.65851 12.4908H12.3414C13.2044 12.4908 13.904 11.7911 13.904 10.9282V10.7216C13.9051 10.7216 13.9063 10.7217 13.9074 10.7217H14.0447C15.2331 10.7217 16.1999 9.7554 16.1999 8.5676V7.3864H17.2036C17.5265 7.3864 17.7884 7.12458 17.7884 6.8016C17.7884 6.47865 17.5265 6.2168 17.2036 6.2168Z"
+                                        class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"></path>
+                                    <path
+                                        d="M13.1157 2.14739C13.1157 0.963338 12.1524 0 10.9683 0H7.03167C5.84758 0 4.88428 0.963299 4.88428 2.14739V8.38037H13.1157V2.14739Z"
+                                        class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"></path>
+                                </svg>
+                            </span>
+                        <span>Register Now</span>
+                    </a>
+                </div>
+
+                <!-- single pricing -->
+                <div
+                    class="bg-[url('../assets/img/pricing-bg.jpg')] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
+                    <div
+                        class="mx-[56px] md:mx-[36px] bg-white rounded-br-[20px] rounded-bl-[20px] text-center py-[6px]">
+                        <h5 class="font-normal text-[24px] md:text-[22px]">Premium Pass</h5>
+                    </div>
+
+                    <!-- price -->
+                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">$59.00</h4>
+
+                    <!-- features -->
+                    <ul class="border-y border-dashed border-white/25 text-[16px] text-white font-normal py-[23px] space-y-[17px]">
+                        <li>Get everything a Conference pass</li>
+                        <li>Enjoy 2 days of inspiring talks</li>
+                        <li>Breakout sessions exploring</li>
+                        <li>Challenging topics, great food.</li>
+                        <li>With experts at a Workshops</li>
+                    </ul>
+
+                    <a href="#"
+                       class="my-[30px] inline-flex items-center gap-[12px] rounded-full border border-white/20 text-white h-[54px] px-[15px] text-[17px] group hover:bg-white hover:border-white hover:text-etBlue">
+                            <span class="icon">
+                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M13.1023 17.6473C13.0496 17.6473 12.9979 17.6511 12.9471 17.6578C12.4966 16.1361 11.1883 14.9794 9.5848 14.7503V13.6641H8.41524V14.7503C6.81011 14.9796 5.50077 16.1384 5.05156 17.6624C4.99031 17.6526 4.92753 17.6473 4.86351 17.6473C4.21347 17.6473 3.68652 18.1742 3.68652 18.8242C3.68652 19.4742 4.21347 20.0012 4.86351 20.0012C5.4544 20.0012 5.94345 19.5657 6.0276 18.9982C6.04471 18.9433 6.05393 18.8848 6.05393 18.8242C6.05393 17.3999 7.06993 16.2086 8.41524 15.9366V17.791C8.04998 17.9908 7.80223 18.3786 7.80223 18.8242C7.80223 19.4742 8.32918 20.0012 8.97918 20.0012C9.62922 20.0012 10.1562 19.4742 10.1562 18.8242C10.1562 18.3957 9.92708 18.0208 9.5848 17.815V15.9366C10.8716 16.1968 11.8565 17.2982 11.9398 18.6401C11.9303 18.7001 11.9253 18.7616 11.9253 18.8243C11.9253 19.4743 12.4523 20.0012 13.1023 20.0012C13.7523 20.0012 14.2793 19.4743 14.2793 18.8243C14.2793 18.1743 13.7523 17.6473 13.1023 17.6473Z"
+                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
+                                    <path
+                                        d="M17.2036 6.2168H15.6151C15.2921 6.2168 15.0303 6.47861 15.0303 6.8016V8.5676C15.0303 9.11044 14.5882 9.55211 14.0447 9.55211H13.9074C13.9062 9.55211 13.9051 9.55227 13.904 9.55227V9.55211H4.09592V9.55227C4.09478 9.55227 4.09365 9.55211 4.09252 9.55211H4.07443C3.53096 9.55211 3.08883 9.11044 3.08883 8.5676V6.8016C3.08883 6.47861 2.82701 6.2168 2.50403 6.2168H0.796348C0.47336 6.2168 0.211548 6.47861 0.211548 6.8016C0.211548 7.12458 0.47336 7.3864 0.796348 7.3864H1.91927V8.5676C1.91927 9.75536 2.88608 10.7217 4.07443 10.7217H4.09252C4.09369 10.7217 4.09478 10.7216 4.09592 10.7216V10.9282C4.09592 11.7911 4.79553 12.4908 5.65851 12.4908H12.3414C13.2044 12.4908 13.904 11.7911 13.904 10.9282V10.7216C13.9051 10.7216 13.9063 10.7217 13.9074 10.7217H14.0447C15.2331 10.7217 16.1999 9.7554 16.1999 8.5676V7.3864H17.2036C17.5265 7.3864 17.7884 7.12458 17.7884 6.8016C17.7884 6.47865 17.5265 6.2168 17.2036 6.2168Z"
+                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
+                                    <path
+                                        d="M13.1157 2.14739C13.1157 0.963338 12.1524 0 10.9683 0H7.03167C5.84758 0 4.88428 0.963299 4.88428 2.14739V8.38037H13.1157V2.14739Z"
+                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
+                                </svg>
+                            </span>
+                        <span>Register Now</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- vectors -->
+        <div>
+            <img src="assets/img/features-vector-3.png" alt="vector"
+                 class="pointer-events-none absolute bottom-[214px] left-[63px] -z-[1]">
+            <img src="assets/img/features-vector-3.png" alt="vector"
+                 class="pointer-events-none absolute top-[163px] right-[106px] -z-[1]">
+        </div>
+    </section>
+    <!-- PRICING SECTION END -->
+
+
+    <!-- GALLERY SECTION START -->
+    <section class="grid grid-cols-4 lg:grid-cols-3 sm:grid-cols-2">
+        <!-- single gallery item -->
+        <div
+            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-1.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-1.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-2.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-2.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-3.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-3.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-4.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-4.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-5.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-5.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-6.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-6.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="bg-etBlue xxs:col-span-2 relative z-[1] flex items-center justify-center text-center before:absolute before:inset-0 before:bg-[url('../assets/img/gallery-text-bg.jpg')] before:-z-[1] before:mix-blend-multiply p-[15px] xxs:pt-[25px] xxs:pb-[30px]">
+            <div>
+                <h6 class="et-section-sub-title !text-white before:!bg-white anim-text">Gallery</h6>
+                <span
+                    class="block text-white font-semibold text-[100px] leading-[0.86] mb-[13px] xxl:text-[80px] xl:text-[60px] md:!text-[50px] xs:!text-[45px] xs:!mb-[10px] anim-text">2020</span>
+                <h2 class="et-section-title !text-white !font-normal mb-[31px] xxl:!text-[40px] xl:!text-[35px] md:!text-[30px] md:mb-[21px] anim-text">
+                    Our Events Gallery</h2>
+                <a href="gallery.html"
+                   class="inline-flex items-center justify-center rounded-full border border-white text-[16px] h-[45px] px-[15px] text-white hover:bg-white hover:text-etBlue">View
+                    All Gallery</a>
+            </div>
+        </div>
+
+        <!-- single gallery item -->
+        <div
+            class="relative xxs:col-span-2 z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
+            <img src="assets/img/gallery-img-7.jpg" alt="gallery image">
+            <a href="assets/img/gallery-img-7.jpg" data-fslightbox="gallery"
+               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
+                <i class="fa-plus fa-regular"></i>
+            </a>
+        </div>
+    </section>
+    <!-- GALLERY SECTION END -->
+
+
+    <!-- SPONSORS & CTA SECTION START -->
+    <section class="et-cta py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
+        <div
+            class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
+            <!-- sponsors -->
+            <div
+                class="flex items-center md:flex-col gap-x-[42px] gap-y-[25px] border border-[#D9D9D9] rounded-[20px] py-[30px] xxs:py-[20px] px-[34px] xxs:px-[16px] mb-[130px] lg:mb-[80px] md:mb-[60px]">
+                <!-- left -->
+                <div
+                    class="flex xxs:flex-wrap items-end gap-[40px] xxs:gap-x-[10px] gap-y-[10px] pr-[42px] md:pr-0 border-r md:border-r-0 border-[#D9D9D9] max-w-[230px] md:max-w-full shrink-0">
+                    <h5 class="font-medium text-[20px] text-etBlack anim-text">Trusted By Top sponsors</h5>
+                    <a href="#" class="inline-block mb-[8px] group">
+                        <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M0 13.4121L11.1668 2.24543H3.87542V0H15V11.1246H12.7546V3.8332L1.58789 15L0 13.4121Z"
+                                class="fill-etBlue group-hover:fill-etBlack transition duration-[400ms]"/>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- right -->
+                <div
+                    class="flex flex-wrap items-center justify-between md:justify-center gap-[30px] md:gap-[50px] w-full xxs:*:w-[40%]">
+                    <!-- single sponsor -->
+                    <a href="#" class="group">
+                        <svg width="73" height="60" viewBox="0 0 73 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="xxs:mx-auto">
+                            <path
+                                d="M40.2451 23.1693L37.7232 25.6913L42.032 30L23.5379 48.4937L5.04384 30L23.5379 11.5059L27.4781 15.4461L19.3866 23.5376L24.588 28.7389L27.1099 26.2169L24.4305 23.5376L30 17.968L32.6794 20.6474L35.2013 18.1255L32.5219 15.4461L42.9242 5.04383L45.6036 7.72323L48.1255 5.20131L42.9242 0L30 12.9242L23.5379 6.4621L0 30L23.5379 53.5376L47.0758 30L40.2451 23.1693Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M72.9242 30.0008L49.3867 6.46289L25.8488 30.0008L32.6794 36.8311L35.2013 34.3092L30.8926 30.0008L49.3867 11.5067L67.8804 30.0008L49.3867 48.4945L45.4465 44.5547L53.5379 36.4632L48.3366 31.2616L45.8147 33.7835L48.4944 36.4632L42.9246 42.0328L40.2452 39.353L37.7232 41.875L40.4026 44.5547L30.0004 54.957L27.3206 52.2776L24.7987 54.7995L30.0004 60.0008L42.9246 47.0766L49.3867 53.5383L72.9242 30.0008Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                        </svg>
+                    </a>
+
+                    <!-- single sponsor -->
+                    <a href="#" class="group">
+                        <svg width="59" height="60" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="xxs:mx-auto">
+                            <path
+                                d="M39.9089 31.8303H34.6058L53.1743 50.3985C48.7682 54.1842 43.2151 56.2491 37.3454 56.2491C30.8464 56.2491 24.7361 53.7181 20.1403 49.1229C15.3749 44.3568 13.006 38.09 13.0285 31.8303C13.0376 29.2954 13.4415 26.7628 14.236 24.3305C15.2011 21.3748 16.7409 18.5671 18.8654 16.0902L27.1056 24.3305H32.4088L18.8146 10.7363L17.4889 12.0624C13.96 15.5912 11.5755 19.8349 10.3214 24.3308C9.63792 26.7807 9.28737 29.3045 9.27956 31.8306C9.2571 39.0508 11.9921 46.2782 17.4886 51.775C22.7927 57.0784 29.8446 59.9993 37.345 59.9993C44.8455 59.9993 51.8974 57.0784 57.2009 51.7746L58.5265 50.4489L39.9089 31.8303Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M28.0808 3.75022C40.8664 3.75022 51.3802 13.6622 52.3404 26.206H15.6366C15.3143 27.4389 15.0976 28.6933 14.9875 29.9559H56.1616V28.0808C56.1616 12.5969 43.5647 0 28.0808 0C12.5969 0 0 12.5969 0 28.0808V29.9559H7.47571C7.55741 28.6992 7.71038 27.4461 7.94929 26.206H3.82118C4.78135 13.6622 15.2951 3.75022 28.0808 3.75022Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                        </svg>
+                    </a>
+
+                    <!-- single sponsor -->
+                    <a href="#" class="group">
+                        <svg width="72" height="60" viewBox="0 0 72 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="xxs:mx-auto">
+                            <path
+                                d="M35.9032 38.8125C24.2204 38.8125 14.7151 48.3175 14.7151 60.0006H18.7796C18.7796 50.5585 26.4615 42.877 35.9032 42.877C45.3449 42.877 53.0268 50.5585 53.0268 60.0006H57.0913C57.0913 48.3175 47.586 38.8125 35.9032 38.8125Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M35.9032 45.9531C28.1577 45.9531 21.8567 52.2542 21.8567 59.9997H25.9212C25.9212 54.4956 30.3992 50.0176 35.9032 50.0176C41.4073 50.0176 45.8852 54.4956 45.8852 59.9997H49.9498C49.9498 52.2546 43.6487 45.9531 35.9032 45.9531Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M35.9032 21.1881C47.586 21.1881 57.0913 11.6832 57.0913 0H53.0268C53.0268 9.4421 45.3449 17.1236 35.9032 17.1236C26.4615 17.1236 18.7796 9.4421 18.7796 0H14.7151C14.7155 11.6835 24.2204 21.1881 35.9032 21.1881Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M14.4248 28.7546C15.6383 27.9178 16.9025 27.1515 18.2118 26.4582C9.68746 20.7391 4.06451 11.0157 4.06451 0.00195312H0C0 11.7514 5.67329 22.2006 14.4248 28.7546Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M42.9528 31.0425C40.6834 31.5578 38.3264 31.8388 35.9032 31.8388C33.4801 31.8388 31.1231 31.5578 28.8537 31.0425C26.6649 31.5756 24.5711 32.3503 22.6003 33.3378C26.7175 34.9867 31.2042 35.9033 35.9032 35.9033C40.6023 35.9033 45.089 34.9867 49.2062 33.3378C52.1397 32.1629 54.8882 30.6208 57.3818 28.753C66.1329 22.199 71.8066 11.7498 71.8066 0H67.742C67.742 11.0138 62.1191 20.7376 53.5948 26.4563C50.4068 28.5951 46.811 30.1668 42.9528 31.0425Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M35.9032 14.0469C43.6487 14.0469 49.9498 7.74549 49.9498 0H45.8852C45.8852 5.50442 41.4073 9.98239 35.9032 9.98239C30.3992 9.98239 25.9212 5.50442 25.9212 0H21.8567C21.8567 7.74549 28.1577 14.0469 35.9032 14.0469Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M57.3822 31.2461C56.1687 32.0829 54.9045 32.8492 53.5952 33.5428C62.1195 39.2619 67.7425 48.9853 67.7425 59.9991H71.807C71.8066 48.2493 66.1333 37.8001 57.3822 31.2461Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M28.8537 28.9565C31.1232 28.4412 33.4801 28.1602 35.9033 28.1602C38.3265 28.1602 40.6834 28.4412 42.9529 28.9565C45.1417 28.4234 47.2355 27.6487 49.2062 26.6613C45.0891 25.0123 40.6024 24.0957 35.9033 24.0957C31.2042 24.0957 26.7175 25.0123 22.6004 26.6613C19.6668 27.8361 16.9184 29.3783 14.4248 31.246C5.67367 37.8 0 48.2492 0 59.999H4.06451C4.06451 48.9852 9.68746 39.2614 18.2118 33.5427C21.3998 31.4039 24.9959 29.8326 28.8537 28.9565Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                        </svg>
+                    </a>
+
+                    <!-- single sponsor -->
+                    <a href="#" class="group">
+                        <svg width="48" height="60" viewBox="0 0 48 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="xxs:mx-auto">
+                            <path
+                                d="M19.26 28.4096C17.0083 30.6617 13.3453 30.6599 11.0932 28.4093L3.91973 21.2383V9.46172L19.6787 25.22L22.4506 22.4503L0 0V40.1812L16.9788 57.16C18.8103 58.9915 21.2446 60 23.8346 60C26.4246 60 28.8589 58.9915 30.6897 57.16L47.4327 40.417V0.254956L19.26 28.4096ZM27.9189 54.3885C26.8281 55.4792 25.3775 56.0803 23.835 56.0803C22.2918 56.0803 20.8418 55.4792 19.7504 54.3885L3.91973 38.5579V26.7813L25.6392 48.5001L25.6399 48.5008C25.6406 48.5015 25.6413 48.5022 25.6423 48.5029C25.8583 48.7188 26.0849 48.9195 26.3168 49.1121C26.3796 49.1642 26.4444 49.2124 26.5083 49.2628C26.6891 49.4053 26.8735 49.5415 27.0625 49.6699C27.1249 49.7124 27.1877 49.7543 27.2508 49.795C27.4714 49.9376 27.6969 50.0709 27.9274 50.1943C27.954 50.2085 27.9799 50.2245 28.0068 50.2383C28.8242 50.6666 29.6993 50.972 30.6106 51.1507C30.6337 51.1553 30.6571 51.1592 30.6801 51.1638C30.8106 51.1883 30.9393 51.2177 31.0712 51.2372L27.9189 54.3885ZM43.5137 27.0175V38.794C43.5137 38.794 36.2909 45.9998 36.1409 46.1221C36.1232 46.1367 36.104 46.1487 36.0863 46.1629C34.1346 47.7171 31.4038 47.8253 29.3454 46.4856C29.3351 46.4789 29.3238 46.4735 29.3138 46.4664C29.1812 46.3789 29.0536 46.282 28.927 46.1824C28.9004 46.1615 28.8717 46.1434 28.8451 46.1218C28.7011 46.0044 28.5621 45.8778 28.4274 45.7445C28.422 45.7392 28.416 45.7345 28.4103 45.7292L25.259 42.5772C25.3576 42.5627 25.4537 42.54 25.5516 42.5226C25.6555 42.5042 25.7594 42.4861 25.8622 42.4645C26.0679 42.4208 26.2707 42.3687 26.4725 42.312C26.5505 42.29 26.6299 42.2723 26.7072 42.2481C26.9817 42.1634 27.2519 42.0673 27.5175 41.9584C27.5774 41.934 27.6348 41.9042 27.694 41.8783C27.9004 41.7886 28.104 41.6936 28.3036 41.5897C28.393 41.5432 28.4802 41.4925 28.5681 41.4432C28.7366 41.3485 28.9022 41.2496 29.0653 41.1446C29.1539 41.0875 29.2419 41.0298 29.3287 40.9698C29.4947 40.8553 29.656 40.7337 29.8152 40.6081C29.8879 40.551 29.962 40.4961 30.0333 40.4365C30.2592 40.2479 30.4794 40.0511 30.6901 39.8408L43.5137 27.0175ZM27.9189 37.0693C26.8281 38.16 25.3775 38.761 23.835 38.761C22.2918 38.761 20.8418 38.16 19.7504 37.0693L16.5941 33.9123C18.5852 33.6208 20.5021 32.7105 22.0311 31.1819L43.5137 9.71278V21.4744L27.9189 37.0693Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                        </svg>
+                    </a>
+
+                    <!-- single sponsor -->
+                    <a href="#" class="group">
+                        <svg width="73" height="60" viewBox="0 0 73 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="xxs:mx-auto">
+                            <path
+                                d="M40.2451 23.1693L37.7232 25.6913L42.032 30L23.5379 48.4937L5.04384 30L23.5379 11.5059L27.4781 15.4461L19.3866 23.5376L24.588 28.7389L27.1099 26.2169L24.4305 23.5376L30 17.968L32.6794 20.6474L35.2013 18.1255L32.5219 15.4461L42.9242 5.04383L45.6036 7.72323L48.1255 5.20131L42.9242 0L30 12.9242L23.5379 6.4621L0 30L23.5379 53.5376L47.0758 30L40.2451 23.1693Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M72.9243 30.0008L49.3868 6.46289L25.8489 30.0008L32.6795 36.8311L35.2014 34.3092L30.8927 30.0008L49.3868 11.5067L67.8805 30.0008L49.3868 48.4945L45.4466 44.5547L53.538 36.4632L48.3367 31.2616L45.8148 33.7835L48.4945 36.4632L42.9247 42.0328L40.2453 39.353L37.7234 41.875L40.4028 44.5547L30.0005 54.957L27.3207 52.2776L24.7988 54.7995L30.0005 60.0008L42.9247 47.0766L49.3868 53.5383L72.9243 30.0008Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                        </svg>
+                    </a>
+
+                    <!-- single sponsor -->
+                    <a href="#" class="group">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg"
+                             class="xxs:mx-auto">
+                            <path
+                                d="M27.2821 23.8021C28.7403 24.629 30.1313 25.6177 31.4222 26.7784C29.858 16.1461 20.6767 7.95703 9.6167 7.95703V11.2759C17.7696 11.2762 24.7178 16.5154 27.2821 23.8021Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M32.7228 36.21C31.2516 35.373 29.8613 34.3771 28.5789 33.2227C30.1431 43.8549 39.324 52.0434 50.3838 52.0434V48.7245C42.2356 48.7242 35.2902 43.4907 32.7228 36.21Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M33.2227 31.4224C43.8546 29.8578 52.0431 20.6772 52.0431 9.61719H48.7242C48.7242 17.7698 43.4853 24.718 36.199 27.2822C35.372 28.7408 34.3834 30.1315 33.2227 31.4224Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M26.7784 28.5781C16.1455 30.1424 7.95703 39.323 7.95703 50.383H11.2759C11.2759 42.2307 16.5151 35.2825 23.8018 32.7183C24.629 31.26 25.6177 29.8691 26.7784 28.5781Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M32.4612 23.6948C32.9079 25.3106 33.1919 26.9932 33.2844 28.7264C39.6956 20.1019 38.9935 7.82014 31.1737 0L28.8271 2.34658C34.5914 8.11142 35.7999 16.7289 32.4612 23.6948Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M27.5395 36.3053C27.0929 34.6895 26.8088 33.0069 26.7163 31.2734C20.3048 39.8976 21.0066 52.179 28.827 59.9995L31.1736 57.6529C25.4094 51.8881 24.2009 43.2708 27.5395 36.3053Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M36.2908 32.4646C34.6775 32.9094 32.9978 33.1925 31.2671 33.284C35.0461 36.104 39.6122 37.6293 44.4133 37.6293C50.3014 37.6293 55.8366 35.3362 60.0001 31.1728L57.6535 28.8262C54.117 32.3627 49.415 34.3101 44.4133 34.3101C41.5536 34.3104 38.7931 33.6713 36.2908 32.4646Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                            <path
+                                d="M23.6944 27.5398C25.3106 27.0931 26.9932 26.8088 28.7267 26.7166C20.1022 20.305 7.82045 21.0068 0 28.8272L2.34657 31.1738C8.1111 25.4093 16.7283 24.2011 23.6944 27.5398Z"
+                                class="fill-etGray2 transition duration-[400ms] group-hover:fill-etBlue"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- cta -->
+            <div class="grid grid-cols-2 sm:grid-cols-1 gap-[30px]">
+                <!-- venue map -->
+                <div
+                    class="bg-[#EEF4FF] p-[40px] lg:p-[30px] xs:px-[20px] xs:pb-0 pb-0 lg:pb-0 rounded-[20px] overflow-hidden relative z-[1] before:absolute before:inset-0 before:bg-[url('../assets/img/cta-bg-1.jpg')] before:bg-cover before:bg-no-repeat before:bg-center before:-z-[1] before:mix-blend-multiply">
+                    <div class="mb-[22px]">
+                        <h6 class="et-section-sub-title anim-text">Event Venue Map</h6>
+                        <h2 class="et-section-title anim-text">Get Direction To The Event Venue</h2>
+                    </div>
+
+                    <div class="relative">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7299.7865598218705!2d90.41595849268677!3d23.822393686713387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7305eea2015%3A0x8805755fb04e861c!2sKuril%20Flyover!5e0!3m2!1sen!2sbd!4v1713418656214!5m2!1sen!2sbd"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            class="w-full h-[303px] rounded-tl-[20px] rounded-tr-[20px]"></iframe>
+
+                        <div
+                            class="absolute inset-[40px] top-auto flex rounded-[20px] overflow-hidden bg-white xxs:flex-col">
+                            <img src="assets/img/cta-venue-img.jpg" alt="venue image"
+                                 class="shrink-0 w-[50%] xxs:w-full">
+                            <div class="flex items-center justify-center w-full">
+                                <a href="#"
+                                   class="bg-etBlue rounded-full text-white h-[45px] px-[15px] text-[17px] my-[10px] flex items-center justify-center hover:bg-white hover:text-etBlue">Get
+                                    Direction</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- join card -->
+                <div
+                    class="bg-etBlue p-[40px] lg:p-[30px] xs:px-[20px] xs:pb-0 pb-0 lg:pb-0 rounded-[20px] overflow-hidden relative z-[1] before:absolute before:inset-0 before:bg-[url('../assets/img/cta-bg-2.jpg')] before:bg-cover before:bg-no-repeat before:bg-center before:-z-[1] before:opacity-30 before:mix-blend-overlay">
+                    <div class="mb-[34px]">
+                        <h6 class="et-section-sub-title !text-white before:!bg-white anim-text">Build Your Career</h6>
+                        <h2 class="et-section-title !text-white mb-[18px] anim-text">Get Join Our Event</h2>
+                        <p class="text-[16px] text-white font-light mb-[25px]">There are many variations of passages of
+                            Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
+                            humour, or randomised words which don't look</p>
+                        <a href="#"
+                           class="bg-etBlue border border-white rounded-full h-[45px] px-[15px] text-[17px] text-white inline-flex items-center justify-center hover:bg-white hover:text-etBlue">Get
+                            Tickets Now</a>
+                    </div>
+
+                    <div class="rounded-tl-[20px] rounded-tr-[20px] overflow-hidden">
+                        <img src="assets/img/cta-img.jpg" alt="Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- vectors -->
+        <div class="xs:hidden">
+            <img src="assets/img/features-vector-1.png" alt="vector"
+                 class="pointer-events-none absolute top-[372px] left-[40px] -z-[1]">
+            <img src="assets/img/features-vector-3.png" alt="vector"
+                 class="pointer-events-none absolute bottom-[207px] right-[106px] -z-[1]">
+        </div>
+    </section>
+    <!-- SPONSORS & CTA SECTION END -->
+
+
+    <!-- BLOG/NEWS SECTION START -->
+    <section
+        class="et-blogs bg-[#EEF4FF] py-[130px] lg:py-[80px] md:py-[60px] relative before:absolute before:inset-0 before:bg-[url('../assets/img/news-bg.jpg')] before:bg-cover before:bg-center before:bg-no-repeat before:mix-blend-multiply">
+        <div
+            class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
+            <!-- heading -->
+            <div class="et-categories-heading text-center mb-[51px] xl:mb-[41px] lg:mb-[31px]">
+                <h6 class="et-section-sub-title anim-text">Latest News</h6>
+                <h2 class="et-section-title anim-text">Our Latest News</h2>
+            </div>
+
+            <div class="grid grid-cols-3 md:grid-cols-2 xs:grid-cols-1 justify-center gap-[30px] lg:gap-[20px]">
+                <!-- single blog -->
+                <div class="et-blog bg-white relative p-[30px] lg:p-[20px] rounded-[20px] group">
+                    <div class="et-blog__img relative z-[1] overflow-hidden rounded-[20px] mb-[21px]">
+                        <img src="assets/img/evenet-sched-2.jpg" alt="category-icon"
+                             class="w-full aspect-[62/45] rounded-[8px] object-cover group-hover:scale-110 transition duration-[400ms]">
+                    </div>
+
+                    <div class="et-blog__txt">
+                        <h4 class="et-blog__title text-[20px] sm:text-[18px] font-medium mb-[11px]"><a href="#"
+                                                                                                       class="hover:text-etBlue">Cupidatat
+                                Nonproident, Sunt in Culpa Qui Officia Deserunt</a></h4>
+
+                        <div class="et-blog__infos flex gap-x-[22px] mb-[25px]">
+                            <!-- single info -->
+                            <div class="et-blog-info flex items-center gap-x-[10px]">
+                                    <span class="icon"><svg width="13" height="14" viewBox="0 0 18 20" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.5435 5.19275C13.5435 7.69093 11.4989 9.7355 9.00075 9.7355C6.50262 9.7355 4.45804 7.69093 4.45804 5.19275C4.45804 2.69457 6.50258 0.65 9.00075 0.65C11.4989 0.65 13.5435 2.69458 13.5435 5.19275Z"
+                                                class="fill-etBlue"/>
+                                            <path
+                                                d="M17.2644 14.6708C17.1052 14.946 16.9241 15.2075 16.7169 15.4769L16.7168 15.4768L16.7089 15.4875C16.4203 15.8791 16.0845 16.2376 15.7295 16.5926C15.4326 16.8894 15.0932 17.1863 14.7568 17.4387C13.0794 18.6913 11.0622 19.3501 8.97815 19.3501C6.89837 19.3501 4.88507 18.694 3.20977 17.4463C2.84588 17.1507 2.51368 16.8795 2.22687 16.5927L2.2199 16.5857L2.21272 16.5789C1.85663 16.2438 1.54239 15.8879 1.24746 15.4876L1.24748 15.4876L1.24414 15.4831C1.06193 15.2402 0.873212 14.9758 0.719199 14.7172C0.836191 14.4561 0.984554 14.1849 1.14522 13.9529L1.14533 13.9529L1.15285 13.9416C2.06985 12.5559 3.53706 11.6391 5.16643 11.415L5.18601 11.4123L5.20539 11.4084C5.23087 11.4033 5.29495 11.4119 5.34548 11.4498L5.34547 11.4498L5.34948 11.4528C6.41651 12.2403 7.6863 12.6456 9.0008 12.6456C10.3153 12.6456 11.5851 12.2403 12.6521 11.4528L12.6521 11.4528L12.6561 11.4498C12.6715 11.4382 12.7403 11.4082 12.8492 11.417C14.4688 11.6438 15.9121 12.557 16.8524 13.9471L16.8524 13.9471L16.8564 13.9529C17.0165 14.1842 17.1557 14.4234 17.2644 14.6708Z"
+                                                class="fill-etBlue"/>
+                                        </svg>
+                                    </span>
+                                <span class="text-[#707882] font-medium text-[14px]">By Admin</span>
+                            </div>
+
+                            <!-- single info -->
+                            <div class="et-blog-info flex items-center gap-x-[10px]">
+                                    <span class="icon">
+                                        <svg width="14" height="14" viewBox="0 0 12 12" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00002 0.300781C2.69162 0.300781 1.61253e-05 2.72318 1.61253e-05 5.70078C1.61253e-05 6.74158 0.329216 7.74978 0.953616 8.62158C0.835416 9.92898 0.518616 10.8996 0.0586161 11.3594C-0.00218387 11.4202 -0.0173839 11.5132 0.0210161 11.59C0.0550161 11.6586 0.125016 11.7008 0.200016 11.7008C0.209216 11.7008 0.218416 11.7002 0.227816 11.6988C0.308816 11.6874 2.19042 11.4166 3.55142 10.631C4.32422 10.9428 5.14742 11.1008 6.00002 11.1008C9.30841 11.1008 12 8.67838 12 5.70078C12 2.72318 9.30841 0.300781 6.00002 0.300781ZM3.20002 6.50078C2.75882 6.50078 2.40002 6.14198 2.40002 5.70078C2.40002 5.25958 2.75882 4.90078 3.20002 4.90078C3.64122 4.90078 4.00002 5.25958 4.00002 5.70078C4.00002 6.14198 3.64122 6.50078 3.20002 6.50078ZM6.00002 6.50078C5.55882 6.50078 5.20002 6.14198 5.20002 5.70078C5.20002 5.25958 5.55882 4.90078 6.00002 4.90078C6.44122 4.90078 6.80001 5.25958 6.80001 5.70078C6.80001 6.14198 6.44122 6.50078 6.00002 6.50078ZM8.80001 6.50078C8.35882 6.50078 8.00002 6.14198 8.00002 5.70078C8.00002 5.25958 8.35882 4.90078 8.80001 4.90078C9.24121 4.90078 9.60001 5.25958 9.60001 5.70078C9.60001 6.14198 9.24121 6.50078 8.80001 6.50078Z"
+                                                class="fill-etBlue"/>
+                                        </svg>
+                                    </span>
+                                <span class="text-[#707882] font-medium text-[14px]">02 Comments</span>
+                            </div>
+                        </div>
+
+                        <!-- date -->
+                        <div
+                            class="bg-[#ECF0F5] rounded-[10px] font-medium text-[14px] text-etBlack inline-block uppercase overflow-hidden text-center">
+                            <span class="bg-etBlue text-white block py-[3px] rounded-[10px]">10</span>
+                            <span class="px-[11px] py-[2px] block">June</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- single blog -->
+                <div class="et-blog bg-white relative p-[30px] lg:p-[20px] rounded-[20px] group">
+                    <div class="et-blog__img relative z-[1] overflow-hidden rounded-[20px] mb-[21px]">
+                        <img src="assets/img/evenet-sched-1.jpg" alt="category-icon"
+                             class="w-full aspect-[62/45] rounded-[8px] object-cover group-hover:scale-110 transition duration-[400ms]">
+                    </div>
+
+                    <div class="et-blog__txt">
+                        <h4 class="et-blog__title text-[20px] sm:text-[18px] font-medium mb-[11px]"><a href="#"
+                                                                                                       class="hover:text-etBlue">Cupidatat
+                                Nonproident, Sunt in Culpa Qui Officia Deserunt</a></h4>
+
+                        <div class="et-blog__infos flex gap-x-[22px] mb-[25px]">
+                            <!-- single info -->
+                            <div class="et-blog-info flex items-center gap-x-[10px]">
+                                    <span class="icon"><svg width="13" height="14" viewBox="0 0 18 20" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.5435 5.19275C13.5435 7.69093 11.4989 9.7355 9.00075 9.7355C6.50262 9.7355 4.45804 7.69093 4.45804 5.19275C4.45804 2.69457 6.50258 0.65 9.00075 0.65C11.4989 0.65 13.5435 2.69458 13.5435 5.19275Z"
+                                                class="fill-etBlue"/>
+                                            <path
+                                                d="M17.2644 14.6708C17.1052 14.946 16.9241 15.2075 16.7169 15.4769L16.7168 15.4768L16.7089 15.4875C16.4203 15.8791 16.0845 16.2376 15.7295 16.5926C15.4326 16.8894 15.0932 17.1863 14.7568 17.4387C13.0794 18.6913 11.0622 19.3501 8.97815 19.3501C6.89837 19.3501 4.88507 18.694 3.20977 17.4463C2.84588 17.1507 2.51368 16.8795 2.22687 16.5927L2.2199 16.5857L2.21272 16.5789C1.85663 16.2438 1.54239 15.8879 1.24746 15.4876L1.24748 15.4876L1.24414 15.4831C1.06193 15.2402 0.873212 14.9758 0.719199 14.7172C0.836191 14.4561 0.984554 14.1849 1.14522 13.9529L1.14533 13.9529L1.15285 13.9416C2.06985 12.5559 3.53706 11.6391 5.16643 11.415L5.18601 11.4123L5.20539 11.4084C5.23087 11.4033 5.29495 11.4119 5.34548 11.4498L5.34547 11.4498L5.34948 11.4528C6.41651 12.2403 7.6863 12.6456 9.0008 12.6456C10.3153 12.6456 11.5851 12.2403 12.6521 11.4528L12.6521 11.4528L12.6561 11.4498C12.6715 11.4382 12.7403 11.4082 12.8492 11.417C14.4688 11.6438 15.9121 12.557 16.8524 13.9471L16.8524 13.9471L16.8564 13.9529C17.0165 14.1842 17.1557 14.4234 17.2644 14.6708Z"
+                                                class="fill-etBlue"/>
+                                        </svg>
+                                    </span>
+                                <span class="text-[#707882] font-medium text-[14px]">By Admin</span>
+                            </div>
+
+                            <!-- single info -->
+                            <div class="et-blog-info flex items-center gap-x-[10px]">
+                                    <span class="icon">
+                                        <svg width="14" height="14" viewBox="0 0 12 12" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00002 0.300781C2.69162 0.300781 1.61253e-05 2.72318 1.61253e-05 5.70078C1.61253e-05 6.74158 0.329216 7.74978 0.953616 8.62158C0.835416 9.92898 0.518616 10.8996 0.0586161 11.3594C-0.00218387 11.4202 -0.0173839 11.5132 0.0210161 11.59C0.0550161 11.6586 0.125016 11.7008 0.200016 11.7008C0.209216 11.7008 0.218416 11.7002 0.227816 11.6988C0.308816 11.6874 2.19042 11.4166 3.55142 10.631C4.32422 10.9428 5.14742 11.1008 6.00002 11.1008C9.30841 11.1008 12 8.67838 12 5.70078C12 2.72318 9.30841 0.300781 6.00002 0.300781ZM3.20002 6.50078C2.75882 6.50078 2.40002 6.14198 2.40002 5.70078C2.40002 5.25958 2.75882 4.90078 3.20002 4.90078C3.64122 4.90078 4.00002 5.25958 4.00002 5.70078C4.00002 6.14198 3.64122 6.50078 3.20002 6.50078ZM6.00002 6.50078C5.55882 6.50078 5.20002 6.14198 5.20002 5.70078C5.20002 5.25958 5.55882 4.90078 6.00002 4.90078C6.44122 4.90078 6.80001 5.25958 6.80001 5.70078C6.80001 6.14198 6.44122 6.50078 6.00002 6.50078ZM8.80001 6.50078C8.35882 6.50078 8.00002 6.14198 8.00002 5.70078C8.00002 5.25958 8.35882 4.90078 8.80001 4.90078C9.24121 4.90078 9.60001 5.25958 9.60001 5.70078C9.60001 6.14198 9.24121 6.50078 8.80001 6.50078Z"
+                                                class="fill-etBlue"/>
+                                        </svg>
+                                    </span>
+                                <span class="text-[#707882] font-medium text-[14px]">05 Comments</span>
+                            </div>
+                        </div>
+
+                        <!-- date -->
+                        <div
+                            class="bg-[#ECF0F5] rounded-[10px] font-medium text-[14px] text-etBlack inline-block uppercase overflow-hidden text-center">
+                            <span class="bg-etBlue text-white block py-[3px] rounded-[10px]">10</span>
+                            <span class="px-[11px] py-[2px] block">June</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- single blog -->
+                <div class="et-blog bg-white relative p-[30px] lg:p-[20px] rounded-[20px] group">
+                    <div class="et-blog__img relative z-[1] overflow-hidden rounded-[20px] mb-[21px]">
+                        <img src="assets/img/evenet-sched-3.jpg" alt="category-icon"
+                             class="w-full aspect-[62/45] rounded-[8px] object-cover group-hover:scale-110 transition duration-[400ms]">
+                    </div>
+
+                    <div class="et-blog__txt">
+                        <h4 class="et-blog__title text-[20px] sm:text-[18px] font-medium mb-[11px]"><a href="#"
+                                                                                                       class="hover:text-etBlue">Cupidatat
+                                Nonproident, Sunt in Culpa Qui Officia Deserunt</a></h4>
+
+                        <div class="et-blog__infos flex gap-x-[22px] mb-[25px]">
+                            <!-- single info -->
+                            <div class="et-blog-info flex items-center gap-x-[10px]">
+                                    <span class="icon"><svg width="13" height="14" viewBox="0 0 18 20" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M13.5435 5.19275C13.5435 7.69093 11.4989 9.7355 9.00075 9.7355C6.50262 9.7355 4.45804 7.69093 4.45804 5.19275C4.45804 2.69457 6.50258 0.65 9.00075 0.65C11.4989 0.65 13.5435 2.69458 13.5435 5.19275Z"
+                                                class="fill-etBlue"/>
+                                            <path
+                                                d="M17.2644 14.6708C17.1052 14.946 16.9241 15.2075 16.7169 15.4769L16.7168 15.4768L16.7089 15.4875C16.4203 15.8791 16.0845 16.2376 15.7295 16.5926C15.4326 16.8894 15.0932 17.1863 14.7568 17.4387C13.0794 18.6913 11.0622 19.3501 8.97815 19.3501C6.89837 19.3501 4.88507 18.694 3.20977 17.4463C2.84588 17.1507 2.51368 16.8795 2.22687 16.5927L2.2199 16.5857L2.21272 16.5789C1.85663 16.2438 1.54239 15.8879 1.24746 15.4876L1.24748 15.4876L1.24414 15.4831C1.06193 15.2402 0.873212 14.9758 0.719199 14.7172C0.836191 14.4561 0.984554 14.1849 1.14522 13.9529L1.14533 13.9529L1.15285 13.9416C2.06985 12.5559 3.53706 11.6391 5.16643 11.415L5.18601 11.4123L5.20539 11.4084C5.23087 11.4033 5.29495 11.4119 5.34548 11.4498L5.34547 11.4498L5.34948 11.4528C6.41651 12.2403 7.6863 12.6456 9.0008 12.6456C10.3153 12.6456 11.5851 12.2403 12.6521 11.4528L12.6521 11.4528L12.6561 11.4498C12.6715 11.4382 12.7403 11.4082 12.8492 11.417C14.4688 11.6438 15.9121 12.557 16.8524 13.9471L16.8524 13.9471L16.8564 13.9529C17.0165 14.1842 17.1557 14.4234 17.2644 14.6708Z"
+                                                class="fill-etBlue"/>
+                                        </svg>
+                                    </span>
+                                <span class="text-[#707882] font-medium text-[14px]">By Admin</span>
+                            </div>
+
+                            <!-- single info -->
+                            <div class="et-blog-info flex items-center gap-x-[10px]">
+                                    <span class="icon">
+                                        <svg width="14" height="14" viewBox="0 0 12 12" fill="none"
+                                             xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M6.00002 0.300781C2.69162 0.300781 1.61253e-05 2.72318 1.61253e-05 5.70078C1.61253e-05 6.74158 0.329216 7.74978 0.953616 8.62158C0.835416 9.92898 0.518616 10.8996 0.0586161 11.3594C-0.00218387 11.4202 -0.0173839 11.5132 0.0210161 11.59C0.0550161 11.6586 0.125016 11.7008 0.200016 11.7008C0.209216 11.7008 0.218416 11.7002 0.227816 11.6988C0.308816 11.6874 2.19042 11.4166 3.55142 10.631C4.32422 10.9428 5.14742 11.1008 6.00002 11.1008C9.30841 11.1008 12 8.67838 12 5.70078C12 2.72318 9.30841 0.300781 6.00002 0.300781ZM3.20002 6.50078C2.75882 6.50078 2.40002 6.14198 2.40002 5.70078C2.40002 5.25958 2.75882 4.90078 3.20002 4.90078C3.64122 4.90078 4.00002 5.25958 4.00002 5.70078C4.00002 6.14198 3.64122 6.50078 3.20002 6.50078ZM6.00002 6.50078C5.55882 6.50078 5.20002 6.14198 5.20002 5.70078C5.20002 5.25958 5.55882 4.90078 6.00002 4.90078C6.44122 4.90078 6.80001 5.25958 6.80001 5.70078C6.80001 6.14198 6.44122 6.50078 6.00002 6.50078ZM8.80001 6.50078C8.35882 6.50078 8.00002 6.14198 8.00002 5.70078C8.00002 5.25958 8.35882 4.90078 8.80001 4.90078C9.24121 4.90078 9.60001 5.25958 9.60001 5.70078C9.60001 6.14198 9.24121 6.50078 8.80001 6.50078Z"
+                                                class="fill-etBlue"/>
+                                        </svg>
+                                    </span>
+                                <span class="text-[#707882] font-medium text-[14px]">01 Comments</span>
+                            </div>
+                        </div>
+
+                        <!-- date -->
+                        <div
+                            class="bg-[#ECF0F5] rounded-[10px] font-medium text-[14px] text-etBlack inline-block uppercase overflow-hidden text-center">
+                            <span class="bg-etBlue text-white block py-[3px] rounded-[10px]">10</span>
+                            <span class="px-[11px] py-[2px] block">June</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- BLOG/NEWS SECTION END -->
+@endsection

@@ -6,13 +6,9 @@ use App\Filament\Resources\BannerResource\Pages;
 use App\Filament\Resources\BannerResource\RelationManagers;
 use App\Models\Banner;
 use Filament\Forms;
-use Filament\Forms\Components\FileUpload;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\ImageColumn;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -27,19 +23,31 @@ class BannerResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('title')->required(),
-                TextInput::make('heading')->required(),
-                FileUpload::make('background_image')
+                Forms\Components\TextInput::make('title')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('subtitle')
+                    ->maxLength(255),
+                Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->imageEditor()
-                    ->minSize(1920)
-                    ->maxSize(1071)
-                    ->directory('banners'),
-                TextInput::make('video_url')->url(),
-                TextInput::make('register_button_text'),
-                TextInput::make('register_button_link')->url(),
-                TextInput::make('view_more_button_text'),
-                TextInput::make('view_more_button_link')->url(),
+                    ->directory('banners')
+                    ->required(),
+                Forms\Components\TextInput::make('video_url')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('button_text')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('button_link')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('button_text_secondary')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('button_link_secondary')
+                    ->url()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('background_color')
+                    ->maxLength(255),
             ]);
     }
 
@@ -47,11 +55,31 @@ class BannerResource extends Resource
     {
         return $table
             ->columns([
-                ImageColumn::make('background_image')->circular(),
-                TextColumn::make('title')->searchable(),
-                TextColumn::make('heading')->limit(50),
-                TextColumn::make('video_url')->limit(30),
-                TextColumn::make('register_button_text'),
+                Tables\Columns\TextColumn::make('title')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('subtitle')
+                    ->searchable(),
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('video_url')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('button_text')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('button_link')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('button_text_secondary')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('button_link_secondary')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('background_color')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

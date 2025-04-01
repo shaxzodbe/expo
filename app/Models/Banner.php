@@ -11,13 +11,14 @@ class Banner extends Model
 
     protected $fillable = [
         'title',
-        'heading',
-        'background_image',
+        'subtitle',
+        'image',
         'video_url',
-        'register_button_text',
-        'register_button_link',
-        'view_more_button_text',
-        'view_more_button_link',
+        'button_text',
+        'button_link',
+        'button_text_secondary',
+        'button_link_secondary',
+        'background_color',
     ];
 
     protected $casts = [

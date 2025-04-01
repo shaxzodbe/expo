@@ -13,14 +13,15 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->string('title');  // "Business Expo 2024"
-            $table->string('heading'); // "Big Conference & Workshop"
-            $table->text('background_image'); // Path to background image
-            $table->text('video_url')->nullable(); // Optional video URL
-            $table->string('register_button_text')->nullable();
-            $table->string('register_button_link')->nullable();
-            $table->string('view_more_button_text')->nullable();
-            $table->string('view_more_button_link')->nullable();
+            $table->string('title');
+            $table->string('subtitle')->nullable();
+            $table->string('image');
+            $table->string('video_url')->nullable();
+            $table->string('button_text')->nullable();
+            $table->string('button_link')->nullable();
+            $table->string('button_text_secondary')->nullable();
+            $table->string('button_link_secondary')->nullable();
+            $table->string('background_color')->nullable();
             $table->timestamps();
         });
     }

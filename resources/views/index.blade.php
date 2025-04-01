@@ -7,6 +7,10 @@
 
 
     <!-- ABOUT SECTION START -->
+    @php
+        $about = \App\Models\About::first();
+    @endphp
+    @if($about)
     <section class="et-about pt-[60px] pb-[130px] xl:pb-[80px] md:pb-[60px] overflow-hidden relative">
         <div
             class="container mx-auto max-w-[calc(100%-39.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
@@ -15,24 +19,24 @@
                 <!-- left -->
                 <div
                     class="et-about-img relative z-[1] md:w-auto shrink-0 max-w-full mr-[70px] md:mr-0 ml-[28px] xxxl:ml-[47px] md:ml-0 xs:w-[70%] xxs:w-[90%] xxs:ml-[47px]">
-                    <img src="assets/img/about-img.jpg" alt="image" class="shrink-0 rounded-[10px]"/>
-                    <img src="assets/img/about-img-3.jpg" alt="image"
+                    <img src="{{ Storage::url($about->main_image) }}" alt="image" class="shrink-0 rounded-[10px]"/>
+                    <img src="{{ Storage::url($about->floating_image) }}" alt="image"
                          class="et-about-floating-img absolute top-[45px] -right-[70px] shrink-0 rounded-[20px] border-white border-[10px] xs:hidden"/>
 
                     <!-- vectors -->
                     <div class="et-about-vectors xs:hidden">
-                        <img src="assets/img/about-img-vector-1.png" alt="vector"
+                        <img src="{{ Storage::url($about->vector_1) }}" alt="vector"
                              class="et-about-vector-1 absolute -left-[47px] top-[20px] -z-[1]"/>
-                        <img src="assets/img/about-img-vector-2.png" alt="vector"
+                        <img src="{{ Storage::url($about->vector_2) }}" alt="vector"
                              class="et-about-vector-2 absolute -left-[27px] top-[41px] -z-[1]"/>
-                        <img src="assets/img/about-img-vector-3.png" alt="vector"
+                        <img src="{{ Storage::url($about->vector_3) }}" alt="vector"
                              class="et-about-vector absolute -right-[24px] bottom-[34px] -z-[1]"/>
                     </div>
 
                     <!-- video btn -->
                     <div
                         class="absolute bottom-[50px] -left-[47px] lg:-left-[27px] md:-left-[47px] w-[180px] lg:w-[160px] aspect-square bg-[url('../assets/img/about-video-btn-bg.jpg')] text-center text-[22px] text-white z-[1] flex items-center justify-center before:absolute before:bg-etBlue/80 before:-z-[1] before:inset-0 after:bg-etBlack after:w-[47px] after:h-[30px] after:absolute after:top-[100%] after:left-0 after:-z-[2] after:skew-y-[30deg] after:-translate-y-[17px]">
-                        <a href="https://www.youtube.com/watch?v=AQleI8oFqZo&amp;t=1s" data-fslightbox="about-video"
+                        <a href="{{ $about->video_link }}" data-fslightbox="about-video"
                            class="w-[107px] aspect-square rounded-full border border-white/20 flex justify-center items-center text-etBlue relative z-[1] text-[18px] before:absolute before:w-[56px] before:h-[56px] before:bg-white before:rounded-full before:-z-[1] hover:text-black"><i
                                 class="fa-solid fa-play"></i></a>
                     </div>
@@ -40,7 +44,7 @@
 
                 <!-- right -->
                 <div class="et-about__txt">
-                    <h6 class="et-section-sub-title anim-text">About Eventek</h6>
+                    <h6 class="et-section-sub-title anim-text">{{ $about->title }}</h6>
                     <h2 class="et-section-title mb-[24px] md:mb-[19px] anim-text">Know More About The Eventek </h2>
 
                     <p class="mb-[30px] text-[16px] font-light text-etGray md:mb-[30px] rev-slide-up">
@@ -124,6 +128,7 @@
                  class="pointer-events-none absolute top-[153px] right-0 -z-[1]">
         </div>
     </section>
+    @endif
     <!-- ABOUT SECTION END -->
 
 

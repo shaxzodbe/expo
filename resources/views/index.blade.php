@@ -44,13 +44,11 @@
 
                 <!-- right -->
                 <div class="et-about__txt">
-                    <h6 class="et-section-sub-title anim-text">{{ $about->title }}</h6>
-                    <h2 class="et-section-title mb-[24px] md:mb-[19px] anim-text">Know More About The Eventek </h2>
+                    <h6 class="et-section-sub-title anim-text">{{ $about->subtitle }}</h6>
+                    <h2 class="et-section-title mb-[24px] md:mb-[19px] anim-text">{{ $about->title }}</h2>
 
                     <p class="mb-[30px] text-[16px] font-light text-etGray md:mb-[30px] rev-slide-up">
-                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered
-                        alteration in some form, by injected humour, or randomised words which don't look even slightly
-                        believable.
+                        {{ $about->description }}
                     </p>
 
                     <div
@@ -89,9 +87,8 @@
 
                         <!-- txt -->
                         <div>
-                            <h6 class="font-medium text-[18px] text-black mb-[8px]">Whence at the Conference</h6>
-                            <p class="text-[16px] font-light text-etGray">Embarrassing hidden in the middle All the
-                                Lorem Ipsum generators on the Internet repeat predefined chunks</p>
+                            <h6 class="font-medium text-[18px] text-black mb-[8px]">{{ $about->conference_title }}</h6>
+                            <p class="text-[16px] font-light text-etGray">{{ $about->conference_description }}</p>
                         </div>
                     </div>
 

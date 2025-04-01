@@ -16,6 +16,8 @@ class About extends Model
         'main_image',
         'floating_image',
         'video_link',
+        'conference_title',
+        'conference_description',
         'vector_1',
         'vector_2',
         'vector_3',

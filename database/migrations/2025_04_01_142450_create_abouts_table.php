@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('main_image');
             $table->string('floating_image')->nullable();
             $table->string('video_link')->nullable();
+            $table->string('conference_title')->nullable();
+            $table->string('conference_description')->nullable();
             $table->string('vector_1')->nullable();
             $table->string('vector_2')->nullable();
             $table->string('vector_3')->nullable();

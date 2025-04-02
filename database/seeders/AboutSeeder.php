@@ -40,10 +40,7 @@ class AboutSeeder extends Seeder
                               believable.',
             'main_image' => 'about/about-img.jpg',
             'floating_image' => 'about/about-img-3.jpg',
-            'video_link' => 'https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s',
-            'vector_1' => 'about/about-img-vector-1.png',
-            'vector_2' => 'about/about-img-vector-2.png',
-            'vector_3' => 'about/about-img-vector-3.png',
+            'video_link' => 'https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s'
         ]);
     }
 }

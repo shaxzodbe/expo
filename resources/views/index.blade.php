@@ -130,15 +130,19 @@
 
 
     <!-- COUNTDOWN SECTION START -->
+    @php
+        $countdown = \App\Models\Countdown::first();
+    @endphp
     <div
         class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up relative z-[2]">
         <div
             class="bg-etBlue relative z-[1] p-[60px] sm:p-[40px] xs:px-[20px] rounded-[20px] overflow-hidden -mb-[114px] shadow-[0_4px_50px_rgba(18,96,254,0.2)] after:absolute after:inset-0 after:-z-[1] after:bg-[url(../assets/img/et-counter-bg.jpg)] after:bg-cover after:bg-no-repeat after:mix-blend-screen flex items-center md:flex-wrap gap-y-[20px]">
             <div class="pr-[54px] border-r md:border-r-0 border-white/20 md:text-center md:pr-0 md:w-full">
-                <h2 class="et-section-title !text-white mb-[28px] anim-text">Count Every Second Until Event.</h2>
-                <a href="contact.html"
-                   class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full border-white border hover:!bg-white hover:!text-etBlue">Buy
-                    Ticket</a>
+                <h2 class="et-section-title !text-white mb-[28px] anim-text">{{ $countdown->title ?? 'Count Every Second Until Event' }}</h2>
+                <a href="{{ $countdown->button_link ?? '#' }}"
+                   class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full border-white border hover:!bg-white hover:!text-etBlue">
+                    {{ $countdown->button_text ?? 'Buy Ticket' }}
+                </a>
             </div>
 
             <!-- counter -->
@@ -167,9 +171,9 @@
 
             <!-- vectors -->
             <div class="sm:hidden">
-                <img src="assets/img/counter-vector.png" alt="vector"
+                <img src="{{ asset('assets/img/counter-vector.png') }}" alt="vector"
                      class="pointer-events-none absolute top-[26px] left-[53%]">
-                <img src="assets/img/counter-vector.png" alt="vector"
+                <img src="{{ asset('assets/img/counter-vector.png') }}" alt="vector"
                      class="pointer-events-none absolute bottom-[33px] right-[90px]">
             </div>
         </div>
@@ -178,6 +182,10 @@
 
 
     <!-- FEATURES SECTION STAR -->
+    @php
+        $features = \App\Models\Feature::orderBy('created_at', 'desc')->take(4)->get();;
+    @endphp
+    @if($features)
     <div
         class="bg-[#EEF4FF] relative z-[1] after:absolute after:inset-0 after:bg-[url(../assets/img/features-bg.png)] after:bg-no-repeat after:bg-cover after:-z-[2] after:mix-blend-multiply after:pointer-events-none pb-[130px] xl:pb-[80px] md:pb-[60px] pt-[244px] xl:pt-[194px] md:pt-[174px]">
         <div
@@ -190,77 +198,23 @@
 
             <!-- cards -->
             <div class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 gap-[30px] lg:gap-[20px]">
+                @foreach($features as $feature)
                 <!-- single card -->
                 <div class="rounded-[20px] bg-white overflow-hidden group">
                     <!-- icon -->
                     <div
                         class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
-                        <img src="assets/img/feature-1.png" alt="Feature icon"
+                        <img src="{{ asset('storage/' . $feature->icon_path) }}" alt="Feature icon"
                              class="transition duration-[0.4s] group-hover:-scale-x-100">
                     </div>
 
                     <!-- text -->
                     <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
-                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Speaker
-                                Lineup</a></h5>
-                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
-                            nullam</p>
+                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">{{ $feature->title }}</a></h5>
+                        <p class="font-light text-etGray text-[16px]">{{ $feature->description }}</p>
                     </div>
                 </div>
-
-                <!-- single card -->
-                <div class="rounded-[20px] bg-white overflow-hidden group">
-                    <!-- icon -->
-                    <div
-                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
-                        <img src="assets/img/feature-2.png" alt="Feature icon"
-                             class="transition duration-[0.4s] group-hover:-scale-x-100">
-                    </div>
-
-                    <!-- text -->
-                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
-                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Networking
-                                People</a></h5>
-                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
-                            nullam</p>
-                    </div>
-                </div>
-
-                <!-- single card -->
-                <div class="rounded-[20px] bg-white overflow-hidden group">
-                    <!-- icon -->
-                    <div
-                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
-                        <img src="assets/img/feature-3.png" alt="Feature icon"
-                             class="transition duration-[0.4s] group-hover:-scale-x-100">
-                    </div>
-
-                    <!-- text -->
-                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
-                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Engaging
-                                Keynote</a></h5>
-                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
-                            nullam</p>
-                    </div>
-                </div>
-
-                <!-- single card -->
-                <div class="rounded-[20px] bg-white overflow-hidden group">
-                    <!-- icon -->
-                    <div
-                        class="w-[146px] aspect-square border-[20px] bg-etBlue border-[#EDF3FE] rounded-full rounded-tr-none ml-auto flex items-center justify-center">
-                        <img src="assets/img/feature-4.png" alt="Feature icon"
-                             class="transition duration-[0.4s] group-hover:-scale-x-100">
-                    </div>
-
-                    <!-- text -->
-                    <div class="px-[30px] xxl:px-[20px] py-[23px] xxl:py-[18px]">
-                        <h5 class="font-medium text-[22px] text-etBlack mb-[8px]"><a href="#" class="hover:text-etBlue">Exhibition
-                                Space</a></h5>
-                        <p class="font-light text-etGray text-[16px]">Mauris ultrices ligula eget volutpat aliquet
-                            nullam</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -274,6 +228,7 @@
                  class="pointer-events-none absolute bottom-[138px] right-[106px] -z-[1]">
         </div>
     </div>
+    @endif
     <!-- FEATURES SECTION end -->
 
 

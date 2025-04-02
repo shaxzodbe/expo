@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Feature;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -22,7 +23,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             BannerSeeder::class,
-            AboutSeeder::class
+            AboutSeeder::class,
+            CountdownSeeder::class,
+            FeatureSeeder::class
         ]);
     }
 }

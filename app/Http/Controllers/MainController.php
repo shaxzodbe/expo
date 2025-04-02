@@ -15,4 +15,12 @@ class MainController extends Controller
 
         return view('index', compact('banners', 'about'));
     }
+
+    public function show(Request $request)
+    {
+        $banners = Banner::all()->toArray();
+        $about = About::first()->toArray();
+
+        return view('event', compact('banners', 'about'));
+    }
 }

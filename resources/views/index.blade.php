@@ -1,3 +1,4 @@
+@php use App\Models\EventSchedule; @endphp
 @extends('layouts.app')
 
 @section('content')
@@ -222,9 +223,9 @@
         <div class="md:hidden">
             <img src="assets/img/features-vector-1.png" alt="vector"
                  class="pointer-events-none absolute bottom-[130px] left-[40px] -z-[1]">
-            <img src="assets/img/features-vector-2.png" alt="vector"
+            <img src="{{ asset('assets/img/features-vector-2.png') }}" alt="vector"
                  class="pointer-events-none absolute top-[222px] right-[180px] -z-[1]">
-            <img src="assets/img/features-vector-3.png" alt="vector"
+            <img src="{{ asset('assets/img/features-vector-3.png') }}" alt="vector"
                  class="pointer-events-none absolute bottom-[138px] right-[106px] -z-[1]">
         </div>
     </div>
@@ -233,6 +234,10 @@
 
 
     <!-- EVENT SCHEDULE SECTION START -->
+    @php
+        $events = \App\Models\EventSchedule::orderBy('date')->get();
+    @endphp
+    @if($events)
     <section class="et-schedules py-[130px] xl:py-[80px] md:py-[60px]">
         <div
             class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up">
@@ -267,15 +272,17 @@
 
             <!-- events -->
             <div class="et-schedules-tab-container">
-                <div id="tab1" class="et-tab active">
+                @foreach ($events->groupBy('date') as $date => $dayEvents)
+                <div id="tab{{ $loop->index + 1 }}" class="et-tab {{ $loop->first ? 'active' : '' }}">
                     <div class="all-scheduled-events space-y-[30px]">
+                        @foreach ($dayEvents as $event)
                         <!-- single schedule -->
                         <div
                             class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
                             <!-- img -->
                             <div
                                 class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-1.jpg" alt="scehduled-event-cover"></div>
+                                <img src="{{ asset('storage/' . $event->image) }}" alt="scehduled-event-cover 12"></div>
 
                             <!-- text -->
                             <div
@@ -325,7 +332,7 @@
                                                     </svg>
                                                 </span>
 
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
+                                            <span class="text-etGray font-normal text-[16px]">{{ $event->date }}</span>
                                         </div>
 
                                         <div class="time flex items-center gap-[10px] xxs:hidden">
@@ -341,14 +348,13 @@
                                                     </svg>
                                                 </span>
 
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
+                                            <span class="text-etGray font-normal text-[16px]">{{ $event->start_time }} AM – {{ $event->end_time }} PM</span>
                                         </div>
                                     </div>
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
+                                        <a href="{{ route('event.details', $event->id) }}" class="hover:text-etBlue">{{ $event->title }}</a></h3>
 
                                     <!-- location -->
                                     <div class="et-schedule-loaction flex items-center gap-[12px]">
@@ -360,22 +366,21 @@
                                                         fill="var(--et-blue)"/>
                                                 </svg>
                                             </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
+                                        <h6 class="text-[16px] text-etGray">{{ $event->location }}</h6>
                                     </div>
                                 </div>
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
+                                    <a href="{{ route('event.details', $event->id) }}"
+                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy Tickets</a>
                                     <div class="flex items-center">
                                         <div class="flex *:-ml-[20px]">
                                             <img src="assets/img/reviewer-1.png" alt="Person"
                                                  class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
+                                            <img src="{{ asset('assets/img/reviewer-2.png') }}" alt="Person"
                                                  class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
+                                            <img src="{{ asset('assets/img/reviewer-3.png') }}" alt="Person"
                                                  class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
                                             <div
                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
@@ -386,1004 +391,43 @@
                                 </div>
                             </div>
                         </div>
-
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-2.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-3.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
-
-                <div id="tab2" class="et-tab">
-                    <div class="all-scheduled-events space-y-[30px]">
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-2.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-3.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-1.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="tab3" class="et-tab">
-                    <div class="all-scheduled-events space-y-[30px]">
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-3.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-1.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- single schedule -->
-                        <div
-                            class="et-schedule flex md:flex-wrap gap-x-[30px] gap-y-[20px] justify-between rev-slide-up">
-                            <!-- img -->
-                            <div
-                                class="w-[270px] h-[226px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] shrink-0 rounded-[20px] overflow-hidden">
-                                <img src="assets/img/evenet-sched-2.jpg" alt="scehduled-event-cover"></div>
-
-                            <!-- text -->
-                            <div
-                                class="px-[37px] sm:px-[22px] py-[30px] shadow-[0_4px_60px_rgba(18,96,254,0.12)] w-full rounded-[20px] flex gap-y-[15px] xs:flex-col items-center xs:items-start">
-                                <div
-                                    class="et-schedule__heading pr-[40px] sm:pr-[25px] xs:pr-0 mr-[40px] sm:mr-[25px] xs:mr-0 border-r xs:border-r-0 border-[#d9d9d9]">
-                                    <!-- date & time -->
-                                    <div
-                                        class="et-schedule-date-time border border-[rgba(217,217,217,0.89)] py-[7px] px-[15px] rounded-full inline-flex xxs:w-full items-center justify-center gap-x-[24px] gap-y-[10px] mb-[10px] xxs:border-0 xxs:p-0 xxs:justify-start">
-                                        <div class="date flex items-center gap-[10px]">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <g clip-path="url(#clip0_2043_1443)">
-                                                            <path
-                                                                d="M14.125 1.75H13.375V0.5H12.125V1.75H3.875V0.5H2.625V1.75H1.875C0.841125 1.75 0 2.59113 0 3.625V14.625C0 15.6589 0.841125 16.5 1.875 16.5H14.125C15.1589 16.5 16 15.6589 16 14.625V3.625C16 2.59113 15.1589 1.75 14.125 1.75ZM14.75 14.625C14.75 14.9696 14.4696 15.25 14.125 15.25H1.875C1.53038 15.25 1.25 14.9696 1.25 14.625V6.375H14.75V14.625ZM14.75 5.125H1.25V3.625C1.25 3.28038 1.53038 3 1.875 3H2.625V4.25H3.875V3H12.125V4.25H13.375V3H14.125C14.4696 3 14.75 3.28038 14.75 3.625V5.125Z"
-                                                                fill="var(--et-blue)"/>
-                                                            <path d="M3.625 7.6875H2.375V8.9375H3.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 7.6875H4.875V8.9375H6.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 7.6875H7.375V8.9375H8.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 7.6875H9.875V8.9375H11.125V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 7.6875H12.375V8.9375H13.625V7.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 10.1875H2.375V11.4375H3.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 10.1875H4.875V11.4375H6.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 10.1875H7.375V11.4375H8.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 10.1875H9.875V11.4375H11.125V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M3.625 12.6875H2.375V13.9375H3.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M6.125 12.6875H4.875V13.9375H6.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M8.625 12.6875H7.375V13.9375H8.625V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M11.125 12.6875H9.875V13.9375H11.125V12.6875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                            <path d="M13.625 10.1875H12.375V11.4375H13.625V10.1875Z"
-                                                                  fill="var(--et-blue)"/>
-                                                        </g>
-                                                        <defs>
-                                                            <clipPath id="clip0_2043_1443">
-                                                                <rect width="16" height="16" fill="white"
-                                                                      transform="translate(0 0.5)"/>
-                                                            </clipPath>
-                                                        </defs>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">24, Jan - 2024</span>
-                                        </div>
-
-                                        <div class="time flex items-center gap-[10px] xxs:hidden">
-                                                <span class="icon">
-                                                    <svg width="16" height="17" viewBox="0 0 16 17" fill="none"
-                                                         xmlns="http://www.w3.org/2000/svg">
-                                                        <path
-                                                            d="M10.8505 9.91291L8.61967 8.23979V4.8316C8.61967 4.48891 8.34266 4.21191 7.99998 4.21191C7.65729 4.21191 7.38029 4.48891 7.38029 4.8316V8.54966C7.38029 8.74485 7.47201 8.92892 7.62817 9.04541L10.1069 10.9044C10.2138 10.985 10.3441 11.0285 10.478 11.0284C10.667 11.0284 10.8529 10.9435 10.9744 10.7799C11.1802 10.5066 11.1244 10.118 10.8505 9.91291Z"
-                                                            fill="var(--et-blue)"/>
-                                                        <path
-                                                            d="M8 0.5C3.58853 0.5 0 4.08853 0 8.5C0 12.9115 3.58853 16.5 8 16.5C12.4115 16.5 16 12.9115 16 8.5C16 4.08853 12.4115 0.5 8 0.5ZM8 15.2607C4.27266 15.2607 1.23934 12.2273 1.23934 8.5C1.23934 4.77266 4.27266 1.73934 8 1.73934C11.728 1.73934 14.7607 4.77266 14.7607 8.5C14.7607 12.2273 11.7273 15.2607 8 15.2607Z"
-                                                            fill="var(--et-blue)"/>
-                                                    </svg>
-                                                </span>
-
-                                            <span class="text-etGray font-normal text-[16px]">10:00 AM – 2.00 PM</span>
-                                        </div>
-                                    </div>
-
-                                    <!-- title -->
-                                    <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
-                                            Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
-
-                                    <!-- location -->
-                                    <div class="et-schedule-loaction flex items-center gap-[12px]">
-                                            <span class="icon">
-                                                <svg width="12" height="16" viewBox="0 0 12 16" fill="none"
-                                                     xmlns="http://www.w3.org/2000/svg">
-                                                    <path
-                                                        d="M5.99998 0C2.80482 0 0.205383 2.59944 0.205383 5.79456C0.205383 9.75981 5.39098 15.581 5.61176 15.8269C5.81913 16.0579 6.1812 16.0575 6.3882 15.8269C6.60898 15.581 11.7946 9.75981 11.7946 5.79456C11.7945 2.59944 9.1951 0 5.99998 0ZM5.99998 8.70997C4.39241 8.70997 3.0846 7.40212 3.0846 5.79456C3.0846 4.187 4.39245 2.87919 5.99998 2.87919C7.60751 2.87919 8.91532 4.18703 8.91532 5.79459C8.91532 7.40216 7.60751 8.70997 5.99998 8.70997Z"
-                                                        fill="var(--et-blue)"/>
-                                                </svg>
-                                            </span>
-                                        <h6 class="text-[16px] text-etGray">135 W, 46nd Street, New York</h6>
-                                    </div>
-                                </div>
-
-                                <div
-                                    class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
-                                       class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
-                                        Tickets</a>
-                                    <div class="flex items-center">
-                                        <div class="flex *:-ml-[20px]">
-                                            <img src="assets/img/reviewer-1.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-2.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <img src="assets/img/reviewer-3.png" alt="Person"
-                                                 class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0">
-                                            <div
-                                                class="w-[45px] h-[45px] rounded-full border-[3px] border-white first:ml-0 text-white bg-etBlue font-semibold flex items-center justify-center text-[16px]"></div>
-                                        </div>
-                                        <span class="font-semibold text-etBlue text-[16px] -ml-[29px]"><span
-                                                class="text-white">Spe</span>akers</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
 
         </div>
     </section>
+    @endif
     <!-- EVENT SCHEDULE SECTION END -->
 
 
     <!-- STATS SECTION START -->
+    @php
+        $stats = \App\Models\Stat::orderBy('created_at')->take(3)->get()
+    @endphp
+    @if($stats)
     <section
         class="text-center py-[130px] xl:py-[80px] md:py-[60px] bg-[url(../assets/img/stats-bg.jpg)] bg-no-repeat bg-cover relative z-[1] before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1]">
         <div
             class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up">
             <div
                 class="flex xs:flex-col gap-x-[77px] sm:gap-x-[57px] gap-y-[15px] justify-center border-b border-white/20 pb-[35px]">
+
                 <!-- single stat -->
+                @foreach($stats as $stat)
                 <div class="et-single-stat text-white">
-                    <h5 class="number font-semibold text-[55px]">50+</h5>
-                    <h6 class="font-medium text-[16px]">Workshop We Offer</h6>
+                    <h5 class="number font-semibold text-[55px]">{{ $stat->title }}</h5>
+                    <h6 class="font-medium text-[16px]">{{ $stat->value }}</h6>
                 </div>
-                <!-- single stat -->
-                <div class="et-single-stat text-white">
-                    <h5 class="number font-semibold text-[55px]">25+</h5>
-                    <h6 class="font-medium text-[16px]">Visionary Speaker</h6>
-                </div>
-                <!-- single stat -->
-                <div class="et-single-stat text-white">
-                    <h5 class="number font-semibold text-[55px]">70k+</h5>
-                    <h6 class="font-medium text-[16px]">Event Participants</h6>
-                </div>
+                @endforeach
             </div>
 
             <h2 class="et-section-title anim-text !text-white text-center max-w-[55%] md:max-w-[65%] sm:max-w-full mx-auto mt-[30px] mb-[40px]">
                 Never Miss Another Speaker Announcement</h2>
 
-            <a href="contact.html"
+            <a href="{{ url('/') }}"
                class="bg-white inline-flex items-center gap-[12px] rounded-full text-etBlue h-[54px] px-[15px] text-[17px] group hover:bg-etBlue hover:text-white">
                     <span class="icon">
                         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1404,20 +448,25 @@
 
         <!-- vectors -->
         <div>
-            <img src="assets/img/stats-vector-1.png" alt="vector"
+            <img src="{{ asset('assets/img/stats-vector-1.png') }}" alt="vector"
                  class="pointer-events-none absolute top-[150px] left-[105px] -z-[1] md:hidden">
-            <img src="assets/img/stats-vector-2.png" alt="vector"
+            <img src="{{ asset('assets/img/stats-vector-2.png') }}" alt="vector"
                  class="pointer-events-none absolute bottom-[63px] left-[63px] -z-[1] w-[80px] aspect-square opacity-10">
-            <img src="assets/img/stats-vector-2.png" alt="vector"
+            <img src="{{ asset('assets/img/stats-vector-2.png') }}" alt="vector"
                  class="pointer-events-none absolute top-[80px] right-[70px] -z-[1] opacity-10">
-            <img src="assets/img/stats-vector-3.png" alt="vector"
+            <img src="{{ asset('assets/img/stats-vector-3.png') }}" alt="vector"
                  class="pointer-events-none absolute bottom-[112px] right-[80px] -z-[1]">
         </div>
     </section>
+    @endif
     <!-- STATS SECTION END -->
 
 
     <!-- SPEAKERS SECTION START -->
+    @php
+        $speakers = \App\Models\Speaker::all();
+    @endphp
+    @if($speakers)
     <section class="et-speakers py-[130px] lg:py-[80px] md:py-[60px] relative overflow-hidden">
         <div class="container mx-auto max-w-[1200px] px-[12px] xl:max-w-full">
             <!-- heading -->
@@ -1445,121 +494,47 @@
             <!-- slider -->
             <div class="et-speakers-slider swiper">
                 <div class="swiper-wrapper">
+                    @foreach($speakers as $speaker)
                     <!-- single speaker -->
                     <div class="swiper-slide">
                         <div class="et-speaker bg-white rounded-[16px] relative z-[1] group">
                             <div
                                 class="et-speaker-img overflow-hidden before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
-                                <img src="assets/img/speaker-1.jpg" alt="speaker image"
+                                <img src="{{ asset('storage/' . $speaker->image) }}" alt="speaker image"
                                      class="mx-auto w-full transition duration-[400ms">
                             </div>
 
                             <!-- socials -->
                             <div
                                 class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
+                                <a href="{{ $speaker->facebook ?? '#' }}" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a href="{{ $speaker->instagram ?? '#' }}" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
+                                <a href="{{ $speaker->twitter ?? '#' }}" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
+                                <a href="{{ $speaker->pinterest ?? '#' }}" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
                             </div>
 
                             <div
                                 class="et-speaker-txt text-center absolute z-[1] bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
-                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
+                                        href="team-member-details.html" class="hover:text-black">{{ $speaker->name }}</a></h4>
+                                <h6 class="et-speaker-label font-normal text-[16px]">{{ $speaker->title }}</h6>
                             </div>
                         </div>
                     </div>
-
-                    <!-- single speaker -->
-                    <div class="swiper-slide">
-                        <div class="et-speaker bg-white rounded-[16px] relative group">
-                            <div
-                                class="et-speaker-img before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
-                                <img src="assets/img/speaker-2.jpg" alt="speaker image"
-                                     class="mx-auto w-full transition duration-[400ms]">
-                            </div>
-
-                            <!-- socials -->
-                            <div
-                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
-                            </div>
-
-                            <div
-                                class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
-                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
-                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- single speaker -->
-                    <div class="swiper-slide">
-                        <div class="et-speaker bg-white rounded-[16px] relative group">
-                            <div
-                                class="et-speaker-img before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
-                                <img src="assets/img/speaker-3.jpg" alt="speaker image"
-                                     class="mx-auto w-full transition duration-[400ms]">
-                            </div>
-
-                            <!-- socials -->
-                            <div
-                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
-                            </div>
-
-                            <div
-                                class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
-                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
-                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- single speaker -->
-                    <div class="swiper-slide">
-                        <div class="et-speaker bg-white rounded-[16px] relative group">
-                            <div
-                                class="et-speaker-img before:absolute before:inset-0 before:bg-gradient-to-t before:from-etBlue before:to-transparent before:opacity-0 before:transition before:duration-[400ms] before:z-[1] group-hover:before:opacity-100">
-                                <img src="assets/img/speaker-1.jpg" alt="speaker image"
-                                     class="mx-auto w-full transition duration-[400ms]">
-                            </div>
-
-                            <!-- socials -->
-                            <div
-                                class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-instagram"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
-                                <a href="#" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
-                            </div>
-
-                            <div
-                                class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
-                                <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
-                                <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
     </section>
+    @endif
     <!-- SPEAKERS SECTION END -->
 
 
     <!-- TESTIMONIAL SECTION START -->
+    @php
+        $testimonials = \App\Models\Testimonial::all();
+    @endphp
+    @if($testimonials)
     <section
         class="et-testimonial bg-[#EEF4FF] relative z-[1] overflow-hidden py-[130px] lg:py-[80px] md:py-[60px] before:absolute before:inset-0 before:-z-[1] before:bg-[url('../assets/img/testimonial-bg.png')] before:bg-no-repeat before:bg-cover before:mix-blend-multiply before:opacity-[0.03] px-[12px]">
         <!-- <div class="container mx-auto max-w-[1200px] px-[12px] xl:max-w-full"> -->
@@ -1567,6 +542,7 @@
         <div class="et-testimonial-slider swiper overflow-visible">
             <div class="swiper-wrapper">
                 <!-- single testimony  -->
+                @foreach($testimonials as $testimonial)
                 <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
                     <div
                         class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
@@ -1593,10 +569,7 @@
 
                         <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
 
-                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
-                            best decisions for our marketing strategy. They not only promised results but delivered them
-                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
-                            strategic insights and seamless execution.</p>
+                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">{{ $testimonial->message }}</p>
 
                         <!-- single testimonay bottom -->
                         <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
@@ -1605,201 +578,18 @@
                             </div>
 
                             <div class="txt">
-                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
-                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
-                                    Tech</h6>
+                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">{{ $testimonial->name }}</h5>
+                                <h6 class="text-etGray/70 font-normal text-[16px]">{{ $testimonial->position }}, {{ $testimonial->company }}</h6>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- single testimony  -->
-                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
-                    <div
-                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
-                        <div class="ml-auto w-max max-w-full">
-                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
-                                    class="fill-etBlue"/>
-                                <path
-                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
-                                    class="fill-etBlue"/>
-                            </svg>
-                        </div>
-
-                        <!-- rating stars -->
-                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                        </div>
-
-                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
-
-                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
-                            best decisions for our marketing strategy. They not only promised results but delivered them
-                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
-                            strategic insights and seamless execution.</p>
-
-                        <!-- single testimonay bottom -->
-                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
-                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
-                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
-                            </div>
-
-                            <div class="txt">
-                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
-                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
-                                    Tech</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- single testimony  -->
-                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
-                    <div
-                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
-                        <div class="ml-auto w-max max-w-full">
-                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
-                                    class="fill-etBlue"/>
-                                <path
-                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
-                                    class="fill-etBlue"/>
-                            </svg>
-                        </div>
-
-                        <!-- rating stars -->
-                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                        </div>
-
-                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
-
-                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
-                            best decisions for our marketing strategy. They not only promised results but delivered them
-                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
-                            strategic insights and seamless execution.</p>
-
-                        <!-- single testimonay bottom -->
-                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
-                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
-                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
-                            </div>
-
-                            <div class="txt">
-                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
-                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
-                                    Tech</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- single testimony  -->
-                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
-                    <div
-                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
-                        <div class="ml-auto w-max max-w-full">
-                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
-                                    class="fill-etBlue"/>
-                                <path
-                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
-                                    class="fill-etBlue"/>
-                            </svg>
-                        </div>
-
-                        <!-- rating stars -->
-                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                        </div>
-
-                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
-
-                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
-                            best decisions for our marketing strategy. They not only promised results but delivered them
-                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
-                            strategic insights and seamless execution.</p>
-
-                        <!-- single testimonay bottom -->
-                        <div class="flex items-center gap-x-[16px] xxs:flex-col xxs:items-start gap-y-[10px">
-                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
-                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
-                            </div>
-
-                            <div class="txt">
-                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
-                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
-                                    Tech</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- single testimony  -->
-                <div class="swiper-slide even:mt-[80px] xs:even:mt-0">
-                    <div
-                        class="et-testimony p-[40px] lg:p-[30px] md:p-[20px] border border-[#256E56]/10 bg-white rounded-[16px]">
-                        <div class="ml-auto w-max max-w-full">
-                            <svg width="46" height="32" viewBox="0 0 46 32" fill="none"
-                                 xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M8.89997 20.8595C7.91 23.3494 6.35003 25.8094 4.26501 28.1795C3.60501 28.9295 3.51501 30.0094 4.055 30.8494C4.47504 31.5094 5.16498 31.8694 5.91498 31.8694C6.125 31.8694 6.33503 31.8545 6.54504 31.7794C10.955 30.4894 21.26 25.9145 21.545 11.2444C21.65 5.58947 17.51 0.72949 12.125 0.17449C9.14001 -0.125525 6.17004 0.849416 3.965 2.82943C1.76004 4.82446 0.5 7.67449 0.5 10.6445C0.5 15.5944 4.01004 19.9295 8.89997 20.8595Z"
-                                    class="fill-etBlue"/>
-                                <path
-                                    d="M36.065 0.17449C33.095 -0.125525 30.125 0.849416 27.92 2.82943C25.715 4.82446 24.455 7.67449 24.455 10.6445C24.455 15.5944 27.965 19.9295 32.855 20.8595C31.865 23.3494 30.305 25.8094 28.22 28.1795C27.56 28.9295 27.47 30.0094 28.01 30.8494C28.43 31.5094 29.12 31.8694 29.87 31.8694C30.08 31.8694 30.29 31.8545 30.5 31.7794C34.91 30.4894 45.215 25.9144 45.5 11.2444V11.0345C45.5 5.46944 41.405 0.72949 36.065 0.17449Z"
-                                    class="fill-etBlue"/>
-                            </svg>
-                        </div>
-
-                        <!-- rating stars -->
-                        <div class="flex gap-[9px] text-[#FFC532] text-[18px] mb-[12px]">
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                            <span><i class="fa-solid fa-star"></i></span>
-                        </div>
-
-                        <h6 class="text-[18px] mb-[16px]">Eventek Special Event on Business</h6>
-
-                        <p class="text-etBlack/70 font-normal text-[16px] mb-[40px]">"Choosing eventek was one of the
-                            best decisions for our marketing strategy. They not only promised results but delivered them
-                            consistently. Trustworthy, reliable, and results-oriented. We're grateful for their
-                            strategic insights and seamless executx-ion.</p>
-
-                        <!-- single testimonay bottom -->
-                        <div class="flex items-center gap-[16px] xxs:flex-col xxs:items-start gap-y-[10px]">
-                            <div class="img rounded-full overflow-hidden p-[7px] w-max max-w-full shrink-0">
-                                <img src="assets/img/reviewer-1.png" alt="reviewer image" class="w-[48px] h-[48px]">
-                            </div>
-
-                            <div class="txt">
-                                <h5 class="text-etBlack font-normal text-[18px] mb-[3px]">David Anderson</h5>
-                                <h6 class="text-etGray/70 font-normal text-[16px]">Marketing Director, Kingosto
-                                    Tech</h6>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <!-- </div> -->
     </section>
+    @endif
     <!-- TESTIMONIAL SECTION END -->
 
 

@@ -25,7 +25,9 @@ class DatabaseSeeder extends Seeder
             BannerSeeder::class,
             AboutSeeder::class,
             CountdownSeeder::class,
-            FeatureSeeder::class
+            FeatureSeeder::class,
+            EventScheduleSeeder::class,
+            SpeakerSeeder::class
         ]);
     }
 }

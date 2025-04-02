@@ -25,11 +25,11 @@
 
                     <!-- vectors -->
                     <div class="et-about-vectors xs:hidden">
-                        <img src="{{ Storage::url($about->vector_1) }}" alt="vector"
+                        <img src="{{ asset('assets/img/about-img-vector-1.png') }}" alt="vector"
                              class="et-about-vector-1 absolute -left-[47px] top-[20px] -z-[1]"/>
-                        <img src="{{ Storage::url($about->vector_2) }}" alt="vector"
+                        <img src="{{ asset('assets/img/about-img-vector-2.png') }}" alt="vector"
                              class="et-about-vector-2 absolute -left-[27px] top-[41px] -z-[1]"/>
-                        <img src="{{ Storage::url($about->vector_3) }}" alt="vector"
+                        <img src="{{ asset('assets/img/about-img-vector-3.png') }}" alt="vector"
                              class="et-about-vector absolute -right-[24px] bottom-[34px] -z-[1]"/>
                     </div>
 

@@ -18,8 +18,5 @@ class About extends Model
         'video_link',
         'conference_title',
         'conference_description',
-        'vector_1',
-        'vector_2',
-        'vector_3',
     ];
 }

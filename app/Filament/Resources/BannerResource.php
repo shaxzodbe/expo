@@ -30,7 +30,9 @@ class BannerResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->image()
-                    ->directory('banners')
+                    ->disk('public')
+                    ->directory('banner')
+                    ->visibility('public')
                     ->required(),
                 Forms\Components\TextInput::make('video_url')
                     ->url()

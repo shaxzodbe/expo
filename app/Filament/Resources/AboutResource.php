@@ -19,8 +19,6 @@ class AboutResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
 
-    protected static ?string $navigationGroup = 'Content Management';
-
     public static function form(Form $form): Form
     {
         return $form
@@ -34,19 +32,32 @@ class AboutResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('main_image')
                     ->image()
-                    ->directory('abouts')
+                    ->disk('public')
+                    ->directory('about')
+                    ->visibility('public')
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
                     ->image()
-                    ->directory('abouts'),
+                    ->disk('public')
+                    ->directory('about')
+                    ->visibility('public'),
                 Forms\Components\TextInput::make('video_link')
                     ->maxLength(255),
-                Forms\Components\TextInput::make('vector_1')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('vector_2')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('vector_3')
-                    ->maxLength(255),
+                Forms\Components\FileUpload::make('vector_1')
+                    ->image()
+                    ->disk('public')
+                    ->directory('about')
+                    ->visibility('public'),
+                Forms\Components\FileUpload::make('vector_2')
+                    ->image()
+                    ->disk('public')
+                    ->directory('about')
+                    ->visibility('public'),
+                Forms\Components\FileUpload::make('vector_3')
+                    ->image()
+                    ->disk('public')
+                    ->directory('about')
+                    ->visibility('public'),
             ]);
     }
 
@@ -62,11 +73,11 @@ class AboutResource extends Resource
                 Tables\Columns\ImageColumn::make('floating_image'),
                 Tables\Columns\TextColumn::make('video_link')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('vector_1')
+                Tables\Columns\ImageColumn::make('vector_1')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('vector_2')
+                Tables\Columns\ImageColumn::make('vector_2')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('vector_3')
+                Tables\Columns\ImageColumn::make('vector_3')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

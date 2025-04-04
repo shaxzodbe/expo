@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CountdownResource\Pages;
-use App\Filament\Resources\CountdownResource\RelationManagers;
-use App\Models\Countdown;
+use App\Filament\Resources\TicketPricingResource\Pages;
+use App\Filament\Resources\TicketPricingResource\RelationManagers;
+use App\Models\TicketPricing;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CountdownResource extends Resource
+class TicketPricingResource extends Resource
 {
-    protected static ?string $model = Countdown::class;
+    protected static ?string $model = TicketPricing::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,15 +23,25 @@ class CountdownResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('button_text')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('button_link')
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('event_time')
+                Forms\Components\Textarea::make('description')
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('price')
+                    ->required()
+                    ->numeric()
+                    ->prefix('$'),
+                Forms\Components\FileUpload::make('image')
+                    ->image()
+                    ->disk('public')
+                    ->directory('pricing')
+                    ->visibility('public')
                     ->required(),
+                Forms\Components\TextInput::make('currency')
+                    ->required()
+                    ->maxLength(3)
+                    ->default('UZS'),
             ]);
     }
 
@@ -39,15 +49,14 @@ class CountdownResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('button_text')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('button_link')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('event_time')
-                    ->dateTime()
+                Tables\Columns\TextColumn::make('price')
+                    ->money()
                     ->sortable(),
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('currency')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +90,9 @@ class CountdownResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCountdowns::route('/'),
-            'create' => Pages\CreateCountdown::route('/create'),
-            'edit' => Pages\EditCountdown::route('/{record}/edit'),
+            'index' => Pages\ListTicketPricings::route('/'),
+            'create' => Pages\CreateTicketPricing::route('/create'),
+            'edit' => Pages\EditTicketPricing::route('/{record}/edit'),
         ];
     }
 }

@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CountdownResource\Pages;
-use App\Filament\Resources\CountdownResource\RelationManagers;
-use App\Models\Countdown;
+use App\Filament\Resources\GalleryResource\Pages;
+use App\Filament\Resources\GalleryResource\RelationManagers;
+use App\Models\Gallery;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CountdownResource extends Resource
+class GalleryResource extends Resource
 {
-    protected static ?string $model = Countdown::class;
+    protected static ?string $model = Gallery::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,15 +23,17 @@ class CountdownResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('button_text')
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('button_link')
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('event_time')
+                Forms\Components\FileUpload::make('image_path')
+                    ->image()
                     ->required(),
+                Forms\Components\TextInput::make('thumbnail_path')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('alt_text')
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('position')
+                    ->required()
+                    ->numeric()
+                    ->default(0),
             ]);
     }
 
@@ -39,14 +41,13 @@ class CountdownResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\ImageColumn::make('image_path'),
+                Tables\Columns\TextColumn::make('thumbnail_path')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('button_text')
+                Tables\Columns\TextColumn::make('alt_text')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('button_link')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('event_time')
-                    ->dateTime()
+                Tables\Columns\TextColumn::make('position')
+                    ->numeric()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
@@ -81,9 +82,9 @@ class CountdownResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCountdowns::route('/'),
-            'create' => Pages\CreateCountdown::route('/create'),
-            'edit' => Pages\EditCountdown::route('/{record}/edit'),
+            'index' => Pages\ListGalleries::route('/'),
+            'create' => Pages\CreateGallery::route('/create'),
+            'edit' => Pages\EditGallery::route('/{record}/edit'),
         ];
     }
 }

@@ -405,7 +405,7 @@
 
     <!-- STATS SECTION START -->
     @php
-        $stats = \App\Models\Stat::orderBy('created_at')->take(3)->get()
+        $stats = \App\Models\Stat::orderBy('created_at')->take(3)->get();
     @endphp
     @if($stats)
     <section
@@ -594,6 +594,10 @@
 
 
     <!-- PRICING SECTION START -->
+    @php
+        $ticketPricings = \App\Models\TicketPricing::take(3)->get();
+    @endphp
+    @if($ticketPricings)
     <section class="py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
         <div
             class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
@@ -606,26 +610,23 @@
             <!-- pricing -->
             <div class="grid grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-[30px] md:gap-[20px]">
                 <!-- single pricing -->
+                @foreach($ticketPricings as $pricing)
                 <div
-                    class="bg-[url('../assets/img/pricing-bg.jpg')] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
+                    class="bg-[url({{ asset('storage/' . $pricing->image) }})] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
                     <div
                         class="mx-[56px] md:mx-[36px] bg-white rounded-br-[20px] rounded-bl-[20px] text-center py-[6px]">
-                        <h5 class="font-normal text-[24px] md:text-[22px]">Basic Pass</h5>
+                        <h5 class="font-normal text-[24px] md:text-[22px]">{{ $pricing->name }}</h5>
                     </div>
 
                     <!-- price -->
-                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">$39.00</h4>
+                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">{{ $pricing->price }} / {{ $pricing->currency }}</h4>
 
                     <!-- features -->
                     <ul class="border-y border-dashed border-white/25 text-[16px] text-white font-normal py-[23px] space-y-[17px]">
-                        <li>Get everything a Conference pass</li>
-                        <li>Enjoy 2 days of inspiring talks</li>
-                        <li>Breakout sessions exploring</li>
-                        <li>Challenging topics, great food.</li>
-                        <li>With experts at a Workshops</li>
+                        {!! $pricing->description !!}
                     </ul>
 
-                    <a href="#"
+                    <a href="{{ url('/') }}"
                        class="my-[30px] inline-flex items-center gap-[12px] rounded-full border border-white/20 text-white h-[54px] px-[15px] text-[17px] group hover:bg-white hover:border-white hover:text-etBlue">
                             <span class="icon">
                                 <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
@@ -644,86 +645,7 @@
                         <span>Register Now</span>
                     </a>
                 </div>
-
-                <!-- single pricing -->
-                <div
-                    class="bg-[url('../assets/img/pricing-bg.jpg')] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
-                    <div
-                        class="mx-[56px] md:mx-[36px] bg-[#FFC532] rounded-br-[20px] rounded-bl-[20px] text-center py-[6px]">
-                        <h5 class="font-normal text-[24px] md:text-[22px]">Standard Pass</h5>
-                    </div>
-
-                    <!-- price -->
-                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">$49.00</h4>
-
-                    <!-- features -->
-                    <ul class="border-y border-dashed border-white/25 text-[16px] text-white font-normal py-[23px] space-y-[17px]">
-                        <li>Get everything a Conference pass</li>
-                        <li>Enjoy 2 days of inspiring talks</li>
-                        <li>Breakout sessions exploring</li>
-                        <li>Challenging topics, great food.</li>
-                        <li>With experts at a Workshops</li>
-                    </ul>
-
-                    <a href="#"
-                       class="bg-white my-[30px] inline-flex items-center gap-[12px] rounded-full text-etBlue h-[54px] px-[15px] text-[17px] group hover:bg-etBlue hover:text-white">
-                            <span class="icon">
-                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M13.1023 17.6473C13.0496 17.6473 12.9979 17.6511 12.9471 17.6578C12.4966 16.1361 11.1883 14.9794 9.5848 14.7503V13.6641H8.41524V14.7503C6.81011 14.9796 5.50077 16.1384 5.05156 17.6624C4.99031 17.6526 4.92753 17.6473 4.86351 17.6473C4.21347 17.6473 3.68652 18.1742 3.68652 18.8242C3.68652 19.4742 4.21347 20.0012 4.86351 20.0012C5.4544 20.0012 5.94345 19.5657 6.0276 18.9982C6.04471 18.9433 6.05393 18.8848 6.05393 18.8242C6.05393 17.3999 7.06993 16.2086 8.41524 15.9366V17.791C8.04998 17.9908 7.80223 18.3786 7.80223 18.8242C7.80223 19.4742 8.32918 20.0012 8.97918 20.0012C9.62922 20.0012 10.1562 19.4742 10.1562 18.8242C10.1562 18.3957 9.92708 18.0208 9.5848 17.815V15.9366C10.8716 16.1968 11.8565 17.2982 11.9398 18.6401C11.9303 18.7001 11.9253 18.7616 11.9253 18.8243C11.9253 19.4743 12.4523 20.0012 13.1023 20.0012C13.7523 20.0012 14.2793 19.4743 14.2793 18.8243C14.2793 18.1743 13.7523 17.6473 13.1023 17.6473Z"
-                                        class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"></path>
-                                    <path
-                                        d="M17.2036 6.2168H15.6151C15.2921 6.2168 15.0303 6.47861 15.0303 6.8016V8.5676C15.0303 9.11044 14.5882 9.55211 14.0447 9.55211H13.9074C13.9062 9.55211 13.9051 9.55227 13.904 9.55227V9.55211H4.09592V9.55227C4.09478 9.55227 4.09365 9.55211 4.09252 9.55211H4.07443C3.53096 9.55211 3.08883 9.11044 3.08883 8.5676V6.8016C3.08883 6.47861 2.82701 6.2168 2.50403 6.2168H0.796348C0.47336 6.2168 0.211548 6.47861 0.211548 6.8016C0.211548 7.12458 0.47336 7.3864 0.796348 7.3864H1.91927V8.5676C1.91927 9.75536 2.88608 10.7217 4.07443 10.7217H4.09252C4.09369 10.7217 4.09478 10.7216 4.09592 10.7216V10.9282C4.09592 11.7911 4.79553 12.4908 5.65851 12.4908H12.3414C13.2044 12.4908 13.904 11.7911 13.904 10.9282V10.7216C13.9051 10.7216 13.9063 10.7217 13.9074 10.7217H14.0447C15.2331 10.7217 16.1999 9.7554 16.1999 8.5676V7.3864H17.2036C17.5265 7.3864 17.7884 7.12458 17.7884 6.8016C17.7884 6.47865 17.5265 6.2168 17.2036 6.2168Z"
-                                        class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"></path>
-                                    <path
-                                        d="M13.1157 2.14739C13.1157 0.963338 12.1524 0 10.9683 0H7.03167C5.84758 0 4.88428 0.963299 4.88428 2.14739V8.38037H13.1157V2.14739Z"
-                                        class="fill-etBlue group-hover:fill-white transition duration-[0.4s]"></path>
-                                </svg>
-                            </span>
-                        <span>Register Now</span>
-                    </a>
-                </div>
-
-                <!-- single pricing -->
-                <div
-                    class="bg-[url('../assets/img/pricing-bg.jpg')] rounded-[30px] overflow-hidden bg-no-repeat bg-cover bg-center relative z-[1] shadow-[0_4px_60px_rgba(18,96,254,0.12)] rev-slide-up before:absolute before:inset-0 before:bg-etBlue/85 before:-z-[1] text-center">
-                    <div
-                        class="mx-[56px] md:mx-[36px] bg-white rounded-br-[20px] rounded-bl-[20px] text-center py-[6px]">
-                        <h5 class="font-normal text-[24px] md:text-[22px]">Premium Pass</h5>
-                    </div>
-
-                    <!-- price -->
-                    <h4 class="font-semibold text-[45px] md:text-[40px] text-white mt-[10px] mb-[12px]">$59.00</h4>
-
-                    <!-- features -->
-                    <ul class="border-y border-dashed border-white/25 text-[16px] text-white font-normal py-[23px] space-y-[17px]">
-                        <li>Get everything a Conference pass</li>
-                        <li>Enjoy 2 days of inspiring talks</li>
-                        <li>Breakout sessions exploring</li>
-                        <li>Challenging topics, great food.</li>
-                        <li>With experts at a Workshops</li>
-                    </ul>
-
-                    <a href="#"
-                       class="my-[30px] inline-flex items-center gap-[12px] rounded-full border border-white/20 text-white h-[54px] px-[15px] text-[17px] group hover:bg-white hover:border-white hover:text-etBlue">
-                            <span class="icon">
-                                <svg width="18" height="20" viewBox="0 0 18 20" fill="none"
-                                     xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M13.1023 17.6473C13.0496 17.6473 12.9979 17.6511 12.9471 17.6578C12.4966 16.1361 11.1883 14.9794 9.5848 14.7503V13.6641H8.41524V14.7503C6.81011 14.9796 5.50077 16.1384 5.05156 17.6624C4.99031 17.6526 4.92753 17.6473 4.86351 17.6473C4.21347 17.6473 3.68652 18.1742 3.68652 18.8242C3.68652 19.4742 4.21347 20.0012 4.86351 20.0012C5.4544 20.0012 5.94345 19.5657 6.0276 18.9982C6.04471 18.9433 6.05393 18.8848 6.05393 18.8242C6.05393 17.3999 7.06993 16.2086 8.41524 15.9366V17.791C8.04998 17.9908 7.80223 18.3786 7.80223 18.8242C7.80223 19.4742 8.32918 20.0012 8.97918 20.0012C9.62922 20.0012 10.1562 19.4742 10.1562 18.8242C10.1562 18.3957 9.92708 18.0208 9.5848 17.815V15.9366C10.8716 16.1968 11.8565 17.2982 11.9398 18.6401C11.9303 18.7001 11.9253 18.7616 11.9253 18.8243C11.9253 19.4743 12.4523 20.0012 13.1023 20.0012C13.7523 20.0012 14.2793 19.4743 14.2793 18.8243C14.2793 18.1743 13.7523 17.6473 13.1023 17.6473Z"
-                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
-                                    <path
-                                        d="M17.2036 6.2168H15.6151C15.2921 6.2168 15.0303 6.47861 15.0303 6.8016V8.5676C15.0303 9.11044 14.5882 9.55211 14.0447 9.55211H13.9074C13.9062 9.55211 13.9051 9.55227 13.904 9.55227V9.55211H4.09592V9.55227C4.09478 9.55227 4.09365 9.55211 4.09252 9.55211H4.07443C3.53096 9.55211 3.08883 9.11044 3.08883 8.5676V6.8016C3.08883 6.47861 2.82701 6.2168 2.50403 6.2168H0.796348C0.47336 6.2168 0.211548 6.47861 0.211548 6.8016C0.211548 7.12458 0.47336 7.3864 0.796348 7.3864H1.91927V8.5676C1.91927 9.75536 2.88608 10.7217 4.07443 10.7217H4.09252C4.09369 10.7217 4.09478 10.7216 4.09592 10.7216V10.9282C4.09592 11.7911 4.79553 12.4908 5.65851 12.4908H12.3414C13.2044 12.4908 13.904 11.7911 13.904 10.9282V10.7216C13.9051 10.7216 13.9063 10.7217 13.9074 10.7217H14.0447C15.2331 10.7217 16.1999 9.7554 16.1999 8.5676V7.3864H17.2036C17.5265 7.3864 17.7884 7.12458 17.7884 6.8016C17.7884 6.47865 17.5265 6.2168 17.2036 6.2168Z"
-                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
-                                    <path
-                                        d="M13.1157 2.14739C13.1157 0.963338 12.1524 0 10.9683 0H7.03167C5.84758 0 4.88428 0.963299 4.88428 2.14739V8.38037H13.1157V2.14739Z"
-                                        class="fill-white group-hover:fill-etBlue transition duration-[0.4s]"></path>
-                                </svg>
-                            </span>
-                        <span>Register Now</span>
-                    </a>
-                </div>
+                @endforeach
             </div>
         </div>
 
@@ -735,96 +657,29 @@
                  class="pointer-events-none absolute top-[163px] right-[106px] -z-[1]">
         </div>
     </section>
+    @endif
     <!-- PRICING SECTION END -->
 
 
     <!-- GALLERY SECTION START -->
+    @php
+        $images = \App\Models\Gallery::orderBy('position')->take(10)->get();
+    @endphp
+    @if($images)
     <section class="grid grid-cols-4 lg:grid-cols-3 sm:grid-cols-2">
         <!-- single gallery item -->
+        @foreach($images as $image)
         <div
             class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-1.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-1.jpg" data-fslightbox="gallery"
+            <img src="{{ asset('storage/' . $image->image_path) }}" alt="gallery image">
+            <a href="{{ asset('storage/' . $image->image_path) }}" data-fslightbox="gallery"
                class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
                 <i class="fa-plus fa-regular"></i>
             </a>
         </div>
-
-        <!-- single gallery item -->
-        <div
-            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-2.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-2.jpg" data-fslightbox="gallery"
-               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
-                <i class="fa-plus fa-regular"></i>
-            </a>
-        </div>
-
-        <!-- single gallery item -->
-        <div
-            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-3.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-3.jpg" data-fslightbox="gallery"
-               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
-                <i class="fa-plus fa-regular"></i>
-            </a>
-        </div>
-
-        <!-- single gallery item -->
-        <div
-            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-4.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-4.jpg" data-fslightbox="gallery"
-               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
-                <i class="fa-plus fa-regular"></i>
-            </a>
-        </div>
-
-        <!-- single gallery item -->
-        <div
-            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-5.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-5.jpg" data-fslightbox="gallery"
-               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
-                <i class="fa-plus fa-regular"></i>
-            </a>
-        </div>
-
-        <!-- single gallery item -->
-        <div
-            class="relative z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-6.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-6.jpg" data-fslightbox="gallery"
-               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
-                <i class="fa-plus fa-regular"></i>
-            </a>
-        </div>
-
-        <!-- single gallery item -->
-        <div
-            class="bg-etBlue xxs:col-span-2 relative z-[1] flex items-center justify-center text-center before:absolute before:inset-0 before:bg-[url('../assets/img/gallery-text-bg.jpg')] before:-z-[1] before:mix-blend-multiply p-[15px] xxs:pt-[25px] xxs:pb-[30px]">
-            <div>
-                <h6 class="et-section-sub-title !text-white before:!bg-white anim-text">Gallery</h6>
-                <span
-                    class="block text-white font-semibold text-[100px] leading-[0.86] mb-[13px] xxl:text-[80px] xl:text-[60px] md:!text-[50px] xs:!text-[45px] xs:!mb-[10px] anim-text">2020</span>
-                <h2 class="et-section-title !text-white !font-normal mb-[31px] xxl:!text-[40px] xl:!text-[35px] md:!text-[30px] md:mb-[21px] anim-text">
-                    Our Events Gallery</h2>
-                <a href="gallery.html"
-                   class="inline-flex items-center justify-center rounded-full border border-white text-[16px] h-[45px] px-[15px] text-white hover:bg-white hover:text-etBlue">View
-                    All Gallery</a>
-            </div>
-        </div>
-
-        <!-- single gallery item -->
-        <div
-            class="relative xxs:col-span-2 z-[1] group before:absolute before:inset-0 before:bg-etBlack/70 before:z-[0] before:opacity-0 before:transition before:duration-[400ms] hover:before:opacity-100">
-            <img src="assets/img/gallery-img-7.jpg" alt="gallery image">
-            <a href="assets/img/gallery-img-7.jpg" data-fslightbox="gallery"
-               class="inline-flex items-center justify-center w-[64px] aspect-square rounded-full bg-white text-[25px] absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] opacity-0 group-hover:opacity-100 hover:text-etBlue">
-                <i class="fa-plus fa-regular"></i>
-            </a>
-        </div>
+        @endforeach
     </section>
+    @endif
     <!-- GALLERY SECTION END -->
 
 

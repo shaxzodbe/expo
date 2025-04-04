@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\CountdownResource\Pages;
-use App\Filament\Resources\CountdownResource\RelationManagers;
-use App\Models\Countdown;
+use App\Filament\Resources\TestimonialResource\Pages;
+use App\Filament\Resources\TestimonialResource\RelationManagers;
+use App\Models\Testimonial;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,9 +13,9 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class CountdownResource extends Resource
+class TestimonialResource extends Resource
 {
-    protected static ?string $model = Countdown::class;
+    protected static ?string $model = Testimonial::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
@@ -23,15 +23,23 @@ class CountdownResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('title')
+                Forms\Components\TextInput::make('name')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('button_text')
+                Forms\Components\TextInput::make('position')
+                    ->required()
                     ->maxLength(255),
-                Forms\Components\TextInput::make('button_link')
+                Forms\Components\TextInput::make('company')
+                    ->required()
                     ->maxLength(255),
-                Forms\Components\DateTimePicker::make('event_time')
-                    ->required(),
+                Forms\Components\Textarea::make('message')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\TextInput::make('rating')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\FileUpload::make('image')
+                    ->image(),
             ]);
     }
 
@@ -39,15 +47,16 @@ class CountdownResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('title')
+                Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('button_text')
+                Tables\Columns\TextColumn::make('position')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('button_link')
+                Tables\Columns\TextColumn::make('company')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('event_time')
-                    ->dateTime()
+                Tables\Columns\TextColumn::make('rating')
+                    ->numeric()
                     ->sortable(),
+                Tables\Columns\ImageColumn::make('image'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +90,9 @@ class CountdownResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListCountdowns::route('/'),
-            'create' => Pages\CreateCountdown::route('/create'),
-            'edit' => Pages\EditCountdown::route('/{record}/edit'),
+            'index' => Pages\ListTestimonials::route('/'),
+            'create' => Pages\CreateTestimonial::route('/create'),
+            'edit' => Pages\EditTestimonial::route('/{record}/edit'),
         ];
     }
 }

@@ -27,7 +27,9 @@ class DatabaseSeeder extends Seeder
             CountdownSeeder::class,
             FeatureSeeder::class,
             EventScheduleSeeder::class,
-            SpeakerSeeder::class
+            SpeakerSeeder::class,
+            TicketPricingSeeder::class,
+            GallerySeeder::class,
         ]);
     }
 }

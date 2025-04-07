@@ -33,7 +33,7 @@ class EventScheduleSeeder extends Seeder
 
         EventSchedule::create([
             'title' => 'Siempre Son Flores',
-            'image' => 'event/event-sched-1.jpg',
+            'image' => 'event/evenet-sched-1.jpg',
             'date' => Carbon::parse('2024-01-24'),
             'start_time' => '10:00:00',
             'end_time' => '14:00:00',
@@ -43,7 +43,7 @@ class EventScheduleSeeder extends Seeder
 
         EventSchedule::create([
             'title' => 'Jazz Night Live',
-            'image' => 'event/event-sched-2.jpg',
+            'image' => 'event/evenet-sched-2.jpg',
             'date' => Carbon::parse('2024-01-25'),
             'start_time' => '18:00:00',
             'end_time' => '22:00:00',

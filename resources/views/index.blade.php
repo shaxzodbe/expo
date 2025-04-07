@@ -20,8 +20,8 @@
                 <!-- left -->
                 <div
                     class="et-about-img relative z-[1] md:w-auto shrink-0 max-w-full mr-[70px] md:mr-0 ml-[28px] xxxl:ml-[47px] md:ml-0 xs:w-[70%] xxs:w-[90%] xxs:ml-[47px]">
-                    <img src="{{ Storage::url($about->main_image) }}" alt="image" class="shrink-0 rounded-[10px]"/>
-                    <img src="{{ Storage::url($about->floating_image) }}" alt="image"
+                    <img src="{{ asset('storage/' . $about->main_image) }}" alt="image" class="shrink-0 rounded-[10px]"/>
+                    <img src="{{ asset('storage/' . $about->floating_image) }}" alt="image"
                          class="et-about-floating-img absolute top-[45px] -right-[70px] shrink-0 rounded-[20px] border-white border-[10px] xs:hidden"/>
 
                     <!-- vectors -->

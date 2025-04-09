@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="flex flex-wrap items-center gap-x-[30px] gap-y-[16px] rev-slide-up">
-                        <a href="contact.html"
+                        <a href="{{ url('/') }}"
                            class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-black hover:!text-white">Register
                             Now</a>
 
@@ -516,7 +516,7 @@
                             <div
                                 class="et-speaker-txt text-center absolute z-[1] bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">{{ $speaker->name }}</a></h4>
+                                        href="{{ url('/') }}" class="hover:text-black">{{ $speaker->name }}</a></h4>
                                 <h6 class="et-speaker-label font-normal text-[16px]">{{ $speaker->title }}</h6>
                             </div>
                         </div>

@@ -221,7 +221,7 @@
                                         <span>24, jan - 2024</span>
                                     </span>
 
-                                <h6 class="font-medium text-[20px] text-white"><a href="news-details.html" class="hover:text-etBlue">Web Developer Meetup</a></h6>
+                                <h6 class="font-medium text-[20px] text-white"><a href="{{ url('/') }}" class="hover:text-etBlue">Web Developer Meetup</a></h6>
                             </div>
                         </div>
 
@@ -257,7 +257,7 @@
                                         <span>24, jan - 2024</span>
                                     </span>
 
-                                <h6 class="font-medium text-[20px] text-white"><a href="news-details.html" class="hover:text-etBlue">Web Developer Meetup</a></h6>
+                                <h6 class="font-medium text-[20px] text-white"><a href="{{ url('/') }}" class="hover:text-etBlue">Web Developer Meetup</a></h6>
                             </div>
                         </div>
                     </div>

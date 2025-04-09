@@ -15,31 +15,31 @@
                         <a role="button">Home</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="index.html">Home</a></li>
-                            <li><a href="index-2.html">Home 02</a></li>
-                            <li><a href="index-3.html">Home 03</a></li>
-                            <li><a href="index-4.html">Home 04</a></li>
+                            <li><a href="{{ url('/') }}">Home</a></li>
+                            <li><a href="{{ url('/') }}">Home 02</a></li>
+                            <li><a href="{{ url('/') }}">Home 03</a></li>
+                            <li><a href="{{ url('/') }}">Home 04</a></li>
                         </ul>
                     </li>
-                    <li><a href="about.html">About us</a></li>
+                    <li><a href="{{ url('/') }}">About us</a></li>
                     <li class="has-sub-menu relative">
                         <a role="button">Events</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="events.html">All Events</a></li>
-                            <li><a href="event-details.html">Events Details</a></li>
+                            <li><a href="{{ url('/') }}">All Events</a></li>
+                            <li><a href="{{ url('/') }}">Events Details</a></li>
                         </ul>
                     </li>
                     <li class="has-sub-menu relative">
                         <a role="button">Pages</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="pricing.html">Pricing Plan</a></li>
-                            <li><a href="gallery.html">Gallery</a></li>
-                            <li><a href="faq.html">FAQ</a></li>
-                            <li><a href="sponsor.html">Sponsors</a></li>
-                            <li><a href="venue.html">Venue</a></li>
-                            <li><a href="404.html">Error 404</a></li>
+                            <li><a href="{{ url('/') }}">Pricing Plan</a></li>
+                            <li><a href="{{ url('/') }}">Gallery</a></li>
+                            <li><a href="{{ url('/') }}">FAQ</a></li>
+                            <li><a href="{{ url('/') }}">Sponsors</a></li>
+                            <li><a href="{{ url('/') }}">Venue</a></li>
+                            <li><a href="{{ url('/') }}">Error 404</a></li>
                         </ul>
                     </li>
                     <li class="has-sub-menu relative">

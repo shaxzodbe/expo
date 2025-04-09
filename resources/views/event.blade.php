@@ -94,7 +94,7 @@
                     </div>
 
                     <div class="flex flex-wrap items-center gap-x-[30px] gap-y-[16px] rev-slide-up">
-                        <a href="contact.html"
+                        <a href="{{ url('/') }}"
                            class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-black hover:!text-white">Register
                             Now</a>
 
@@ -471,7 +471,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -490,7 +490,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -589,7 +589,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -608,7 +608,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -712,7 +712,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -731,7 +731,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -830,7 +830,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -849,7 +849,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -949,7 +949,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -968,7 +968,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -1072,7 +1072,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -1091,7 +1091,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -1191,7 +1191,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -1210,7 +1210,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -1315,7 +1315,7 @@
 
                                     <!-- title -->
                                     <h3 class="et-schedule-title text-[24px] sm:text-[22px] font-regular text-etBlack leading-[1.25] mb-[16px] anim-text">
-                                        <a href="event-details.html" class="hover:text-etBlue">Siempre Son Flores"
+                                        <a href="{{ url('/') }}" class="hover:text-etBlue">Siempre Son Flores"
                                             Musica Cubana Salsa Jazz adipi scing elit. Nullam</a></h3>
 
                                     <!-- location -->
@@ -1334,7 +1334,7 @@
 
                                 <div
                                     class="flex shrink-0 xxl:flex-col flex-wrap items-center xxl:items-start gap-x-[30px] gap-y-[16px]">
-                                    <a href="event-details.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn border border-etBlue text-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] font-normal text-[17px] rounded-full hover:!bg-etBlue hover:!text-white">Buy
                                         Tickets</a>
                                     <div class="flex items-center">
@@ -1391,7 +1391,7 @@
             <h2 class="et-section-title anim-text !text-white text-center max-w-[55%] md:max-w-[65%] sm:max-w-full mx-auto mt-[30px] mb-[40px]">
                 Never Miss Another Speaker Announcement</h2>
 
-            <a href="contact.html"
+            <a href="{{ url('/') }}"
                class="bg-white inline-flex items-center gap-[12px] rounded-full text-etBlue h-[54px] px-[15px] text-[17px] group hover:bg-etBlue hover:text-white">
                     <span class="icon">
                         <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1474,7 +1474,7 @@
                             <div
                                 class="et-speaker-txt text-center absolute z-[1] bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                        href="{{ url('/') }}" class="hover:text-black">Esther Howard</a></h4>
                                 <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
                             </div>
                         </div>
@@ -1501,7 +1501,7 @@
                             <div
                                 class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                        href="{{ url('/') }}" class="hover:text-black">Esther Howard</a></h4>
                                 <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
                             </div>
                         </div>
@@ -1528,7 +1528,7 @@
                             <div
                                 class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                        href="{{ url('/') }}" class="hover:text-black">Esther Howard</a></h4>
                                 <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
                             </div>
                         </div>
@@ -1555,7 +1555,7 @@
                             <div
                                 class="et-speaker-txt text-center absolute bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
-                                        href="team-member-details.html" class="hover:text-black">Esther Howard</a></h4>
+                                        href="{{ url('/') }}" class="hover:text-black">Esther Howard</a></h4>
                                 <h6 class="et-speaker-label font-normal text-[16px]">Music speaker</h6>
                             </div>
                         </div>
@@ -2027,7 +2027,7 @@
                     class="block text-white font-semibold text-[100px] leading-[0.86] mb-[13px] xxl:text-[80px] xl:text-[60px] md:!text-[50px] xs:!text-[45px] xs:!mb-[10px] anim-text">2020</span>
                 <h2 class="et-section-title !text-white !font-normal mb-[31px] xxl:!text-[40px] xl:!text-[35px] md:!text-[30px] md:mb-[21px] anim-text">
                     Our Events Gallery</h2>
-                <a href="gallery.html"
+                <a href="{{ url('/') }}"
                    class="inline-flex items-center justify-center rounded-full border border-white text-[16px] h-[45px] px-[15px] text-white hover:bg-white hover:text-etBlue">View
                     All Gallery</a>
             </div>

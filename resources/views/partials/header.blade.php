@@ -3,7 +3,7 @@
         <!-- logo -->
         <div class="logo shrink-0">
             <a href="{{ url('/') }}">
-                <img src="assets/img/logo_new.png" alt="logo">
+                <img style="width: 15vw;" src="assets/img/logo_new.png" alt="logo">
             </a>
         </div>
 

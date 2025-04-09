@@ -2,8 +2,8 @@
     <div class="flex justify-between items-center">
         <!-- logo -->
         <div class="logo shrink-0">
-            <a href="index.html">
-                <img src="assets/img/logo-white.png" alt="logo">
+            <a href="{{ url('/') }}">
+                <img src="assets/img/logo_new.png" alt="logo">
             </a>
         </div>
 

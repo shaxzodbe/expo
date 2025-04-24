@@ -17,7 +17,7 @@
                                 </h1>
 
                                 <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
-                                    <a href="contact.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">Register
                                         Now</a>
 
@@ -69,7 +69,7 @@
                                 </h1>
 
                                 <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
-                                    <a href="contact.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">Register
                                         Now</a>
 
@@ -121,7 +121,7 @@
                                 </h1>
 
                                 <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
-                                    <a href="contact.html"
+                                    <a href="{{ url('/') }}"
                                        class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">Register
                                         Now</a>
 

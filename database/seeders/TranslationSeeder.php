@@ -118,6 +118,103 @@ class TranslationSeeder extends Seeder
                 'ru' => 'Контакты',
                 'uz' => 'Aloqa',
             ],
+
+            'footer.event_venue' => [
+                'en' => 'Event Venue',
+                'ru' => 'Место проведения',
+                'uz' => 'Tadbir joyi',
+            ],
+            'footer.send_email' => [
+                'en' => 'Send Email',
+                'ru' => 'Отправить письмо',
+                'uz' => 'Elektron pochta yuboring',
+            ],
+            'footer.call_emergency' => [
+                'en' => 'Call Emergency',
+                'ru' => 'Экстренный вызов',
+                'uz' => 'Favqulodda qo‘ng‘iroq',
+            ],
+            'footer.find_events' => [
+                'en' => 'Find Events',
+                'ru' => 'Найти мероприятия',
+                'uz' => 'Tadbirlarni topish',
+            ],
+            'footer.outdoor_concerts' => [
+                'en' => 'Outdoor Concerts',
+                'ru' => 'Открытые концерты',
+                'uz' => 'Tashqi konsertlar',
+            ],
+            'footer.indoor_concerts' => [
+                'en' => 'Indoor Concerts',
+                'ru' => 'Закрытые концерты',
+                'uz' => 'Ichki konsertlar',
+            ],
+            'footer.festivals' => [
+                'en' => 'Festivals',
+                'ru' => 'Фестивали',
+                'uz' => 'Festivallar',
+            ],
+            'footer.concerts' => [
+                'en' => 'Concerts',
+                'ru' => 'Концерты',
+                'uz' => 'Konsertlar',
+            ],
+            'footer.event_calendar' => [
+                'en' => 'Event Calendar',
+                'ru' => 'Календарь событий',
+                'uz' => 'Tadbirlar taqvimi',
+            ],
+            'footer.useful_links' => [
+                'en' => 'Useful <span class="text-etBlue">Links</span>',
+                'ru' => 'Полезные <span class="text-etBlue">Cсылки</span>',
+                'uz' => 'Foydali <span class="text-etBlue">Havolalar</span>',
+            ],
+            'footer.login' => [
+                'en' => 'Log In',
+                'ru' => 'Войти',
+                'uz' => 'Kirish',
+            ],
+            'footer.register' => [
+                'en' => 'Register',
+                'ru' => 'Регистрация',
+                'uz' => 'Ro‘yxatdan o‘tish',
+            ],
+            'footer.about_eventek' => [
+                'en' => 'About Eventek',
+                'ru' => 'О Eventek',
+                'uz' => 'Eventek haqida',
+            ],
+            'footer.how_it_works' => [
+                'en' => 'How It Works',
+                'ru' => 'Как это работает',
+                'uz' => 'Bu qanday ishlaydi',
+            ],
+            'footer.upcoming_events' => [
+                'en' => 'Upcoming <span class="text-etBlue">Events</span>',
+                'ru' => 'Предстоящие <span class="text-etBlue">Мероприятия</span>',
+                'uz' => 'Bo‘lajak <span class="text-etBlue">Tadbirlar</span>',
+            ],
+            'footer.meetup_title' => [
+                'en' => 'Web Developer Meetup',
+                'ru' => 'Встреча веб-разработчиков',
+                'uz' => 'Web dasturchilar uchrashuvi',
+            ],
+            'footer.about' => [
+                'en' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet magna elemen facilisis',
+            ],
+            'footer.location' => [
+                'en' => '4648 Rocky Road Philadelphia PA, 1920',
+            ],
+            'footer.find_events_html' => [
+                'en' => 'Find <span class="text-etBlue">Events</span>',
+                'ru' => 'Поиск <span class="text-etBlue">Событий</span>',
+                'uz' => 'Yangiliklarni <span class="text-etBlue">Toping</span>',
+            ],
+            'footer.reserved' => [
+                'en' => '2024, Eventek All Rights Reserved.',
+                'uz' => '2024, Eventek Barcha Huquqlar Himoyalangan.',
+                'ru' => '2024, Eventek Все права защищены.',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

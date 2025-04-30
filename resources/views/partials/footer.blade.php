@@ -17,8 +17,8 @@
                     </div>
                     <!-- txt -->
                     <div>
-                        <span class="block font-medium text-[14px]">Event Venue</span>
-                        <h5 class="font-medium text-[20px]">4648 Rocky Road Philadelphia PA, 1920</h5>
+                        <span class="block font-medium text-[14px]">{{ translation('footer.event_venue') }}</span>
+                        <h5 class="font-medium text-[20px]">{{ translation('footer.location') }}</h5>
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@
                     </div>
                     <!-- txt -->
                     <div>
-                        <span class="block font-medium text-[14px]">Send Email</span>
+                        <span class="block font-medium text-[14px]">{{ translation('footer.send_email') }}</span>
                         <h5 class="font-medium text-[20px]"><a href="mailto:info@eventek.com">info@eventek.com</a></h5>
                     </div>
                 </div>
@@ -57,7 +57,7 @@
 
                     <!-- txt -->
                     <div>
-                        <span class="block font-medium text-[14px]">Call Emergency</span>
+                        <span class="block font-medium text-[14px]">{!! translation('footer.call_emergency') !!}</span>
                         <h5 class="font-medium text-[20px]"><a href="tel:88012365499">+88 0123 654 99</a></h5>
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                 <!-- footer about -->
                 <div class="et-footer-about max-w-[295px] lg:max-w-none md:max-w-[300px] xs:max-w-full">
                     <a href="#" class="mb-[25px] inline-block"><img src="assets/img/logo_new.png" alt="logo"></a>
-                    <p class="font-light text-[#f2f2f2] text-[16px] mb-[25px]">Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet magna elemen facilisis</p>
+                    <p class="font-light text-[#f2f2f2] text-[16px] mb-[25px]">{{ translation('footer.about') }}</p>
 
                     <!-- social media -->
                     <div class="et-socials flex gap-[10px] text-[14px] *:border *:border-[#9EAACB] *:text-[#9EAACB] *:w-[40px] *:aspect-square *:shrink-0 *:inline-flex *:items-center *:justify-center *:rounded-full ">
@@ -80,7 +80,7 @@
 
                 <!-- widget -->
                 <div class="et-footer-widget shrink-0 xs:grow">
-                    <h5 class="text-[20px] font-medium mb-[16px]">Find <span class="text-etBlue">Events</span></h5>
+                    <h5 class="text-[20px] font-medium mb-[16px]">{!! translation('footer.find_events_html') !!}</h5>
 
                     <ul class="space-y-[17px] text-[16px] font-light text-[#f2f2f2]">
                         <li>
@@ -90,7 +90,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Outdoor Concerts</span>
+                                <span class="txt">{{ translation('footer.outdoor_concerts') }}</span>
                             </a>
                         </li>
                         <li>
@@ -100,7 +100,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Indoor Concerts</span>
+                                <span class="txt">{{ translation('footer.indoor_concerts') }}</span>
                             </a>
                         </li>
                         <li>
@@ -110,7 +110,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Festivals</span>
+                                <span class="txt">{{ translation('footer.festivals') }}</span>
                             </a>
                         </li>
                         <li>
@@ -120,7 +120,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Concerts</span>
+                                <span class="txt">{{ translation('footer.concerts') }}</span>
                             </a>
                         </li>
                         <li>
@@ -130,7 +130,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Event Calendar</span>
+                                <span class="txt">{{ translation('footer.event_calendar') }}</span>
                             </a>
                         </li>
                     </ul>
@@ -138,7 +138,7 @@
 
                 <!-- widget -->
                 <div class="et-footer-widget shrink-0 xs:grow">
-                    <h5 class="text-[20px] font-semibold mb-[16px]">Useful <span class="text-etBlue">Links</span></h5>
+                    <h5 class="text-[20px] font-semibold mb-[16px]">{!! translation('footer.useful_links') !!}</h5>
 
                     <ul class="space-y-[17px] text-[16px] font-light text-[#f2f2f2]">
                         <li>
@@ -148,7 +148,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Log In</span>
+                                <span class="txt">{{ translation('footer.login') }}</span>
                             </a>
                         </li>
                         <li>
@@ -158,7 +158,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">Register</span>
+                                <span class="txt">{{ translation('footer.register') }}</span>
                             </a>
                         </li>
                         <li>
@@ -168,7 +168,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">About Eventek</span>
+                                <span class="txt">{{ translation('footer.about_eventek') }}</span>
                             </a>
                         </li>
                         <li>
@@ -178,7 +178,7 @@
                                             <path d="M0 15.875V2.28125C0 1.51953 0.615234 0.875 1.40625 0.875H9.84375C10.6055 0.875 11.25 1.51953 11.25 2.28125V15.875L5.625 12.5938L0 15.875Z" class="fill-transparent stroke-white group-hover:stroke-etBlue group-hover:fill-etBlue transition" />
                                         </svg>
                                     </span>
-                                <span class="txt">How It Works</span>
+                                <span class="txt">{{ translation('footer.how_it_works') }}</span>
                             </a>
                         </li>
                     </ul>
@@ -186,7 +186,7 @@
 
                 <!-- widget -->
                 <div class="et-footer-widget shrink-0 max-w-[318px] xs:max-w-full xs:grow">
-                    <h5 class="text-[20px] font-semibold mb-[16px]">Upcoming <span class="text-etBlue">Events</span></h5>
+                    <h5 class="text-[20px] font-semibold mb-[16px]">{!! translation('footer.upcoming_events') !!}</h5>
 
                     <div class="space-y-[30px]">
                         <!-- single upcoming events -->
@@ -267,7 +267,7 @@
 
         <!-- footer bottom -->
         <div class="et-footer-bottom border-t border-white/20 py-[34px]">
-            <p class="font-light text-[#f2f2f2] text-center text-[16px]">&copy; 2024, Eventek All Rights Reserved.</p>
+            <p class="font-light text-[#f2f2f2] text-center text-[16px]">&copy; {{ translation('footer.reserved') }}</p>
         </div>
     </div>
 </footer>

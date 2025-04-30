@@ -12,57 +12,57 @@
                 <!-- nav -->
                 <ul class="et-header-nav flex md:flex-col gap-x-[43px] xl:gap-x-[33px] font-kanit text-[17px] font-normal">
                     <li class="has-sub-menu relative">
-                        <a role="button">Home</a>
+                        <a role="button">{{ translation('header.home') }}</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('/') }}">Home 02</a></li>
-                            <li><a href="{{ url('/') }}">Home 03</a></li>
-                            <li><a href="{{ url('/') }}">Home 04</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.home') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.home.2') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.home.3') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.home.4') }}</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url('/') }}">About us</a></li>
+                    <li><a href="{{ url('/') }}">{{ translation('header.about_us') }}</a></li>
                     <li class="has-sub-menu relative">
                         <a role="button">Events</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="{{ url('/') }}">All Events</a></li>
-                            <li><a href="{{ url('/') }}">Events Details</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.all_events') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.events_details') }}</a></li>
                         </ul>
                     </li>
                     <li class="has-sub-menu relative">
-                        <a role="button">Pages</a>
+                        <a role="button">{{ translation('header.details') }}</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="{{ url('/') }}">Pricing Plan</a></li>
-                            <li><a href="{{ url('/') }}">Gallery</a></li>
-                            <li><a href="{{ url('/') }}">FAQ</a></li>
-                            <li><a href="{{ url('/') }}">Sponsors</a></li>
-                            <li><a href="{{ url('/') }}">Venue</a></li>
-                            <li><a href="{{ url('/') }}">Error 404</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.pricing_plan') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.gallery') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.faq') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.sponsors') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.venue') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.error_404') }}</a></li>
                         </ul>
                     </li>
                     <li class="has-sub-menu relative">
-                        <a role="button">Team</a>
+                        <a role="button">{{ translation('header.team') }}</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="{{ url('/') }}">Team Members</a></li>
-                            <li><a href="{{ url('/') }}">Team Details</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.team_members') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.team_details') }}</a></li>
                         </ul>
                     </li>
                     <li class="has-sub-menu relative">
-                        <a role="button">News</a>
+                        <a role="button">{{ translation('header.news') }}</a>
 
                         <ul class="et-header-submenu">
-                            <li><a href="{{ url('/') }}">All News</a></li>
-                            <li><a href="{{ url('/') }}">News Details</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.all_news') }}</a></li>
+                            <li><a href="{{ url('/') }}">{{ translation('header.news_details') }}</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url('/') }}">Contact</a></li>
+                    <li><a href="{{ url('/') }}">{{ translation('header.contact') }}</a></li>
                 </ul>
 
                 <!-- button -->
-                <a href={{ url('/') }}" class="et-btn bg-white flex items-center justify-center gap-x-[15px] h-[50px] px-[15px] text-etBlue font-medium text-[17px] rounded-full group">
+                <a href="{{ url('/') }}" class="et-btn bg-white flex items-center justify-center gap-x-[15px] h-[50px] px-[15px] text-etBlue font-medium text-[17px] rounded-full group">
                         <span class="icon">
                             <svg width="27" height="16" viewBox="0 0 27 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.02101 0H0.844661C0.378197 0 0 0.378144 0 0.844662V5.12625C0 5.59277 0.378197 5.97091 0.844661 5.97091C1.96347 5.97091 2.8737 6.88114 2.8737 8C2.8737 9.11886 1.96347 10.029 0.844661 10.029C0.378197 10.029 0 10.4071 0 10.8736V15.1553C0 15.6218 0.378197 15.9999 0.844661 15.9999H8.02101V0Z" class="fill-etBlue group-hover:fill-white transition" />
@@ -71,7 +71,7 @@
                         </span>
                     Get Tickets
                 </a>
-                
+
                 <div class="language-switcher flex gap-2 items-center">
                     @foreach (['en' => 'EN', 'ru' => 'RU', 'uz' => 'UZ'] as $localeCode => $label)
                         <a href="{{ route('change.lang', $localeCode) }}"

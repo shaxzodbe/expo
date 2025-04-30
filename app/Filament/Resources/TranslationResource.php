@@ -4,16 +4,17 @@ namespace App\Filament\Resources;
 
 use App\Filament\Resources\TranslationResource\Pages;
 use App\Models\Translation;
-use Filament\Forms\Components\Grid;
-use Filament\Forms\Components\TextInput;
+use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
 class TranslationResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = Translation::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
@@ -22,13 +23,11 @@ class TranslationResource extends Resource
     {
         return $form
             ->schema([
-                TextInput::make('key')->required(),
-
-                Grid::make(3)->schema([
-                    TextInput::make('value.en')->label('English')->required(),
-                    TextInput::make('value.ru')->label('Русский')->required(),
-                    TextInput::make('value.uz')->label('Oʻzbekcha')->required(),
-                ]),
+                Forms\Components\TextInput::make('key')
+                    ->required()
+                    ->maxLength(255),
+                Forms\Components\TextInput::make('value')
+                    ->required(),
             ]);
     }
 
@@ -36,10 +35,16 @@ class TranslationResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('key')->searchable(),
-                TextColumn::make('value.en')->label('EN'),
-                TextColumn::make('value.ru')->label('RU'),
-                TextColumn::make('value.uz')->label('UZ'),
+                Tables\Columns\TextColumn::make('key')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //

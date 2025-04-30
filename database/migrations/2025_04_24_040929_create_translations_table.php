@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('translations', function (Blueprint $table) {
             $table->id();
-            $table->string('key');
+            $table->string('key')->unique();
             $table->json('value'); // {"en": "Welcome", "ru": "Добро пожаловать"}
             $table->timestamps();
         });

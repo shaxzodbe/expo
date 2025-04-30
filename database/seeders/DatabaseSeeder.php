@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             SpeakerSeeder::class,
             TicketPricingSeeder::class,
             GallerySeeder::class,
+            TranslationSeeder::class,
         ]);
     }
 }

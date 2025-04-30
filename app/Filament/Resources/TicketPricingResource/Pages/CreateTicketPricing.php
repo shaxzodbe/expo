@@ -8,5 +8,14 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateTicketPricing extends CreateRecord
 {
+    use CreateRecord\Concerns\Translatable;
+
     protected static string $resource = TicketPricingResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make(),
+        ];
+    }
 }

@@ -8,5 +8,14 @@ use Filament\Resources\Pages\CreateRecord;
 
 class CreateSpeaker extends CreateRecord
 {
+    use CreateRecord\Concerns\Translatable;
+
     protected static string $resource = SpeakerResource::class;
+
+    protected function getHeaderActions(): array
+    {
+        return [
+            Actions\LocaleSwitcher::make(),
+        ];
+    }
 }

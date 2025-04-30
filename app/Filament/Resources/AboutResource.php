@@ -3,18 +3,18 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\AboutResource\Pages;
-use App\Filament\Resources\AboutResource\RelationManagers;
 use App\Models\About;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class AboutResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = About::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-information-circle';
@@ -43,21 +43,6 @@ class AboutResource extends Resource
                     ->visibility('public'),
                 Forms\Components\TextInput::make('video_link')
                     ->maxLength(255),
-                Forms\Components\FileUpload::make('vector_1')
-                    ->image()
-                    ->disk('public')
-                    ->directory('about')
-                    ->visibility('public'),
-                Forms\Components\FileUpload::make('vector_2')
-                    ->image()
-                    ->disk('public')
-                    ->directory('about')
-                    ->visibility('public'),
-                Forms\Components\FileUpload::make('vector_3')
-                    ->image()
-                    ->disk('public')
-                    ->directory('about')
-                    ->visibility('public'),
             ]);
     }
 

@@ -3,9 +3,7 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TranslationResource\Pages;
-use App\Filament\Resources\TranslationResource\RelationManagers;
 use App\Models\Translation;
-use Filament\Forms;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;
@@ -13,8 +11,6 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TranslationResource extends Resource
 {
@@ -27,7 +23,7 @@ class TranslationResource extends Resource
         return $form
             ->schema([
                 TextInput::make('key')->required(),
-                
+
                 Grid::make(3)->schema([
                     TextInput::make('value.en')->label('English')->required(),
                     TextInput::make('value.ru')->label('Русский')->required(),

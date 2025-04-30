@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Banner extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $fillable = [
         'title',
@@ -23,5 +24,12 @@ class Banner extends Model
 
     protected $casts = [
         'attachments' => 'array',
+    ];
+
+    public $translatable = [
+        'title',
+        'subtitle',
+        'button_text_secondary',
+        'button_link_secondary',
     ];
 }

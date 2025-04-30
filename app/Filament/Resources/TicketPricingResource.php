@@ -3,18 +3,18 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\TicketPricingResource\Pages;
-use App\Filament\Resources\TicketPricingResource\RelationManagers;
 use App\Models\TicketPricing;
 use Filament\Forms;
 use Filament\Forms\Form;
+use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class TicketPricingResource extends Resource
 {
+    use Translatable;
+
     protected static ?string $model = TicketPricing::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';

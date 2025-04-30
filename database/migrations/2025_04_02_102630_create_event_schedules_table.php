@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('event_schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->text('title');
             $table->string('image')->nullable();
             $table->date('date');
             $table->time('start_time');

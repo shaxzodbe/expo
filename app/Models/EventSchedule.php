@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class EventSchedule extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $fillable = [
         'title',
@@ -16,6 +17,11 @@ class EventSchedule extends Model
         'start_time',
         'end_time',
         'location',
+        'description',
+    ];
+
+    public $translatable = [
+        'title',
         'description',
     ];
 }

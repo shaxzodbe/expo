@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('countdowns', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('button_text')->nullable();
+            $table->text('title');
+            $table->text('button_text')->nullable();
             $table->string('button_link')->nullable();
             $table->timestamp('event_time');
             $table->timestamps();

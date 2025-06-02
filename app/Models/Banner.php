@@ -22,14 +22,10 @@ class Banner extends Model
         'background_color',
     ];
 
-    protected $casts = [
-        'attachments' => 'array',
-    ];
-
     public $translatable = [
         'title',
         'subtitle',
+        'button_text',
         'button_text_secondary',
-        'button_link_secondary',
     ];
 }

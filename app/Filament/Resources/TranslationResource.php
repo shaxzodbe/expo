@@ -37,6 +37,8 @@ class TranslationResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('key')
                     ->searchable(),
+                Tables\Columns\TextColumn::make('value')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

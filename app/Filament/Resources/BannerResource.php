@@ -3,7 +3,6 @@
 namespace App\Filament\Resources;
 
 use App\Filament\Resources\BannerResource\Pages;
-use App\Filament\Resources\BannerResource\RelationManagers;
 use App\Models\Banner;
 use Filament\Forms;
 use Filament\Forms\Form;
@@ -41,13 +40,10 @@ class BannerResource extends Resource
                 Forms\Components\TextInput::make('button_text')
                     ->maxLength(255),
                 Forms\Components\TextInput::make('button_link')
-                    ->url()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('button_text_secondary')
-                    ->url()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('button_link_secondary')
-                    ->url()
                     ->maxLength(255),
                 Forms\Components\TextInput::make('background_color')
                     ->maxLength(255),

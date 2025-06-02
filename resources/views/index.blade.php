@@ -598,7 +598,7 @@
         $ticketPricings = \App\Models\TicketPricing::take(3)->get();
     @endphp
     @if($ticketPricings)
-    <section class="py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
+    {{--<section class="py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
         <div
             class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
             <!-- section heading -->
@@ -656,7 +656,7 @@
             <img src="assets/img/features-vector-3.png" alt="vector"
                  class="pointer-events-none absolute top-[163px] right-[106px] -z-[1]">
         </div>
-    </section>
+    </section>--}}
     @endif
     <!-- PRICING SECTION END -->
 

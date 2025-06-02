@@ -62,7 +62,7 @@
                 </ul>
 
                 <!-- button -->
-                <a href="{{ url('/') }}" class="et-btn bg-white flex items-center justify-center gap-x-[15px] h-[50px] px-[15px] text-etBlue font-medium text-[17px] rounded-full group">
+                {{--<a href="{{ url('/') }}" class="et-btn bg-white flex items-center justify-center gap-x-[15px] h-[50px] px-[15px] text-etBlue font-medium text-[17px] rounded-full group">
                         <span class="icon">
                             <svg width="27" height="16" viewBox="0 0 27 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M8.02101 0H0.844661C0.378197 0 0 0.378144 0 0.844662V5.12625C0 5.59277 0.378197 5.97091 0.844661 5.97091C1.96347 5.97091 2.8737 6.88114 2.8737 8C2.8737 9.11886 1.96347 10.029 0.844661 10.029C0.378197 10.029 0 10.4071 0 10.8736V15.1553C0 15.6218 0.378197 15.9999 0.844661 15.9999H8.02101V0Z" class="fill-etBlue group-hover:fill-white transition" />
@@ -70,14 +70,17 @@
                             </svg>
                         </span>
                     Get Tickets
-                </a>
+                </a>--}}
 
                 <div class="language-switcher flex gap-2 items-center">
                     @foreach (['en' => 'EN', 'ru' => 'RU', 'uz' => 'UZ'] as $localeCode => $label)
-                        <a href="{{ route('change.lang', $localeCode) }}"
-                           class="text-sm px-2 py-1 rounded {{ app()->getLocale() === $localeCode ? 'bg-etBlue text-white' : 'text-etBlue hover:underline' }}">
-                            {{ $label }}
-                        </a>
+                        <form action="{{ route('change.lang', $localeCode) }}" method="post">
+                            @csrf
+                            <input type="hidden" name="locale" value="{{ $localeCode }}">
+                            <button type="submit" class="text-sm px-2 py-1 rounded {{ app()->getLocale() === $localeCode ? 'bg-etBlue text-white' : 'text-etBlue hover:underline' }}">
+                                {{ $label }}
+                            </button>
+                        </form>
                     @endforeach
                 </div>
             </div>

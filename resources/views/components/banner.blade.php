@@ -12,21 +12,21 @@
                             class="flex md:flex-col items-center justify-between gap-x-[30px] gap-y-[30px] md:grid-cols-1">
                             <div class="left relative z-[20] w-[55%] md:w-full">
                                 <h6 class="font-kalam font-bold text-[2.4rem] mb-[3px] anim-text">
-                                    {{ $banner['title'][app()->getLocale()] ?? '' }}
+                                    {{ $banner->title }}
                                 </h6>
 
                                 <h1 class="text-[clamp(42px,6.25vw,12rem)] font-semibold leading-[1.1] mb-[36px] md:mb-[36px] anim-text">
-                                    {!! $banner['subtitle'][app()->getLocale()] ?? '' !!}
+                                    {!! $banner->subtitle !!}
                                 </h1>
 
                                 <div class="et-banner-btns flex flex-wrap items-center gap-[20px]">
-                                    <a href="{{ $banner['button_link'] ?? '#' }}"
+                                    <a href="{{ $banner->button_link ?? url('/') }}"
                                        class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-white hover:!text-etBlue">
-                                        {{ $banner['button_text'][app()->getLocale()] ?? '' }}
+                                        {{ $banner->button_text ?? '' }}
                                     </a>
 
-                                    <a href="{{ $banner['button_text_secondary'][app()->getLocale()] ?? '#' }}" class="et-btn bg-white inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-etBlue font-normal text-[17px] rounded-full">
-                                        View More
+                                    <a href="{{ $banner->button_text_secondary ?? url('/') }}" class="et-btn bg-white inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-etBlue font-normal text-[17px] rounded-full">
+                                        {{ translation('banner.view_more') }}
                                     </a>
                                 </div>
 
@@ -43,7 +43,7 @@
 
                             <!-- video button -->
                             <div class="et-banner-video-btn w-[40%] md:w-full shrink-0">
-                                <a href="{{ $banner['video_url'] ?? '#' }}"
+                                <a href="{{ $banner->video_url ?? '#' }}"
                                    data-fslightbox="banner-video-1"
                                    class="w-[135px] aspect-square rounded-full border border-white/20 flex justify-center items-center text-etBlue ml-auto mr-[230px] lg:mr-[150px] md:mr-auto md:ml-0 relative z-[1] text-[18px] before:absolute before:w-[70px] before:h-[70px] before:bg-white before:rounded-full before:-z-[1] before:transition before:duration-[400ms] hover:text-white hover:before:bg-etBlue hover:border-etBlue"><i
                                         class="fa-solid fa-play"></i></a>

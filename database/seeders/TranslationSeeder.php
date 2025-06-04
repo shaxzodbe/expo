@@ -215,6 +215,16 @@ class TranslationSeeder extends Seeder
                 'uz' => '2024, Eventek Barcha Huquqlar Himoyalangan.',
                 'ru' => '2024, Eventek Все права защищены.',
             ],
+            'banner.view_more' => [
+                'en' => 'View more',
+                'uz' => 'Koproq korsatish',
+                'ru' => 'Показать больше',
+            ],
+            'index.register_now' => [
+                'en' => 'Register Now',
+                'uz' => 'Royxatdan otish',
+                'ru' => 'Регистрироваться',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

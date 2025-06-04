@@ -74,9 +74,8 @@
 
                 <div class="language-switcher flex gap-2 items-center">
                     @foreach (['en' => 'EN', 'ru' => 'RU', 'uz' => 'UZ'] as $localeCode => $label)
-                        <form action="{{ route('change.lang', $localeCode) }}" method="post">
+                        <form action="{{ route('change.lang', ['locale' => $localeCode]) }}" method="POST">
                             @csrf
-                            <input type="hidden" name="locale" value="{{ $localeCode }}">
                             <button type="submit" class="text-sm px-2 py-1 rounded {{ app()->getLocale() === $localeCode ? 'bg-etBlue text-white' : 'text-etBlue hover:underline' }}">
                                 {{ $label }}
                             </button>

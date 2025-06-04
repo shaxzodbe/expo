@@ -94,10 +94,9 @@
                     </div>
 
                     <div class="flex flex-wrap items-center gap-x-[30px] gap-y-[16px] rev-slide-up">
-                        <a href="{{ url('/') }}"
-                           class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-black hover:!text-white">Register
-                            Now</a>
-
+                        <a href="{{ url('/') }}" class="et-btn bg-etBlue inline-flex items-center justify-center gap-x-[13px] h-[45px] px-[15px] text-white font-normal text-[17px] rounded-full hover:!bg-black hover:!text-white">
+                            {{ translation('index.register_now') }}
+                        </a>
                         <div class="flex items-center gap-[10px]">
                             <div class="flex *:-ml-[20px]">
                                 <img src="assets/img/reviewer-1.png" alt="Person"

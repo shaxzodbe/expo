@@ -10,8 +10,8 @@ class MainController extends Controller
 {
     public function index(Request $request)
     {
-        $banners = Banner::all()->toArray();
-        $about = About::first()->toArray();
+        $banners = Banner::all();
+        $about = About::first();
 
         return view('index', compact('banners', 'about'));
     }

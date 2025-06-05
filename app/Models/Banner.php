@@ -22,13 +22,6 @@ class Banner extends Model
         'background_color',
     ];
 
-    protected $casts = [
-        'title' => 'array',
-        'subtitle' => 'array',
-        'button_text' => 'array',
-        'button_text_secondary' => 'array',
-    ];
-
     public array $translatable = [
         'title',
         'subtitle',

@@ -18,7 +18,6 @@ class LanguageController extends Controller
         }
 
         Session::put('locale', $locale);
-        Log::info('Stored locale in session: '.Session::get('locale'));
 
         return redirect()->back();
     }

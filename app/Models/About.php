@@ -21,7 +21,7 @@ class About extends Model
         'conference_description',
     ];
 
-    public $translatable = [
+    public array $translatable = [
         'title',
         'subtitle',
         'description',

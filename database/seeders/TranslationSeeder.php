@@ -225,6 +225,11 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Royxatdan otish',
                 'ru' => 'Регистрироваться',
             ],
+            'index.speakers' => [
+                'en' => 'Speakers',
+                'uz' => 'Spikerlar',
+                'ru' => 'Спикеры',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

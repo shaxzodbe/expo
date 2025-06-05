@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('banners', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->text('subtitle')->nullable();
+            $table->json('title');
+            $table->json('subtitle')->nullable();
             $table->string('image');
             $table->text('video_url')->nullable();
-            $table->text('button_text')->nullable();
+            $table->json('button_text')->nullable();
             $table->string('button_link')->nullable();
-            $table->text('button_text_secondary')->nullable();
+            $table->json('button_text_secondary')->nullable();
             $table->string('button_link_secondary')->nullable();
             $table->string('background_color')->nullable();
             $table->timestamps();

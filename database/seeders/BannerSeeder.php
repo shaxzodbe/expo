@@ -14,24 +14,29 @@ class BannerSeeder extends Seeder
     public function run(): void
     {
         Banner::create([
-            'title' => 'Business Expo 2024',
-            'subtitle' => 'Big Conference & Workshop',
+            'title' => [
+                'en' => 'Business Expo 2024',
+                'ru' => 'Бизнес Экспо 2024',
+                'uz' => 'Biznes Expo 2024',
+            ],
+            'subtitle' => [
+                'en' => 'Big Conference & Workshop',
+                'ru' => 'Большая конференция и семинар',
+                'uz' => 'Katta konferensiya va seminar',
+            ],
             'image' => 'assets/img/banner-bg-1.jpg',
             'video_url' => 'https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s',
-            'button_text' => 'Register Now',
+            'button_text' => [
+                'en' => 'Register Now',
+                'ru' => 'Зарегистрироваться',
+                'uz' => 'Roʻyxatdan oʻting',
+            ],
             'button_link' => 'contact.html',
-            'button_text_secondary' => 'View More',
-            'button_link_secondary' => '#',
-        ]);
-
-        Banner::create([
-            'title' => 'Tech Summit 2024',
-            'subtitle' => 'Innovation & Future',
-            'image' => 'assets/img/banner-bg-2.jpg',
-            'video_url' => 'https://www.youtube.com/watch?v=AQleI8oFqZo&t=1s',
-            'button_text' => 'Get Tickets',
-            'button_link' => 'tickets.html',
-            'button_text_secondary' => 'Learn More',
+            'button_text_secondary' => [
+                'en' => 'View More',
+                'ru' => 'Подробнее',
+                'uz' => 'Batafsil',
+            ],
             'button_link_secondary' => '#',
         ]);
     }

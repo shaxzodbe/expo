@@ -16,7 +16,7 @@ class Feature extends Model
         'icon_path'
     ];
 
-    public $translatable = [
+    public array $translatable = [
         'title',
         'description'
     ];

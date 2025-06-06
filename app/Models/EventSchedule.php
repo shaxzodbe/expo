@@ -20,7 +20,7 @@ class EventSchedule extends Model
         'description',
     ];
 
-    public $translatable = [
+    public array $translatable = [
         'title',
         'description',
     ];

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('features', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->text('description');
+            $table->json('title');
+            $table->json('description');
             $table->string('icon_path');
             $table->timestamps();
         });

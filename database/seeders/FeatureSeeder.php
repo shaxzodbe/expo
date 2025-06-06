@@ -31,25 +31,63 @@ class FeatureSeeder extends Seeder
                 dump("Copied: {$sourcePath} -> storage/app/public/{$destinationPath}");
             }
         }
-        Feature::create([
-            'title' => 'Speaker Lineup',
-            'description' => 'Mauris ultrices ligula eget volutpat aliquet nullam',
-            'icon_path' => 'feature/feature-1.png',
-        ]);
-        Feature::create([
-            'title' => 'Networking People',
-            'description' => 'Mauris ultrices ligula eget volutpat aliquet nullam',
-            'icon_path' => 'feature/feature-2.png',
-        ]);
-        Feature::create([
-            'title' => 'Engaging Keynote',
-            'description' => 'Mauris ultrices ligula eget volutpat aliquet nullam',
-            'icon_path' => 'feature/feature-3.png',
-        ]);
-        Feature::create([
-            'title' => 'Exhibition Space',
-            'description' => 'Mauris ultrices ligula eget volutpat aliquet nullam',
-            'icon_path' => 'feature/feature-4.png',
-        ]);
+        $features = [
+            [
+                'title' => [
+                    'en' => 'Speaker Lineup',
+                    'ru' => 'Состав спикеров',
+                    'uz' => 'Spikerlar tarkibi',
+                ],
+                'description' => [
+                    'en' => 'Meet industry-leading speakers sharing key insights.',
+                    'ru' => 'Встречайте ведущих экспертов, делящихся опытом.',
+                    'uz' => 'Soha yetakchi spikerlari bilan tanishing.',
+                ],
+                'icon_path' => 'feature/feature-1.png',
+            ],
+            [
+                'title' => [
+                    'en' => 'Networking People',
+                    'ru' => 'Нетворкинг участников',
+                    'uz' => 'Ishtirokchilar bilan tarmoq tuzish',
+                ],
+                'description' => [
+                    'en' => 'Connect with professionals and grow your network.',
+                    'ru' => 'Знакомьтесь с профессионалами и расширяйте круг общения.',
+                    'uz' => 'Mutaxassislar bilan tanishing va aloqalarni kengaytiring.',
+                ],
+                'icon_path' => 'feature/feature-2.png',
+            ],
+            [
+                'title' => [
+                    'en' => 'Engaging Keynote',
+                    'ru' => 'Захватывающее выступление',
+                    'uz' => 'Qiziqarli asosiy ma’ruza',
+                ],
+                'description' => [
+                    'en' => 'Enjoy thought-provoking keynote presentations.',
+                    'ru' => 'Наслаждайтесь вдохновляющими выступлениями.',
+                    'uz' => 'Ilhomlantiruvchi asosiy maʼruzalardan bahramand bo‘ling.',
+                ],
+                'icon_path' => 'feature/feature-3.png',
+            ],
+            [
+                'title' => [
+                    'en' => 'Exhibition Space',
+                    'ru' => 'Выставочное пространство',
+                    'uz' => 'Ko‘rgazma maydoni',
+                ],
+                'description' => [
+                    'en' => 'Explore innovative booths and partner exhibits.',
+                    'ru' => 'Исследуйте инновационные стенды и выставки партнёров.',
+                    'uz' => 'Innovatsion stendlar va ko‘rgazmalarni ko‘rib chiqing.',
+                ],
+                'icon_path' => 'feature/feature-4.png',
+            ],
+        ];
+        
+        foreach ($features as $feature) {
+            Feature::create($feature);
+        }
     }
 }

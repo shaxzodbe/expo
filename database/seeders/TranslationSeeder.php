@@ -250,6 +250,16 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Sekund',
                 'ru' => 'Секунд',
             ],
+            'event.event_features' => [
+                'en' => 'Event Features',
+                'uz' => 'Tadbir Haqida ',
+                'ru' => 'Особенности мероприятия',
+            ],
+            'event.unifying' => [
+                'en' => 'Unifying For A Better World',
+                'uz' => 'Yaxshi Dunyo Uchun Birlashtiruvchi',
+                'ru' => 'Объединяемся Ради Лучшего Мира',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

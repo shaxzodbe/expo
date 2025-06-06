@@ -230,6 +230,26 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Spikerlar',
                 'ru' => 'Спикеры',
             ],
+            'countdown.days' => [
+                'en' => 'Days',
+                'uz' => 'Kun',
+                'ru' => 'День',
+            ],
+            'countdown.hours' => [
+                'en' => 'Hours',
+                'uz' => 'Soat',
+                'ru' => 'Час',
+            ],
+            'countdown.minutes' => [
+                'en' => 'Minutes',
+                'uz' => 'Minut',
+                'ru' => 'Минут',
+            ],
+            'countdown.seconds' => [
+                'en' => 'Seconds',
+                'uz' => 'Sekund',
+                'ru' => 'Секунд',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

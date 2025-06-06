@@ -14,10 +14,18 @@ class CountdownSeeder extends Seeder
     public function run(): void
     {
         Countdown::create([
-            'title'       => 'Count Every Second Until Event.',
-            'button_text' => 'Buy Ticket',
+            'title' => [
+                'en' => 'Count Every Second Until Event.',
+                'ru' => 'Считай каждую секунду до начала события.',
+                'uz' => 'Tadbir boshlanishigacha har soniyani sanang.',
+            ],
+            'button_text' => [
+                'en' => 'Buy Ticket',
+                'ru' => 'Купить билет',
+                'uz' => 'Chipta xarid qilish',
+            ],
             'button_link' => '#',
-            'event_time'  => Carbon::now()->addDays(15),
+            'event_time' => Carbon::now()->addDays(15),
         ]);
     }
 }

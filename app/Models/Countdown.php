@@ -17,7 +17,7 @@ class Countdown extends Model
         'event_time',
     ];
 
-    public $translatable = [
+    public array $translatable = [
         'title',
         'button_text',
     ];

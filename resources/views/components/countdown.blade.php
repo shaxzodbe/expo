@@ -1,3 +1,6 @@
+@php
+	$lang = \Illuminate\Support\Facades\Session::get('locale', config(	'app.locale'))
+ @endphp
 <div
 		class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full rev-slide-up relative z-[2]">
 	<div

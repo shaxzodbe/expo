@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\Feature;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -26,7 +25,7 @@ class FeatureSeeder extends Seeder
             $sourcePath = public_path("assets/img/{$file}");
             $destinationPath = "feature/{$file}";
 
-            if (File::exists($sourcePath) && !Storage::exists($destinationPath)) {
+            if (File::exists($sourcePath) && ! Storage::exists($destinationPath)) {
                 Storage::disk('public')->put($destinationPath, File::get($sourcePath));
                 dump("Copied: {$sourcePath} -> storage/app/public/{$destinationPath}");
             }
@@ -85,7 +84,7 @@ class FeatureSeeder extends Seeder
                 'icon_path' => 'feature/feature-4.png',
             ],
         ];
-        
+
         foreach ($features as $feature) {
             Feature::create($feature);
         }

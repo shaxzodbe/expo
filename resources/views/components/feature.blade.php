@@ -1,3 +1,6 @@
+@php
+    $lang = \Illuminate\Support\Facades\Session::get('locale', config(	'app.locale'))
+@endphp
 <div
         class="bg-[#EEF4FF] relative z-[1] after:absolute after:inset-0 after:bg-[url(../assets/img/features-bg.png)] after:bg-no-repeat after:bg-cover after:-z-[2] after:mix-blend-multiply after:pointer-events-none pb-[130px] xl:pb-[80px] md:pb-[60px] pt-[244px] xl:pt-[194px] md:pt-[174px]">
     <div

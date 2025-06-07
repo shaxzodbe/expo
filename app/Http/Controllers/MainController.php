@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\About;
 use App\Models\Banner;
 use App\Models\Countdown;
+use App\Models\EventSchedule;
 use App\Models\Feature;
 use Illuminate\Http\Request;
 
@@ -16,8 +17,9 @@ class MainController extends Controller
         $about = About::first();
         $countdown = Countdown::first();
         $features = Feature::orderBy('created_at', 'desc')->take(4)->get();
+        $events = EventSchedule::orderBy('date')->get();
 
-        return view('index', compact('banners', 'about', 'countdown', 'features'));
+        return view('index', compact('banners', 'about', 'countdown', 'features', 'events'));
     }
 
     public function show(Request $request)

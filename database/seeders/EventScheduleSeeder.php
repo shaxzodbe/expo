@@ -30,25 +30,46 @@ class EventScheduleSeeder extends Seeder
                 dump("Copied: {$sourcePath} -> storage/app/public/{$destinationPath}");
             }
         }
-
-        EventSchedule::create([
-            'title' => 'Siempre Son Flores',
-            'image' => 'event/evenet-sched-1.jpg',
-            'date' => Carbon::parse('2024-01-24'),
-            'start_time' => '10:00:00',
-            'end_time' => '14:00:00',
-            'location' => '135 W, 46nd Street, New York',
-            'description' => 'Musica Cubana Salsa Jazz adipi scing elit.',
-        ]);
-
-        EventSchedule::create([
-            'title' => 'Jazz Night Live',
-            'image' => 'event/evenet-sched-2.jpg',
-            'date' => Carbon::parse('2024-01-25'),
-            'start_time' => '18:00:00',
-            'end_time' => '22:00:00',
-            'location' => 'Grand Hall, NY',
-            'description' => 'A night of mesmerizing jazz performances.',
-        ]);
+        
+        $schedules = [
+            [
+                'title' => [
+                    'en' => 'Siempre Son Flores',
+                    'ru' => 'Сиэмпре Сон Флорес',
+                    'uz' => 'Siempre Son Flores',
+                ],
+                'image' => 'event/evenet-sched-1.jpg',
+                'date' => Carbon::parse('2024-01-24'),
+                'start_time' => '10:00:00',
+                'end_time' => '14:00:00',
+                'location' => '135 W, 46nd Street, New York',
+                'description' => [
+                    'en' => 'Cuban Salsa Jazz music at its finest.',
+                    'ru' => 'Кубинская сальса и джаз в лучшем исполнении.',
+                    'uz' => 'Kubalik salsa va jazz musiqasining eng sara chiqishi.',
+                ],
+            ],
+            [
+                'title' => [
+                    'en' => 'Jazz Night Live',
+                    'ru' => 'Живая джазовая ночь',
+                    'uz' => 'Jazz tuni jonli ijroda',
+                ],
+                'image' => 'event/evenet-sched-2.jpg',
+                'date' => Carbon::parse('2024-01-25'),
+                'start_time' => '18:00:00',
+                'end_time' => '22:00:00',
+                'location' => 'Grand Hall, NY',
+                'description' => [
+                    'en' => 'A night of mesmerizing jazz performances.',
+                    'ru' => 'Ночь захватывающих джазовых выступлений.',
+                    'uz' => 'Sehrli jazz chiqishlari kechasi.',
+                ],
+            ],
+        ];
+        
+        foreach ($schedules as $schedule) {
+            EventSchedule::create($schedule);
+        }
     }
 }

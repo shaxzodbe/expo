@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('event_schedules', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
+            $table->json('title');
             $table->string('image')->nullable();
             $table->date('date');
             $table->time('start_time');
             $table->time('end_time');
             $table->string('location');
-            $table->text('description')->nullable();
+            $table->json('description')->nullable();
             $table->timestamps();
         });
     }

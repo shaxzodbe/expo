@@ -260,6 +260,31 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Yaxshi Dunyo Uchun Birlashtiruvchi',
                 'ru' => 'Объединяемся Ради Лучшего Мира',
             ],
+            'event-schedule.event_timetable' => [
+                'en' => 'Event Timetable',
+                'uz' => 'Tadbirlar jadvali',
+                'ru' => 'Расписание мероприятий'
+            ],
+            'event-schedule.information' => [
+                'en' => 'Information Of Event Schedule',
+                'uz' => 'Tadbirlar Jadvali Haqida Ma`lumot',
+                'ru' => 'Информация О Расписании Мероприятий'
+            ],
+            'event-schedule.buy_tickets' => [
+                'en' => 'Buy Tickets',
+                'uz' => 'Chiptalarni Sotib Oling',
+                'ru' => 'Покупайте билеты'
+            ],
+            'event-schedule.day' => [
+                'en' => 'Day',
+                'uz' => 'Kun',
+                'ru' => 'День'
+            ],
+            'event-schedule.speakers' => [
+                'en' => '<span class="text-white">Spe</span>akers',
+                'uz' => '<span class="text-white">So`z</span>lovchilar',
+                'ru' => '<span class="text-white">Спи</span>керы'
+            ],
         ];
 
         foreach ($translations as $key => $value) {

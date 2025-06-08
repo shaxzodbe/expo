@@ -7,6 +7,7 @@ use App\Models\Banner;
 use App\Models\Countdown;
 use App\Models\EventSchedule;
 use App\Models\Feature;
+use App\Models\Stat;
 use Illuminate\Http\Request;
 
 class MainController extends Controller
@@ -18,8 +19,9 @@ class MainController extends Controller
         $countdown = Countdown::first();
         $features = Feature::orderBy('created_at', 'desc')->take(4)->get();
         $events = EventSchedule::orderBy('date')->get();
+        $stats = Stat::orderBy('created_at')->take(3)->get();
 
-        return view('index', compact('banners', 'about', 'countdown', 'features', 'events'));
+        return view('index', compact('banners', 'about', 'countdown', 'features', 'events', 'stats'));
     }
 
     public function show(Request $request)

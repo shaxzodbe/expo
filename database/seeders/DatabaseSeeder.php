@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             BannerSeeder::class,
             AboutSeeder::class,
+            StatSeeder::class,
             CountdownSeeder::class,
             FeatureSeeder::class,
             EventScheduleSeeder::class,

@@ -285,6 +285,11 @@ class TranslationSeeder extends Seeder
                 'uz' => '<span class="text-white">So`z</span>lovchilar',
                 'ru' => '<span class="text-white">Спи</span>керы'
             ],
+            'stat.never_miss' => [
+                'en' => 'Never Miss Another Speaker Announcement',
+                'uz' => 'Ma`ruzachi E`lonini O`tkazib Yubormang',
+                'ru' => 'Не пропустите Очередное объявление спикера'
+            ],
         ];
 
         foreach ($translations as $key => $value) {

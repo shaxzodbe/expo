@@ -19,7 +19,7 @@ class Speaker extends Model
         'pinterest',
     ];
 
-    public $translatable = [
+    public array $translatable = [
         'name',
         'title',
     ];

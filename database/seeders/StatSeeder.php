@@ -13,8 +13,35 @@ class StatSeeder extends Seeder
      */
     public function run(): void
     {
-        Stat::create(['title' => 'Visionary Speaker', 'value' => '25+']);
-        Stat::create(['title' => 'Workshop We Offer', 'value' => '50+']);
-        Stat::create(['title' => 'Event Participants', 'value' => '70k+']);
+        $stats = [
+            [
+                'title' => [
+                    'en' => 'Visionary Speaker',
+                    'ru' => 'Визионерский спикер',
+                    'uz' => 'Zamonaviy spikerlar',
+                ],
+                'value' => '25+',
+            ],
+            [
+                'title' => [
+                    'en' => 'Workshop We Offer',
+                    'ru' => 'Мы предлагаем воркшопы',
+                    'uz' => 'Taklif etilgan seminarlar',
+                ],
+                'value' => '50+',
+            ],
+            [
+                'title' => [
+                    'en' => 'Event Participants',
+                    'ru' => 'Участников мероприятия',
+                    'uz' => 'Tadbir ishtirokchilari',
+                ],
+                'value' => '70k+',
+            ],
+        ];
+        
+        foreach ($stats as $stat) {
+            Stat::create($stat);
+        }
     }
 }

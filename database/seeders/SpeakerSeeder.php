@@ -31,33 +31,63 @@ class SpeakerSeeder extends Seeder
                 dump("Copied: {$sourcePath} -> storage/app/public/{$destinationPath}");
             }
         }
-
-        Speaker::create([
-            'name' => 'Esther Howard',
-            'title' => 'Music Speaker',
-            'image' => 'speaker/speaker-1.jpg',
-            'facebook' => 'https://facebook.com/estherhoward',
-            'instagram' => 'https://instagram.com/estherhoward',
-            'twitter' => 'https://twitter.com/estherhoward',
-            'pinterest' => 'https://pinterest.com/estherhoward',
-        ]);
-        Speaker::create([
-            'name' => 'Esther Howard',
-            'title' => 'Music Speaker',
-            'image' => 'speaker/speaker-2.jpg',
-            'facebook' => 'https://facebook.com/estherhoward',
-            'instagram' => 'https://instagram.com/estherhoward',
-            'twitter' => 'https://twitter.com/estherhoward',
-            'pinterest' => 'https://pinterest.com/estherhoward',
-        ]);
-        Speaker::create([
-            'name' => 'Esther Howard',
-            'title' => 'Music Speaker',
-            'image' => 'speaker/speaker-3.jpg',
-            'facebook' => 'https://facebook.com/estherhoward',
-            'instagram' => 'https://instagram.com/estherhoward',
-            'twitter' => 'https://twitter.com/estherhoward',
-            'pinterest' => 'https://pinterest.com/estherhoward',
-        ]);
+        
+        $speakers = [
+            [
+                'name' => [
+                    'en' => 'Esther Howard',
+                    'ru' => 'Эстер Ховард',
+                    'uz' => 'Esther Howard',
+                ],
+                'title' => [
+                    'en' => 'Music Speaker',
+                    'ru' => 'Музыкальный спикер',
+                    'uz' => 'Musiqa sohasidagi spiker',
+                ],
+                'image' => 'speaker/speaker-1.jpg',
+                'facebook' => 'https://facebook.com/estherhoward',
+                'instagram' => 'https://instagram.com/estherhoward',
+                'twitter' => 'https://twitter.com/estherhoward',
+                'pinterest' => 'https://pinterest.com/estherhoward',
+            ],
+            [
+                'name' => [
+                    'en' => 'Esther Howard',
+                    'ru' => 'Эстер Ховард',
+                    'uz' => 'Esther Howard',
+                ],
+                'title' => [
+                    'en' => 'Music Speaker',
+                    'ru' => 'Музыкальный спикер',
+                    'uz' => 'Musiqa sohasidagi spiker',
+                ],
+                'image' => 'speaker/speaker-2.jpg',
+                'facebook' => 'https://facebook.com/estherhoward',
+                'instagram' => 'https://instagram.com/estherhoward',
+                'twitter' => 'https://twitter.com/estherhoward',
+                'pinterest' => 'https://pinterest.com/estherhoward',
+            ],
+            [
+                'name' => [
+                    'en' => 'Esther Howard',
+                    'ru' => 'Эстер Ховард',
+                    'uz' => 'Esther Howard',
+                ],
+                'title' => [
+                    'en' => 'Music Speaker',
+                    'ru' => 'Музыкальный спикер',
+                    'uz' => 'Musiqa sohasidagi spiker',
+                ],
+                'image' => 'speaker/speaker-3.jpg',
+                'facebook' => 'https://facebook.com/estherhoward',
+                'instagram' => 'https://instagram.com/estherhoward',
+                'twitter' => 'https://twitter.com/estherhoward',
+                'pinterest' => 'https://pinterest.com/estherhoward',
+            ],
+        ];
+        
+        foreach ($speakers as $speaker) {
+            Speaker::create($speaker);
+        }
     }
 }

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('speakers', function (Blueprint $table) {
             $table->id();
-            $table->text('name');
-            $table->text('title');
+            $table->json('name');
+            $table->json('title');
             $table->string('image');
             $table->string('facebook')->nullable();
             $table->string('instagram')->nullable();

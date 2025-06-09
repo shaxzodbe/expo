@@ -201,6 +201,8 @@ class TranslationSeeder extends Seeder
             ],
             'footer.about' => [
                 'en' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet magna elemen facilisis',
+                'uz' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit ut aliquam purus sit amet magna elemen facilisis',
+                'ru' => 'Лорем ипсум долор сит амет консектетур адиписцинг элит ут аликвам пурус сит амет магна элемент фацилисис',
             ],
             'footer.location' => [
                 'en' => '4648 Rocky Road Philadelphia PA, 1920',

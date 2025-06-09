@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Session; @endphp
 <header class="et-header to-be-fixed py-[30px] xxs:py-[20px] fixed top-0 w-full px-[155px] xxxl:px-[100px] xxl:px-[40px] xs:px-[20px] z-50">
     <div class="flex justify-between items-center">
         <!-- logo -->
@@ -58,7 +59,7 @@
                             <li><a href="{{ url('/') }}">{{ translation('header.news_details') }}</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{ url('/') }}">{{ translation('header.contact') }}</a></li>
+                    <li><a class="hover:text-etBlue" href="{{ url('/') }}">{{ translation('header.contact') }}</a></li>
                 </ul>
 
                 <!-- button -->
@@ -73,10 +74,13 @@
                 </a>--}}
 
                 <div class="language-switcher flex gap-2 items-center">
+                    @php
+                        $currentLocale = Session::get('locale', config('app.locale'));
+                    @endphp
                     @foreach (['en' => 'EN', 'ru' => 'RU', 'uz' => 'UZ'] as $localeCode => $label)
                         <form action="{{ route('change.lang', ['locale' => $localeCode]) }}" method="POST">
                             @csrf
-                            <button type="submit" class="text-sm px-2 py-1 rounded {{ app()->getLocale() === $localeCode ? 'bg-etBlue text-white' : 'text-etBlue hover:underline' }}">
+                            <button type="submit" style="display: block; line-height: 3" class="et-sidebar-close-btn border border-white/50 w-[45px] aspect-square shrink-0 text-white text-[22px] hover:text-etBlue hover:bg-white">
                                 {{ $label }}
                             </button>
                         </form>

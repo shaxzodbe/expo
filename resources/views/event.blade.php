@@ -1432,8 +1432,8 @@
             <div
                 class="et-speakers-heading flex xs:flex-col justify-between items-center mb-[46px] xl:mb-[26px] lg:mb-[16px] gap-[15px]">
                 <div class="left xs:text-center">
-                    <h6 class="et-section-sub-title anim-text">Event Speakers</h6>
-                    <h2 class="et-section-title anim-text">Meet Our Speakers</h2>
+                    <h6 class="et-section-sub-title anim-text">{{ translation('event.speakers') }}</h6>
+                    <h2 class="et-section-title anim-text">{{ translation('event.meet') }}</h2>
                 </div>
 
                 <div class="right">

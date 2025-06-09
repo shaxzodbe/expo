@@ -8,10 +8,10 @@
         <div
                 class="et-speakers-heading flex xs:flex-col justify-between items-center mb-[46px] xl:mb-[26px] lg:mb-[16px] gap-[15px]">
             <div class="left xs:text-center">
-                <h6 class="et-section-sub-title anim-text">Event Speakers</h6>
-                <h2 class="et-section-title anim-text">Meet Our Speakers</h2>
+                <h6 class="et-section-sub-title anim-text">{{ translation('event.speakers') }}</h6>
+                <h2 class="et-section-title anim-text">{{ translation('event.meet') }}</h2>
             </div>
-            
+
             <div class="right">
                 <div class="et-speakers-slider-nav flex gap-[16px] sm:gap-[12px]">
                     <button
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </div>
-        
+
         <!-- slider -->
         <div class="et-speakers-slider swiper">
             <div class="swiper-wrapper">
@@ -38,7 +38,7 @@
                                 <img src="{{ asset('storage/' . $speaker->image) }}" alt="speaker image"
                                      class="mx-auto w-full transition duration-[400ms">
                             </div>
-                            
+
                             <!-- socials -->
                             <div class="et-speaker-socials bg-[#E7EFFF] w-[55px] py-[15px] text-center rounded-full absolute z-[2] -left-[10px] -top-[10px] flex flex-col justify-center text-[20px] text-etGray2 gap-[10px] border-[10px] border-white box-content">
                                 <a href="{{ $speaker->facebook ?? url('/') }}" class="hover:text-etBlue"><i class="fa-brands fa-facebook-f"></i></a>
@@ -46,7 +46,7 @@
                                 <a href="{{ $speaker->twitter ?? url('/') }}" class="hover:text-etBlue"><i class="fa-brands fa-twitter"></i></a>
                                 <a href="{{ $speaker->pinterest ?? url('/') }}" class="hover:text-etBlue"><i class="fa-brands fa-pinterest-p"></i></a>
                             </div>
-                            
+
                             <div class="et-speaker-txt text-center absolute z-[1] bottom-0 pb-[24px] w-full text-white translate-y-full group-hover:translate-y-0 transition duration-[400ms]">
                                 <h4 class="et-speaker-name font-medium text-[24px] mb-[3px]"><a
                                             href="{{ url('/') }}" class="hover:text-black">{{ $speaker?->getTranslation('name', $lang) }}</a></h4>

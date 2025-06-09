@@ -290,6 +290,56 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Ma`ruzachi E`lonini O`tkazib Yubormang',
                 'ru' => 'Не пропустите Очередное объявление спикера',
             ],
+            'event.speakers' => [
+                'en' => 'Event Speakers',
+                'uz' => 'Tadbir Ma`ruzachilari',
+                'ru' => 'Спикеры мероприятия',
+            ],
+            'event.meet' => [
+                'en' => 'Meet Our Speakers',
+                'uz' => 'Ma`ruzachilarimiz Bilan Tanishing',
+                'ru' => 'Познакомьтесь с нашими спикерами',
+            ],
+            'index.trusted_by' => [
+                'en' => 'Trusted By Top sponsors',
+                'uz' => 'Top homiylar tomonidan ishonchli',
+                'ru' => 'Доверяют Ведущие спонсоры',
+            ],
+            'index.event_venue_map' => [
+                'en' => 'Event Venue Map',
+                'uz' => 'Voqealar Joyi Xaritasi',
+                'ru' => 'Карта места проведения мероприятия',
+            ],
+            'index.get_direction' => [
+                'en' => 'Get Direction To The Event Venue',
+                'uz' => 'Voqealar Joyi Xaritasi',
+                'ru' => 'Карта места проведения мероприятия',
+            ],
+            'index.get_direction_' => [
+                'en' => 'Get Direction',
+                'uz' => 'Yo`nalishni Oling',
+                'ru' => 'Получить направление',
+            ],
+            'index.build' => [
+                'en' => 'Build Your Career',
+                'uz' => 'Karyerangizni Yarating',
+                'ru' => 'Постройте свою карьеру',
+            ],
+            'index.get_join' => [
+                'en' => 'Get Join Our Event',
+                'uz' => 'Bizning Tadbir Qo`shiling Qiling',
+                'ru' => 'Присоединяйтесь к Нашему Мероприятию',
+            ],
+            'index.messages' => [
+                'en' => 'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don`t look',
+                'uz' => 'Oyatlarning ko`p tafovutlar bor Mavjud Lore Ipsum, lekin ko`p ba`zi shaklida o`zgarish uchradi, sanchiladi tomonidan hazil yoki tasodifiy ko`rinmaydigan so`zlar',
+                'ru' => 'Существует множество вариаций отрывков из Lorem Ipsum, но большинство из них в той или иной форме подверглись изменениям в результате инъекции юмор или случайные слова, которые не выглядят',
+            ],
+            'index.tickets_now' => [
+                'en' => 'Tickets Now',
+                'uz' => 'Hozir Chiptalar',
+                'ru' => 'Билеты можно приобрести прямо сейчас',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

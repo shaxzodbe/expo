@@ -32,6 +32,7 @@ class DatabaseSeeder extends Seeder
             TicketPricingSeeder::class,
             GallerySeeder::class,
             TranslationSeeder::class,
+            CallToActionSeeder::class,
         ]);
     }
 }

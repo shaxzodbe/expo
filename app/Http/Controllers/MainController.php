@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Banner;
+use App\Models\CallToAction;
 use App\Models\Countdown;
 use App\Models\EventSchedule;
 use App\Models\Feature;

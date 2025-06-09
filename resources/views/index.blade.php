@@ -207,14 +207,11 @@
         <div
             class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
             <!-- sponsors -->
-            <div
-                class="flex items-center md:flex-col gap-x-[42px] gap-y-[25px] border border-[#D9D9D9] rounded-[20px] py-[30px] xxs:py-[20px] px-[34px] xxs:px-[16px] mb-[130px] lg:mb-[80px] md:mb-[60px]">
+            <div class="flex items-center md:flex-col gap-x-[42px] gap-y-[25px] border border-[#D9D9D9] rounded-[20px] py-[30px] xxs:py-[20px] px-[34px] xxs:px-[16px] mb-[130px] lg:mb-[80px] md:mb-[60px]">
                 <!-- left -->
-                <div
-                    class="flex xxs:flex-wrap items-end gap-[40px] xxs:gap-x-[10px] gap-y-[10px] pr-[42px] md:pr-0 border-r md:border-r-0 border-[#D9D9D9] max-w-[230px] md:max-w-full shrink-0">
-                    <h5 class="font-medium text-[20px] text-etBlack
-                    anim-text">{{ translation('index.trusted_by') }}</h5>
-                    <a href="#" class="inline-block mb-[8px] group">
+                <div class="flex xxs:flex-wrap items-end gap-[40px] xxs:gap-x-[10px] gap-y-[10px] pr-[42px] md:pr-0 border-r md:border-r-0 border-[#D9D9D9] max-w-[230px] md:max-w-full shrink-0">
+                    <h5 class="font-medium text-[20px] text-etBlack anim-text">{{ translation('index.trusted_by') }}</h5>
+                    <a href="{{ url('/') }}" class="inline-block mb-[8px] group">
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M0 13.4121L11.1668 2.24543H3.87542V0H15V11.1246H12.7546V3.8332L1.58789 15L0 13.4121Z"
@@ -340,53 +337,15 @@
             </div>
 
             <!-- cta -->
-            <div class="grid grid-cols-2 sm:grid-cols-1 gap-[30px]">
-                <!-- venue map -->
-                <div
-                    class="bg-[#EEF4FF] p-[40px] lg:p-[30px] xs:px-[20px] xs:pb-0 pb-0 lg:pb-0 rounded-[20px] overflow-hidden relative z-[1] before:absolute before:inset-0 before:bg-[url('../assets/img/cta-bg-1.jpg')] before:bg-cover before:bg-no-repeat before:bg-center before:-z-[1] before:mix-blend-multiply">
-                    <div class="mb-[22px]">
-                        <h6 class="et-section-sub-title anim-text">Event Venue Map</h6>
-                        <h2 class="et-section-title anim-text">Get Direction To The Event Venue</h2>
-                    </div>
+            @php
+                use App\Models\CallToAction;
 
-                    <div class="relative">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7299.7865598218705!2d90.41595849268677!3d23.822393686713387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c7305eea2015%3A0x8805755fb04e861c!2sKuril%20Flyover!5e0!3m2!1sen!2sbd!4v1713418656214!5m2!1sen!2sbd"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-                            class="w-full h-[303px] rounded-tl-[20px] rounded-tr-[20px]"></iframe>
-
-                        <div
-                            class="absolute inset-[40px] top-auto flex rounded-[20px] overflow-hidden bg-white xxs:flex-col">
-                            <img src="assets/img/cta-venue-img.jpg" alt="venue image"
-                                 class="shrink-0 w-[50%] xxs:w-full">
-                            <div class="flex items-center justify-center w-full">
-                                <a href="#"
-                                   class="bg-etBlue rounded-full text-white h-[45px] px-[15px] text-[17px] my-[10px] flex items-center justify-center hover:bg-white hover:text-etBlue">Get
-                                    Direction</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- join card -->
-                <div
-                    class="bg-etBlue p-[40px] lg:p-[30px] xs:px-[20px] xs:pb-0 pb-0 lg:pb-0 rounded-[20px] overflow-hidden relative z-[1] before:absolute before:inset-0 before:bg-[url('../assets/img/cta-bg-2.jpg')] before:bg-cover before:bg-no-repeat before:bg-center before:-z-[1] before:opacity-30 before:mix-blend-overlay">
-                    <div class="mb-[34px]">
-                        <h6 class="et-section-sub-title !text-white before:!bg-white anim-text">Build Your Career</h6>
-                        <h2 class="et-section-title !text-white mb-[18px] anim-text">Get Join Our Event</h2>
-                        <p class="text-[16px] text-white font-light mb-[25px]">There are many variations of passages of
-                            Lorem Ipsum available, but the majority have suffered alteration in some form, by injected
-                            humour, or randomised words which don't look</p>
-                        <a href="#"
-                           class="bg-etBlue border border-white rounded-full h-[45px] px-[15px] text-[17px] text-white inline-flex items-center justify-center hover:bg-white hover:text-etBlue">Get
-                            Tickets Now</a>
-                    </div>
-
-                    <div class="rounded-tl-[20px] rounded-tr-[20px] overflow-hidden">
-                        <img src="assets/img/cta-img.jpg" alt="Image">
-                    </div>
-                </div>
-            </div>
+                $ctaMap = CallToAction::where('type', 'map')->first();
+                $ctaJoin = CallToAction::where('type', 'join')->first();
+            @endphp
+            @if($ctaJoin && $ctaMap)
+                <x-call-to-action :ctaMap="$ctaMap" :ctaJoin="$ctaJoin" />
+            @endif
         </div>
 
         <!-- vectors -->

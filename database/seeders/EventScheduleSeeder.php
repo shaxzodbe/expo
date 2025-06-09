@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\EventSchedule;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\File;
@@ -25,12 +24,12 @@ class EventScheduleSeeder extends Seeder
             $sourcePath = public_path("assets/img/{$file}");
             $destinationPath = "event/{$file}";
 
-            if (File::exists($sourcePath) && !Storage::exists($destinationPath)) {
+            if (File::exists($sourcePath) && ! Storage::exists($destinationPath)) {
                 Storage::disk('public')->put($destinationPath, File::get($sourcePath));
                 dump("Copied: {$sourcePath} -> storage/app/public/{$destinationPath}");
             }
         }
-        
+
         $schedules = [
             [
                 'title' => [
@@ -67,7 +66,7 @@ class EventScheduleSeeder extends Seeder
                 ],
             ],
         ];
-        
+
         foreach ($schedules as $schedule) {
             EventSchedule::create($schedule);
         }

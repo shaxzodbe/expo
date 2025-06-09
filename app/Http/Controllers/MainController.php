@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Banner;
+use App\Models\Blog;
 use App\Models\CallToAction;
 use App\Models\Countdown;
 use App\Models\EventSchedule;
@@ -23,8 +24,9 @@ class MainController extends Controller
         $events = EventSchedule::orderBy('date')->get();
         $stats = Stat::orderBy('created_at')->take(3)->get();
         $speakers = Speaker::take(3)->get();
+        $blogs = Blog::take(3)->get();
 
-        return view('index', compact('banners', 'about', 'countdown', 'features', 'events', 'stats', 'speakers'));
+        return view('index', compact('banners', 'about', 'countdown', 'features', 'events', 'stats', 'speakers', 'blogs'));
     }
 
     public function show(Request $request)

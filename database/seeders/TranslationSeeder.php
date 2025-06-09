@@ -340,6 +340,21 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Hozir Chiptalar',
                 'ru' => 'Билеты можно приобрести прямо сейчас',
             ],
+            'blog.latest_news' => [
+                'en' => 'Latest News',
+                'uz' => 'Oxirgi Yangiliklar',
+                'ru' => 'Последние Новости',
+            ],
+            'blog.our_latest_news' => [
+                'en' => 'Our Latest News',
+                'uz' => 'Bizning So\'nggi Yangiliklarimiz',
+                'ru' => 'Наши последние новости',
+            ],
+            'blog.index' => [
+                'en' => 'Comments',
+                'uz' => 'Komentariyalar',
+                'ru' => 'Комменты',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

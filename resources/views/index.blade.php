@@ -50,7 +50,7 @@
 
 
     <!-- TESTIMONIAL SECTION START -->
-    @php
+    {{--@php
         $testimonials = \App\Models\Testimonial::all();
     @endphp
     @if($testimonials)
@@ -108,16 +108,16 @@
         </div>
         <!-- </div> -->
     </section>
-    @endif
+    @endif--}}
     <!-- TESTIMONIAL SECTION END -->
 
 
     <!-- PRICING SECTION START -->
-    @php
+    {{--@php
         $ticketPricings = \App\Models\TicketPricing::take(3)->get();
     @endphp
     @if($ticketPricings)
-    {{--<section class="py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
+    <section class="py-[130px] lg:py-[80px] md:py-[60px] relative z-[1]">
         <div
             class="container mx-auto max-w-[calc(100%-37.1vw)] xxxl:max-w-[calc(100%-350px)] xl:max-w-[calc(100%-170px)] px-[12px] lg:max-w-full">
             <!-- section heading -->
@@ -175,8 +175,8 @@
             <img src="assets/img/features-vector-3.png" alt="vector"
                  class="pointer-events-none absolute top-[163px] right-[106px] -z-[1]">
         </div>
-    </section>--}}
-    @endif
+    </section>--}}{{--
+    @endif--}}
     <!-- PRICING SECTION END -->
 
 
@@ -212,7 +212,8 @@
                 <!-- left -->
                 <div
                     class="flex xxs:flex-wrap items-end gap-[40px] xxs:gap-x-[10px] gap-y-[10px] pr-[42px] md:pr-0 border-r md:border-r-0 border-[#D9D9D9] max-w-[230px] md:max-w-full shrink-0">
-                    <h5 class="font-medium text-[20px] text-etBlack anim-text">Trusted By Top sponsors</h5>
+                    <h5 class="font-medium text-[20px] text-etBlack
+                    anim-text">{{ translation('index.trusted_by') }}</h5>
                     <a href="#" class="inline-block mb-[8px] group">
                         <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path

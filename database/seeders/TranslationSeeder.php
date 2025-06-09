@@ -263,32 +263,32 @@ class TranslationSeeder extends Seeder
             'event-schedule.event_timetable' => [
                 'en' => 'Event Timetable',
                 'uz' => 'Tadbirlar jadvali',
-                'ru' => 'Расписание мероприятий'
+                'ru' => 'Расписание мероприятий',
             ],
             'event-schedule.information' => [
                 'en' => 'Information Of Event Schedule',
                 'uz' => 'Tadbirlar Jadvali Haqida Ma`lumot',
-                'ru' => 'Информация О Расписании Мероприятий'
+                'ru' => 'Информация О Расписании Мероприятий',
             ],
             'event-schedule.buy_tickets' => [
                 'en' => 'Buy Tickets',
                 'uz' => 'Chiptalarni Sotib Oling',
-                'ru' => 'Покупайте билеты'
+                'ru' => 'Покупайте билеты',
             ],
             'event-schedule.day' => [
                 'en' => 'Day',
                 'uz' => 'Kun',
-                'ru' => 'День'
+                'ru' => 'День',
             ],
             'event-schedule.speakers' => [
                 'en' => '<span class="text-white">Spe</span>akers',
                 'uz' => '<span class="text-white">So`z</span>lovchilar',
-                'ru' => '<span class="text-white">Спи</span>керы'
+                'ru' => '<span class="text-white">Спи</span>керы',
             ],
             'stat.never_miss' => [
                 'en' => 'Never Miss Another Speaker Announcement',
                 'uz' => 'Ma`ruzachi E`lonini O`tkazib Yubormang',
-                'ru' => 'Не пропустите Очередное объявление спикера'
+                'ru' => 'Не пропустите Очередное объявление спикера',
             ],
         ];
 

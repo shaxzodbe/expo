@@ -357,6 +357,11 @@ class TranslationSeeder extends Seeder
                 'uz' => 'Komentariyalar',
                 'ru' => 'Комменты',
             ],
+            'header.events' => [
+                'en' => 'Events',
+                'uz' => 'Ma`ruzalar',
+                'ru' => 'Объявления',
+            ],
         ];
 
         foreach ($translations as $key => $value) {

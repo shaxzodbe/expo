@@ -24,7 +24,7 @@
                     </li>
                     <li><a href="{{ url('/') }}">{{ translation('header.about_us') }}</a></li>
                     <li class="has-sub-menu relative">
-                        <a role="button">Events</a>
+                        <a role="button">{{ translation('header.events') }}</a>
 
                         <ul class="et-header-submenu">
                             <li><a href="{{ url('/') }}">{{ translation('header.all_events') }}</a></li>

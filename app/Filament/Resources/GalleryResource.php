@@ -24,6 +24,10 @@ class GalleryResource extends Resource
         return $form
             ->schema([
                 Forms\Components\FileUpload::make('image_path')
+                    ->acceptedFileTypes([
+                        'image/jpeg',
+                        'image/png',
+                    ])
                     ->required(),
                 Forms\Components\TextInput::make('thumbnail_path')
                     ->maxLength(255),

@@ -38,7 +38,11 @@ class TestimonialResource extends Resource
                 Forms\Components\TextInput::make('rating')
                     ->required()
                     ->numeric(),
-                Forms\Components\FileUpload::make('image'),
+                Forms\Components\FileUpload::make('image')
+                    ->acceptedFileTypes([
+                        'image/jpeg',
+                        'image/png',
+                    ]),
             ]);
     }
 

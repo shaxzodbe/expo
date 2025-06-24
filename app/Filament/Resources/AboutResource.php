@@ -31,13 +31,19 @@ class AboutResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('main_image')
-                    ->image()
+                    ->acceptedFileTypes([
+                        'image/jpeg',
+                        'image/png',
+                    ])
                     ->disk('public')
                     ->directory('about')
                     ->visibility('public')
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
-                    ->image()
+                    ->acceptedFileTypes([
+                        'image/jpeg',
+                        'image/png',
+                    ])
                     ->disk('public')
                     ->directory('about')
                     ->visibility('public'),

@@ -40,7 +40,8 @@ class TestimonialResource extends Resource
                     ->numeric(),
                 Forms\Components\FileUpload::make('image')
                     ->acceptedFileTypes([
-                        'image/jpeg',
+                         'image/jpeg',
+ 'image/jpg',
                         'image/png',
                     ]),
             ]);

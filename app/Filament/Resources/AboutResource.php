@@ -34,6 +34,7 @@ class AboutResource extends Resource
                     ->image()
                     ->disk('public')
                     ->directory('about')
+                    ->visibility('public')
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
                     ->image()
@@ -56,12 +57,6 @@ class AboutResource extends Resource
                 Tables\Columns\ImageColumn::make('main_image'),
                 Tables\Columns\ImageColumn::make('floating_image'),
                 Tables\Columns\TextColumn::make('video_link')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('vector_1')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('vector_2')
-                    ->searchable(),
-                Tables\Columns\ImageColumn::make('vector_3')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

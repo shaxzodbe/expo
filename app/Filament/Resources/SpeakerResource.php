@@ -31,8 +31,7 @@ class SpeakerResource extends Resource
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
                     ->acceptedFileTypes([
-                         'image/jpeg',
- 'image/jpg',
+                        'image/jpeg',
                         'image/png',
                     ])
                     ->disk('public')

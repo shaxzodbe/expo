@@ -32,8 +32,7 @@ class AboutResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('main_image')
                     ->acceptedFileTypes([
-                         'image/jpeg',
- 'image/jpg',
+                        'image/jpeg',
                         'image/png',
                     ])
                     ->disk('public')
@@ -42,8 +41,8 @@ class AboutResource extends Resource
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
                     ->acceptedFileTypes([
-                         'image/jpeg',
- 'image/jpg',
+                        'image/jpeg',
+                        'image/jpg',
                         'image/png',
                     ])
                     ->disk('public')

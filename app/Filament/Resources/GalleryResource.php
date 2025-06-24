@@ -25,8 +25,7 @@ class GalleryResource extends Resource
             ->schema([
                 Forms\Components\FileUpload::make('image_path')
                     ->acceptedFileTypes([
-                         'image/jpeg',
- 'image/jpg',
+                        'image/jpeg',
                         'image/png',
                     ])
                     ->required(),

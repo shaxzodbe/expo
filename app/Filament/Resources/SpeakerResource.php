@@ -30,7 +30,6 @@ class SpeakerResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
                     ->disk('public')
                     ->directory('speaker')
                     ->visibility('public')

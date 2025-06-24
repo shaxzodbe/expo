@@ -33,7 +33,6 @@ class TicketPricingResource extends Resource
                     ->numeric()
                     ->prefix('$'),
                 Forms\Components\FileUpload::make('image')
-                    ->image()
                     ->disk('public')
                     ->directory('pricing')
                     ->visibility('public')

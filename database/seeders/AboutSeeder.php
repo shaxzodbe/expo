@@ -29,6 +29,13 @@ class AboutSeeder extends Seeder
             if (File::exists($sourcePath) && ! Storage::exists($destinationPath)) {
                 Storage::disk('public')->put($destinationPath, File::get($sourcePath));
                 dump("Copied: {$sourcePath} -> storage/app/public/{$destinationPath}");
+            } else {
+                if (! File::exists($sourcePath)) {
+                    dump("Source file not found: {$sourcePath}");
+                }
+                if (Storage::disk('public')->exists($destinationPath)) {
+                    dump("Destination file already exists, skipping: storage/app/public/{$destinationPath}");
+                }
             }
         }
 

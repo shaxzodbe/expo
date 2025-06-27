@@ -31,22 +31,9 @@ class AboutResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('main_image')
-                    ->acceptedFileTypes([
-                        'image/jpeg',
-                        'image/png',
-                    ])
-                    ->disk('public')
-                    ->visibility('public')
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
-                    ->acceptedFileTypes([
-                        'image/jpeg',
-                        'image/jpg',
-                        'image/png',
-                    ])
-                    ->disk('public')
-                    ->directory('about')
-                    ->visibility('public'),
+                    ->directory('about'),
                 Forms\Components\TextInput::make('video_link')
                     ->maxLength(255),
             ]);

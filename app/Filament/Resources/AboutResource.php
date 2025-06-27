@@ -32,8 +32,7 @@ class AboutResource extends Resource
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('main_image')
                     ->required(),
-                Forms\Components\FileUpload::make('floating_image')
-                    ->directory('about'),
+                Forms\Components\FileUpload::make('floating_image'),
                 Forms\Components\TextInput::make('video_link')
                     ->maxLength(255),
             ]);

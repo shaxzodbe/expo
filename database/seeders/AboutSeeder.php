@@ -24,7 +24,7 @@ class AboutSeeder extends Seeder
 
         foreach ($files as $file) {
             $sourcePath = public_path("assets/img/{$file}");
-            $destinationPath = "about/{$file}";
+            $destinationPath = "{$file}";
 
             if (File::exists($sourcePath) && ! Storage::exists($destinationPath)) {
                 Storage::disk('public')->put($destinationPath, File::get($sourcePath));

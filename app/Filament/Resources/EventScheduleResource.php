@@ -28,10 +28,6 @@ class EventScheduleResource extends Resource
                     ->required()
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->acceptedFileTypes([
-                        'image/jpeg',
-                        'image/png',
-                    ])
                     ->disk('public')
                     ->directory('event')
                     ->visibility('public')

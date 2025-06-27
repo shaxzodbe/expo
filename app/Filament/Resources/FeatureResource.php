@@ -30,10 +30,6 @@ class FeatureResource extends Resource
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('icon_path')
-                    ->acceptedFileTypes([
-                        'image/jpeg',
-                        'image/png',
-                    ])
                     ->disk('public')
                     ->directory('feature')
                     ->visibility('public')

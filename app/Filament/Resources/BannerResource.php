@@ -29,10 +29,6 @@ class BannerResource extends Resource
                 Forms\Components\TextInput::make('subtitle')
                     ->maxLength(255),
                 Forms\Components\FileUpload::make('image')
-                    ->acceptedFileTypes([
-                        'image/jpeg',
-                        'image/png',
-                    ])
                     ->disk('public')
                     ->directory('banner')
                     ->visibility('public')

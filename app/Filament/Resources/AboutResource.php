@@ -31,10 +31,12 @@ class AboutResource extends Resource
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
                 Forms\Components\FileUpload::make('main_image')
+                    ->disk('public')
                     ->directory('about')
                     ->visibility('public')
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
+                    ->disk('public')
                     ->directory('about')
                     ->visibility('public'),
                 Forms\Components\TextInput::make('video_link')

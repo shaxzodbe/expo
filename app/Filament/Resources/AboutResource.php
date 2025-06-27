@@ -36,7 +36,6 @@ class AboutResource extends Resource
                         'image/png',
                     ])
                     ->disk('public')
-                    ->directory('about')
                     ->visibility('public')
                     ->required(),
                 Forms\Components\FileUpload::make('floating_image')
